@@ -1,0 +1,141 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\citeauthoryear{Bahgat \bgroup \em et al.\egroup
+  }{2016}]{gaber_e-mail_2016}
+Eman~M. Bahgat, Sherine Rady, and Walaa Gad.
+\newblock An {E}-mail {Filtering} {Approach} {Using} {Classification}
+  {Techniques}.
+\newblock In Tarek Gaber, Aboul~Ella Hassanien, Nashwa El-Bendary, and Nilanjan
+  Dey, editors, {\em The 1st {International} {Conference} on {Advanced}
+  {Intelligent} {System} and {Informatics} ({AISI}2015), {November} 28-30,
+  2015, {Beni} {Suef}, {Egypt}}, volume 407, pages 321--331. Springer
+  International Publishing, Cham, 2016.
+
+\bibitem[\protect\citeauthoryear{Fisher \bgroup \em et al.\egroup
+  }{2006}]{fisher_revisiting_2006}
+Danyel Fisher, A.~J. Brush, Eric Gleave, and Marc~A. Smith.
+\newblock Revisiting {Whittaker} \& {Sidner}'s email overload ten years later.
+\newblock In {\em Proceedings of the 2006 20th anniversary conference on
+  {Computer} supported cooperative work}, pages 309--312. ACM, 2006.
+
+\bibitem[\protect\citeauthoryear{Freeman}{1977}]{freeman_set_1977}
+Linton~C. Freeman.
+\newblock A {Set} of {Measures} of {Centrality} {Based} on {Betweenness}.
+\newblock {\em Sociometry}, 40(1):35--41, 1977.
+
+\bibitem[\protect\citeauthoryear{He \bgroup \em et al.\egroup
+  }{2014}]{he_novel_2014}
+Bin He, Zefeng Li, and Nan Yang.
+\newblock A {Novel} {Approach} for {Email} {Clustering} {Based} on {Semantics}.
+\newblock In {\em Web {Information} {System} and {Application} {Conference}
+  ({WISA}), 2014 11th}, pages 269--272, September 2014.
+
+\bibitem[\protect\citeauthoryear{Hu \bgroup \em et al.\egroup
+  }{2012}]{hu_towards_2012}
+Qi~Hu, S.~Bao, Jingmin Xu, Wenli Zhou, Min Li, and Heyuan Huang.
+\newblock Towards building effective email recipient recommendation service.
+\newblock In {\em 2012 {IEEE} {International} {Conference} on {Service}
+  {Operations} and {Logistics}, and {Informatics} ({SOLI})}, pages 398--403,
+  July 2012.
+
+\bibitem[\protect\citeauthoryear{Keila and
+  Skillicorn}{2005}]{keila_structure_2005}
+Parambir~S. Keila and David~B. Skillicorn.
+\newblock Structure in the {Enron} email dataset.
+\newblock {\em Computational \& Mathematical Organization Theory},
+  11(3):183--199, 2005.
+
+\bibitem[\protect\citeauthoryear{Klimt and Yang}{2004}]{klimt_introducing_2004}
+Bryan Klimt and Yiming Yang.
+\newblock Introducing the {Enron} {Corpus}.
+\newblock In {\em {CEAS}}, 2004.
+
+\bibitem[\protect\citeauthoryear{Martin \bgroup \em et al.\egroup
+  }{2005}]{martin_analyzing_2005}
+Steve Martin, Blaine Nelson, Anil Sewani, Karl Chen, and Anthony~D. Joseph.
+\newblock Analyzing {Behavioral} {Features} for {Email} {Classification}.
+\newblock In {\em {CEAS}}, 2005.
+
+\bibitem[\protect\citeauthoryear{Nordbø}{2014}]{nordbo_data_2014}
+André Nordbø.
+\newblock Data {Visualization} for {Discovery} of {Digital} {Evidence} in
+  {Email}.
+\newblock 2014.
+
+\bibitem[\protect\citeauthoryear{Radicati and
+  Levenstein}{2015}]{radicati_emails_2015}
+S.~Radicati and Levenstein.
+\newblock {\em Email statistics report, 2015-2019}.
+\newblock Technical report, 2015.
+
+\bibitem[\protect\citeauthoryear{Rowe \bgroup \em et al.\egroup
+  }{2007}]{rowe_automated_2007}
+Ryan Rowe, German Creamer, Shlomo Hershkop, and Salvatore~J. Stolfo.
+\newblock Automated social hierarchy detection through email network analysis.
+\newblock In {\em Proceedings of the 9th {WebKDD} and 1st {SNA}-{KDD} 2007
+  workshop on {Web} mining and social network analysis}, pages 109--117. ACM,
+  2007.
+
+\bibitem[\protect\citeauthoryear{Shams and
+  Mercer}{2013}]{shams_classifying_2013}
+R.~Shams and R.E. Mercer.
+\newblock Classifying {Spam} {Emails} {Using} {Text} and {Readability}
+  {Features}.
+\newblock In {\em 2013 {IEEE} 13th {International} {Conference} on {Data}
+  {Mining} ({ICDM})}, pages 657--666, December 2013.
+
+\bibitem[\protect\citeauthoryear{Shetty and Adibi}{2004}]{shetty_enron_2004}
+Jitesh Shetty and Jafar Adibi.
+\newblock The {Enron} email dataset database schema and brief statistical
+  report.
+\newblock {\em Information sciences institute technical report, University of
+  Southern California}, 4, 2004.
+
+\bibitem[\protect\citeauthoryear{Sofershtein and
+  Cohen}{2015}]{sofershtein_predicting_2015}
+Zvi Sofershtein and Sara Cohen.
+\newblock Predicting {Email} {Recipients}.
+\newblock pages 761--764. ACM Press, 2015.
+
+\bibitem[\protect\citeauthoryear{Tang \bgroup \em et al.\egroup
+  }{2013}]{tang_email_2013}
+Guanting Tang, Jian Pei, and Wo-Shun Luk.
+\newblock Email mining: tasks, common techniques, and tools.
+\newblock {\em Knowledge and Information Systems}, 41(1):1--31, June 2013.
+
+\bibitem[\protect\citeauthoryear{Tyler \bgroup \em et al.\egroup
+  }{2003}]{tyler_email_2003}
+Joshua~R. Tyler, Dennis~M. Wilkinson, and Bernardo~A. Huberman.
+\newblock Email as {Spectroscopy}: {Automated} {Discovery} of {Community}
+  {Structure} within {Organizations}.
+\newblock {\em arXiv:cond-mat/0303264}, March 2003.
+\newblock arXiv: cond-mat/0303264.
+
+\bibitem[\protect\citeauthoryear{Wasserman and
+  Faust}{1994}]{wasserman_social_1994}
+Stanley Wasserman and Katherine Faust.
+\newblock {\em Social {Network} {Analysis}: {Methods} and {Applications}}.
+\newblock Cambridge University Press, November 1994.
+
+\bibitem[\protect\citeauthoryear{Waterman and
+  Bruening}{2014}]{waterman_big_2014}
+K.~Krasnow Waterman and Paula~J. Bruening.
+\newblock Big {Data} analytics: risks and responsibilities.
+\newblock {\em International Data Privacy Law}, 4(2):89--95, May 2014.
+
+\bibitem[\protect\citeauthoryear{Wilson and
+  Banzhaf}{2009}]{wilson_discovery_2009}
+Garnett Wilson and Wolfgang Banzhaf.
+\newblock Discovery of email communication networks from the {Enron} corpus
+  with a genetic algorithm using social network analysis.
+\newblock In {\em Evolutionary {Computation}, 2009. {CEC}'09. {IEEE} {Congress}
+  on}, pages 3256--3263. IEEE, 2009.
+
+\bibitem[\protect\citeauthoryear{Yelupula and
+  Ramaswamy}{2008}]{yelupula_social_2008}
+K.~Yelupula and Srini Ramaswamy.
+\newblock Social network analysis for email classification.
+\newblock In {\em Proceedings of the 46th {Annual} {Southeast} {Regional}
+  {Conference} on {XX}}, pages 469--474. ACM, 2008.
+
+\end{thebibliography}

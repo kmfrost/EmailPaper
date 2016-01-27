@@ -1,0 +1,65 @@
+\documentclass[conference]{IEEEtran}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm, amssymb}
+\usepackage{enumerate}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{soul}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{empheq}
+\usepackage{comment}
+\restylefloat{table}
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+\usepackage{fancybox}
+\usepackage{framed}
+\usepackage{mathrsfs}
+\usepackage{cite}
+
+\begin{document}
+\title{Exploring Workplace Hierarchy Through Corporate Email Metadata}
+\author{Kayla Straub}
+\maketitle
+
+\begin{abstract}
+\end{abstract}
+\section{Introduction}
+Email is a pervasive medium for communication in modern society - particularly in the workplace.  In 2015, there were estimated over 2.6 billion email users, and it is projected that by the end of 2019, over one third of the global population will be using email.  In fact, the average business email sends or receives 112 emails per day, accounting for 54.7\% of worldwide email traffic \cite{radicati_emails_2015}].  According to \cite{fisher_revisiting_2006}, retention of large email archives has become common practice with decreasing memory size and cost.  In that study, out of 600 employees at a high-tech company, the average employee had 28,660 emails stored in 133 folders which is a significant increase from 10 years earlier.  This trove of interesting information can be leveraged to analyze the relationships between coworkers.
+
+\section{Related Works}
+Email has been a common research topic over the past decade.  Most notably, the Enron email database was released in 2004 \cite{klimt_introducing_2004}, following the company's collapse.  This dataset has been extensively researched on topics including spam classification \cite{martin_analyzing_2005}, \cite{gaber_e-mail_2016}, \cite{shams_classifying_2013}; email categorization \cite{he_novel_2014}, \cite{keila_structure_2005}; and recipient prediction \cite{sofershtein_predicting_2015}, \cite{hu_towards_2012}.  However, there are known flaws and discrepancies with even the most recent versions of this dataset -- ranging from misspelled email addresses \cite{nordbo_data_2014} to duplicate emails \cite{waterman_big_2014}. In one of the most popular forms of the dataset, \cite{shetty_enron_2004}, the database includes 253,735 emails sent as 'CC' and  253,713 emails sent as 'BCC'.  Further inspection reveals that emails sent as one type or the other were mistakenly recorded as both. 
+
+The existing literature on analyzing social email behavior is mainly divided into two categories: feature-based and social-based \cite{tang_email_2013}.  
+
+Using features extracted from email metadata, \cite{yelupula_social_2008} was able to cluster levels of management at Enron. In addition to email traffic statistics, using features such as the presence of different email attachment types and the length of emails were shown to successfully categorize email behavior in \cite{martin_analyzing_2005}.
+
+Relational ties can be modeled as a graph network where nodes represent people and edges represent interactions.  This is a useful model because many useful statistics can be calculated from the layout of a social graph \cite{wasserman_social_1994}.  A common metric that has been shown to indicate importance in a social graph is betweenness, which comes in several different flavors, and was first developed by \cite{freeman_set_1977}. As \cite{tyler_email_2003} shows, a betweenness centrality algorithm can be used on a social graph to determine community structures within an organization.  However, other features have been used successfully as well.  Degree, density, and proximity prestige were used in \cite{wilson_discovery_2009} to detect the most important email users within a corporate network.
+
+Some research has been done in trying to combine the two different types of features.  An example of this approach is seen in \cite{rowe_automated_2007}, which combined features such as number of emails, response time, cliques, and degree centrality into a "Social Score" which was used to rank Enron employees.  The purpose of this paper is to further unite the two branches of research by aggregating old and novel email traffic statistics with social graph features and applying them to an original, clean dataset. 
+
+[Maybe add paragraph about algorithm-specific learning?]
+
+
+\section{Features}
+\subsection{Traffic-Based Features}
+\subsection{Social Network Features}
+[Image: Social graph of the Hume Center]
+
+\section{Analysis}
+[Image: Feature histograms]
+
+[Image: Random tree rules]
+\section{Results}
+[Image: Graphical representation of the predictions]
+
+
+\section{Conclusions and Future Work}
+
+\bibliographystyle{IEEEtran}
+\bibliography{bib}
+\end{document}

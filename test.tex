@@ -1,0 +1,71 @@
+\documentclass[11pt,english]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm, amssymb}
+\usepackage{enumerate}
+\usepackage{fullpage}
+\usepackage{hyperref}
+\usepackage{soul}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{mathtools}
+\usepackage{empheq}
+\usepackage{comment}
+\restylefloat{table}
+\usepackage{listings}
+\usepackage{fancybox}
+\usepackage{framed}
+\usepackage{mathrsfs}
+\usepackage{cite}
+
+\begin{document}
+\begin{table}[ht]
+\centering
+\begin{tabular}{llllll}
+  \hline
+len & freq & err & condition & pred & impRRF \\ 
+  \hline
+4 & 0.5 & 0.114 & rec\_cc$<$=0.03676470585 \& after\_hours\_sent\_hume\_perc$>$0.0264847512 \& pg\_pagerank$<$=0.045060613 \& fg\_authorities$<$=0.02275275595 & GradStudent & 1 \\ 
+  3 & 0.071 & 0 & sent\_cc$>$0.03523123265 \& after\_hours\_rec\_perc$<$=0.3193896343 \& rec\_fw\_perc$<$=0.36158038145 & PM & 0.300674722423417 \\ 
+  3 & 0.129 & 0.111 & avg\_attachments\_sent$<$=0.235 \& rec\_fw\_perc$>$0.1877384196 \& avg\_subject\_chars\_sent$>$0.1265013489 & Research & 0.217371714329781 \\ 
+  1 & 0.429 & 0.1 & rec\_fw$<$=0.02190395955 & GradStudent & 0.175394924545941 \\ 
+  3 & 0.114 & 0.25 & rec\_cc\_perc$>$0.48242326905 \& avg\_emails\_per\_day$>$0.0780856291 \& avg\_subject\_chars\_sent$<$=0.18038061605 & Director & 0.155987780212233 \\ 
+  5 & 0.229 & 0.25 & total\_received\_signed$>$0.026478376 \& rec\_cc\_perc$>$0.1341006424 \& var\_subject\_chars\_rec$>$0.38072444075 \& fg\_load\_centrality$<$=0.3334579081 \& fg\_square\_clustering$<$=0.606415516 & Research & 0.135602500273178 \\ 
+  2 & 0.014 & 0 & total\_sent$>$0.0054592761 \& fg\_closeness\_centrality$<$=0.14139375285 & Outreach & 0.117751002942353 \\ 
+  1 & 0.143 & 0.4 & after\_hours\_sent\_perc$<$=0.0781691005 & Operations & 0.112905237617092 \\ 
+  2 & 0.414 & 0.069 & avg\_attachments\_sent$>$0.01 \& fg\_hubs$<$=0.01239050875 & GradStudent & 0.10996146953513 \\ 
+  3 & 0.1 & 0.286 & unique\_sub\_rec\_perc$<$=0.46029348295 \& var\_body\_chars\_rec$>$0.0015762561 \& rec\_re\_perc$<$=0.79512473505 & PM & 0.0856788454685607 \\ 
+  4 & 0.414 & 0.448 & unique\_subjects\_received\_signed$<$=0.69007184845 \& rec\_cc$>$0.0142832995 \& rec\_cc\_perc$<$=0.82191291935 \& sent\_re\_perc$>$0.5767 & Research & 0.0828645488114031 \\ 
+  3 & 0.057 & 0.5 & after\_hours\_sent\_perc$<$=0.11351086025 \& avg\_rec\_per\_day$>$0.23589664005 \& sent\_re\_perc$>$0.5497 & Outreach & 0.0592841289946087 \\ 
+  5 & 0.286 & 0.35 & sent\_to\_perc$<$=0.76912586935 \& avg\_emails\_per\_day$<$=0.2219419335 \& attached\_rec$>$0.01661858775 \& avg\_subject\_chars\_rec$>$0.3514025584 \& pg\_communicability\_betweenness\_centrality$<$=0.69817961435 & Research & 0.0580457767926218 \\ 
+  4 & 0.314 & 0.409 & after\_hours\_rec$>$0.0112834979 \& sent\_re\_perc$>$0.5476 \& sent\_fw$<$=0.11114629515 \& pg\_communicability\_betweenness\_centrality$>$0.0724352742 & Research & 0.0573134182162074 \\ 
+  2 & 0.171 & 0.667 & total\_sent\_signed$<$=0.04540528825 \& sent\_fw$>$0.02311589615 & Director & 0.0519939513969694 \\ 
+  2 & 0.029 & 0 & rec\_re\_perc$>$0.84118702105 \& pg\_communicability\_centrality$>$0.1631238228 & Outreach & 0.0501491809218833 \\ 
+  3 & 0.143 & 0 & after\_hours\_sent\_hume\_perc$>$0.1575708935 \& sent\_fw$<$=0.13996200125 \& pg\_authorities$>$0.0146321007 & Research & 0.0492825956686885 \\ 
+  4 & 0.471 & 0.091 & unique\_add\_sent\_perc$<$=0.72635960045 \& unique\_sub\_sent\_perc$>$0.15151282445 \& pg\_communicability\_centrality$<$=0.2344391529 \& pg\_authorities$<$=0.02425810095 & GradStudent & 0.0491064386221696 \\ 
+  3 & 0.071 & 0 & after\_hours\_sent\_perc$<$=0.1870168119 \& sent\_fw$<$=0.15151994935 \& fg\_closeness\_centrality$>$0.46463554005 & Operations & 0.0482281563059694 \\ 
+  3 & 0.114 & 0.375 & avg\_recipients\_sent$>$0.2642165224 \& after\_hours\_sent\_hume\_perc$<$=0.1183788122 \& fg\_hubs$>$0.01239050875 & Operations & 0.0462640814384122 \\ 
+  6 & 0.171 & 0.083 & unique\_add\_rec\_perc\_signed$>$0.0396 \& rec\_to\_perc$<$=0.8263740186 \& after\_hours\_sent\_perc$>$0.07221745 \& attached\_sent$<$=0.25009788565 \& avg\_subject\_chars\_rec$>$0.4103024411 \& fg\_degree\_centrality$>$0.3142857143 & Research & 0.0456077061485122 \\ 
+  3 & 0.071 & 0 & after\_hours\_sent\_hume\_perc$<$=0.08246388445 \& after\_hours\_rec\_hume$>$0.00977944235 \& sent\_re\_perc$<$=0.5767 & Operations & 0.043485126472005 \\ 
+  3 & 0.071 & 0.2 & after\_hours\_sent\_perc$<$=0.1562768438 \& after\_hours\_sent\_hume\_perc$>$0.0771803103 \& avg\_emails\_per\_day$>$0.13185560245 & PM & 0.038160196259583 \\ 
+  2 & 0.314 & 0.091 & sent\_to\_perc$>$0.63766534845 \& pg\_current\_flow\_closeness\_centrality$<$=0.8365892062 & GradStudent & 0.0365502753448292 \\ 
+  6 & 0.157 & 0.091 & unique\_addresses\_sent$<$=0.04554427525 \& after\_hours\_rec\_perc$>$0.08839779005 \& sent\_re\_perc$>$0.6124 \& sent\_fw$<$=0.02549081695 \& rec\_fw$>$0.01937657965 \& pg\_current\_flow\_closeness\_centrality$>$0.59575132525 & Research & 0.0354003316619743 \\ 
+  6 & 0.157 & 0.091 & unique\_add\_rec\_perc$<$=0.5445015823 \& avg\_body\_chars\_rec$>$0.03188762285 \& avg\_sent\_per\_day$<$=0.14033730125 \& avg\_attachments\_sent$<$=0.48 \& rec\_re$>$0.0557191949 \& rec\_re\_perc$<$=0.7987934127 & Research & 0.0346464580582024 \\ 
+  4 & 0.157 & 0.091 & unique\_addresses\_received\_signed$>$0.05555555555 \& inter\_hume\_received$>$0.7556818182 \& rec\_cc$>$0.01910074375 \& sent\_fw$<$=0.0213742875 & Research & 0.0327362338156995 \\ 
+  3 & 0.057 & 0.25 & after\_hours\_rec\_perc$<$=0.24125230205 \& sent\_fw\_perc$>$0.16483292585 \& pg\_communicability\_centrality$>$0.0618390562 & Outreach & 0.0282343362540523 \\ 
+  3 & 0.1 & 0.286 & total\_sent\_signed$<$=0.00783846265 \& rec\_cc$>$0.0170723462 \& after\_hours\_sent\_perc$<$=0.0837526077 & Operations & 0.0270688568542615 \\ 
+  5 & 0.143 & 0.1 & unique\_sub\_rec\_perc\_signed$>$0.6408 \& sent\_to\_perc$<$=0.70714577935 \& avg\_recipients\_rec$>$0.0039272857 \& avg\_rec\_per\_day$<$=0.24355940095 \& rec\_re$>$0.01963672065 & Research & 0.0254696974318217 \\ 
+  4 & 0.057 & 0 & after\_hours\_sent\_perc$<$=0.31022211315 \& avg\_attachments\_rec$<$=0.2091836735 \& rec\_fw\_perc$>$0.13514986375 \& var\_subject\_chars\_rec$<$=0.3593954688 & Operations & 0.0246411011115712 \\ 
+  2 & 0.1 & 0.429 & unique\_sub\_rec\_perc$<$=0.42026327145 \& after\_hours\_sent\_perc$>$0.11351086025 & Director & 0.023658304402261 \\ 
+  4 & 0.071 & 0 & rec\_to\_perc$<$=0.46788008565 \& after\_hours\_rec\_hume\_perc$<$=0.74450135585 \& avg\_subject\_chars\_sent$<$=0.18038061605 \& fg\_authorities$>$0.07012254925 & Director & 0.0224542160109638 \\ 
+  2 & 0.214 & 0.4 & after\_hours\_sent\_hume\_perc$>$0.1183788122 \& pg\_authorities$>$0.0200792458 & Research & 0.0199065413445114 \\ 
+  4 & 0.3 & 0.381 & rec\_cc\_perc$<$=0.6159885796 \& sent\_fw\_perc$<$=0.2086389568 \& fg\_between\_centrality$<$=0.433225528 \& fg\_hubs$>$0.01239050875 & Research & 0.0187982380280573 \\ 
+  3 & 0.071 & 0.6 & unique\_sub\_sent\_perc$<$=0.2323759791 \& total\_sent\_signed$>$0.00567114575 \& rec\_cc\_perc$<$=0.60849393295 & Outreach & 0.0183179393775608 \\ 
+  5 & 0.086 & 0.333 & unique\_add\_rec\_perc\_signed$>$0.0453 \& avg\_recipients\_rec$<$=0.0523439747 \& avg\_body\_chars\_rec$<$=0.0545350424 \& avg\_emails\_per\_day$<$=0.13185560245 \& rec\_fw$>$0.0202190396 & Operations & 0.0179290676358572 \\ 
+  1 & 0.514 & 0.611 & avg\_attachments\_sent$>$0.24 & GradStudent & 0.0143657821449174 \\ 
+  4 & 0.129 & 0.444 & unique\_sub\_sent\_perc\_signed$>$0.4349 \& sent\_cc\_perc$>$0.230601391 \& avg\_sent\_per\_day$>$0.0442078674 \& fg\_degree\_centrality$<$=0.96428571425 & Director & 0.013393133556403 \\ 
+  5 & 0.143 & 0.1 & unique\_sub\_sent\_perc$>$0.19728152355 \& unique\_subjects\_received\_signed$<$=0.5774003919 \& after\_hours\_sent\_perc$>$0.07154252055 \& avg\_attachments\_rec$<$=0.2857142857 \& pg\_communicability\_centrality$>$0.22697084635 & Research & 0.011454839205679 \\ 
+   \hline
+\end{tabular}
+\end{table}
+\end{document}
