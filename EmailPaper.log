@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.22)  27 JAN 2016 15:55
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.22)  27 JAN 2016 17:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,7 +6,6 @@ entering extended mode
 (./EmailPaper.tex
 LaTeX2e <2011/06/27>
 Babel <3.9h> and hyphenation patterns for 4 languages loaded.
-IJCAI-16 Instructions for Authors
 (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size10.clo
@@ -410,21 +409,21 @@ Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 (./EmailPaper.aux)
 \openout1 = `EmailPaper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 28.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -457,7 +456,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box37
-Package hyperref Info: Link coloring OFF on input line 29.
+Package hyperref Info: Link coloring OFF on input line 28.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -467,9 +466,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count133
 )
-LaTeX Info: Redefining \ref on input line 29.
-LaTeX Info: Redefining \pageref on input line 29.
-LaTeX Info: Redefining \nameref on input line 29.
+LaTeX Info: Redefining \ref on input line 28.
+LaTeX Info: Redefining \pageref on input line 28.
+LaTeX Info: Redefining \nameref on input line 28.
 
 (./EmailPaper.out) (./EmailPaper.out)
 \@outlinefile=\write5
@@ -477,64 +476,68 @@ LaTeX Info: Redefining \nameref on input line 29.
 
 \c@lstlisting=\count134
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 36.
-LaTeX Font Info:    Try loading font information for U+msa on input line 36.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
+LaTeX Font Info:    Try loading font information for U+msa on input line 35.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 36.
+LaTeX Font Info:    Try loading font information for U+msb on input line 35.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 36.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 35.
 
 (/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 36.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 53.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
 
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 53.
-Missing character: There is no Ã in font ptmr7t!
-Missing character: There is no ¸ in font ptmr7t!
+Underfull \hbox (badness 10000) in paragraph at lines 41--43
 
-Underfull \hbox (badness 7081) in paragraph at lines 67--68
-[]\OT1/ptm/m/n/10 Using fea-tures ex-tracted from email meta-data,
  []
 
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no ¸ in font ptmr7t!
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 ]
-Underfull \hbox (badness 3000) in paragraph at lines 74--75
+Underfull \hbox (badness 7081) in paragraph at lines 54--55
+[]\OT1/ptm/m/n/10 Using fea-tures ex-tracted from email meta-data,
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 61.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 61.
+
+Underfull \hbox (badness 3000) in paragraph at lines 61--62
 []\OT1/ptm/m/n/10 Maybe add para-graph about algorithm-specific
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 81.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 69.
 
-Underfull \hbox (badness 2189) in paragraph at lines 105--106
+Underfull \hbox (badness 2189) in paragraph at lines 93--94
 []\OT1/ptm/m/n/10 Time pe-riod (1114 days/3.05 years, from
  []
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 114.
-<Pictures/adj_matrix.png, id=99, 1861.95625pt x 1059.96pt>
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 102.
+<Pictures/adj_matrix.png, id=102, 1861.95625pt x 1059.96pt>
 File: Pictures/adj_matrix.png Graphic file (type png)
 
 <use Pictures/adj_matrix.png>
-Package pdftex.def Info: Pictures/adj_matrix.png used on input line 123.
+Package pdftex.def Info: Pictures/adj_matrix.png used on input line 111.
 (pdftex.def)             Requested size: 234.8775pt x 133.70769pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 123--124
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 111--112
  [][] 
  []
 
@@ -543,92 +546,93 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.135     \item D
-                 escribe Random Trees <./Pictures/adj_matrix.png>]
-<Pictures/3_level_tree.png, id=111, 1861.95625pt x 1059.96pt>
+l.122     \begin{itemize}
+                          <./Pictures/adj_matrix.png>]
+<Pictures/3_level_tree.png, id=116, 1861.95625pt x 1059.96pt>
 File: Pictures/3_level_tree.png Graphic file (type png)
 
 <use Pictures/3_level_tree.png>
-Package pdftex.def Info: Pictures/3_level_tree.png used on input line 138.
+Package pdftex.def Info: Pictures/3_level_tree.png used on input line 126.
 (pdftex.def)             Requested size: 234.8775pt x 133.70769pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 138--139
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 126--127
  [][] 
  []
 
 
-Overfull \hbox (21.32405pt too wide) in paragraph at lines 153--176
+Overfull \hbox (7.4842pt too wide) in paragraph at lines 141--164
  [][] 
  []
 
-<Pictures/Unique_subjects_rec_hist.png, id=112, 546.54187pt x 273.27094pt>
+<Pictures/Unique_subjects_rec_hist.png, id=117, 546.54187pt x 273.27094pt>
 File: Pictures/Unique_subjects_rec_hist.png Graphic file (type png)
 
 <use Pictures/Unique_subjects_rec_hist.png>
 Package pdftex.def Info: Pictures/Unique_subjects_rec_hist.png used on input li
-ne 182.
+ne 169.
 (pdftex.def)             Requested size: 187.89914pt x 93.94914pt.
 
-<Pictures/Hubs_hist.png, id=113, 551.05875pt x 304.13625pt>
+<Pictures/Hubs_hist.png, id=118, 551.05875pt x 304.13625pt>
 File: Pictures/Hubs_hist.png Graphic file (type png)
 
 <use Pictures/Hubs_hist.png>
-Package pdftex.def Info: Pictures/Hubs_hist.png used on input line 190.
+Package pdftex.def Info: Pictures/Hubs_hist.png used on input line 177.
 (pdftex.def)             Requested size: 187.89914pt x 103.70195pt.
 
-<Pictures/FeatureAnalysis.png, id=114, 362.10281pt x 217.5628pt>
+<Pictures/FeatureAnalysis.png, id=119, 362.10281pt x 217.5628pt>
 File: Pictures/FeatureAnalysis.png Graphic file (type png)
 
 <use Pictures/FeatureAnalysis.png>
-Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 199.
+Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 186.
 (pdftex.def)             Requested size: 187.89914pt x 112.8976pt.
 
-<Pictures/SplitAnalysis.png, id=115, 455.45157pt x 255.95625pt>
-File: Pictures/SplitAnalysis.png Graphic file (type png)
+<Pictures/SplitAnalysisWithLine.png, id=120, 455.45157pt x 255.95625pt>
+File: Pictures/SplitAnalysisWithLine.png Graphic file (type png)
 
-<use Pictures/SplitAnalysis.png>
-Package pdftex.def Info: Pictures/SplitAnalysis.png used on input line 215.
+<use Pictures/SplitAnalysisWithLine.png>
+Package pdftex.def Info: Pictures/SplitAnalysisWithLine.png used on input line 
+202.
 (pdftex.def)             Requested size: 187.89914pt x 105.59886pt.
  [3pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.219 
+l.206 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.219 
+l.206 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 4}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.219 
+l.206 
       pdfTeX warning (ext4): destination with the same identifier (name{figure.
 5}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.219 
+l.206 
        <./Pictures/3_level_tree.png> <./Pictures/Unique_subjects_rec_hist.png> 
 <./Pictures/Hubs_hist.png> <./Pictures/FeatureAnalysis.png>]
-<Pictures/Prediction_50_50_RF.jpg, id=126, 607.26875pt x 341.275pt>
+<Pictures/Prediction_50_50_RF.jpg, id=131, 607.26875pt x 341.275pt>
 File: Pictures/Prediction_50_50_RF.jpg Graphic file (type jpg)
 
 <use Pictures/Prediction_50_50_RF.jpg>
-Package pdftex.def Info: Pictures/Prediction_50_50_RF.jpg used on input line 22
-6.
+Package pdftex.def Info: Pictures/Prediction_50_50_RF.jpg used on input line 21
+3.
 (pdftex.def)             Requested size: 234.8775pt x 131.99272pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 226--227
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 213--214
  [][] 
  []
 
 
-Underfull \hbox (badness 7203) in paragraph at lines 254--255
+Underfull \hbox (badness 7203) in paragraph at lines 241--242
 []\OT1/ptm/m/n/10 Evaluate meth-ods on En-ron/Hillary Clin-ton's
  []
 
@@ -650,8 +654,8 @@ e ignored
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
 l.48 ...t and Yang}{2004}]{klimt_introducing_2004}
-                                                   <./Pictures/SplitAnalysis.pn
-g (PNG copy)> <./Pictures/Prediction_50_50_RF.jpg>]
+                                                   <./Pictures/SplitAnalysisWit
+hLine.png (PNG copy)> <./Pictures/Prediction_50_50_RF.jpg>]
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¸ in font ptmr7t!
 Missing character: There is no Ã in font ptmr7t!
@@ -679,34 +683,34 @@ Underfull \hbox (badness 1418) in paragraph at lines 136--140
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 261.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 248.
  [5]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 261.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 248.
  (./EmailPaper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 261.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 261.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 248.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 248.
 Package rerunfilecheck Info: File `EmailPaper.out' has not changed.
 (rerunfilecheck)             Checksum: 18AA5F6C04F4D19AEAE4B60A1B98ED62;618.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 261.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 248.
  ) 
 Here is how much of TeX's memory you used:
- 9171 strings out of 494985
- 133520 string characters out of 6180356
- 234979 words of memory out of 5000000
- 12187 multiletter control sequences out of 15000+600000
+ 9177 strings out of 494985
+ 133634 string characters out of 6180356
+ 235195 words of memory out of 5000000
+ 12193 multiletter control sequences out of 15000+600000
  23658 words of font info for 63 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 29i,11n,35p,1335b,435s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,11n,35p,1335b,425s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist
 /fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a
 .pfb>
-Output written on EmailPaper.pdf (5 pages, 216459 bytes).
+Output written on EmailPaper.pdf (5 pages, 217956 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
- 148 compressed objects within 2 object streams
+ 175 PDF objects out of 1000 (max. 8388607)
+ 153 compressed objects within 2 object streams
  46 named destinations out of 1000 (max. 500000)
  124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
