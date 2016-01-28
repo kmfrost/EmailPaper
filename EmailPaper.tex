@@ -62,6 +62,8 @@ Some research has been done in trying to combine the two different types of feat
 \end{itemize}
 
 \section{Data Collection} \label{Data Collection}
+For over the past decade, the Enron dataset has been widely used to study email behaviors because it is one of the only datasets available comprised of real-world corporate emails.  A list of ground truth job titles was compiled by [ref labels here].  However, there are issues with these labels.  For example, Jeff Dasovich had the most emails out of any employee in the database, and is labeled as "employee".  In reality, Jeff Dasovich served as the Director for State Government Affairs. Additionally, over the period that the dataset covers, Enron was undergoing turmoil where directors changed and job titles were shifting.  Instead of working with uncertain labels, we decided to generate a new dataset from an organization with which we had intimate knowledge.
+
 \begin{itemize}
 \item Motivation for new data set
     \begin{itemize}
@@ -210,6 +212,8 @@ avg\_sent\_per\_day                          & Traffic      & 0.404  \\ \hline
 
 \item Classification Results
 \item Assumption: employees with the same title exhibit
+\item Assumption: Email behavior is consistent over time
+
 \begin{figure}[H]
     \centering
         \includegraphics[width=0.5\textwidth]{Prediction_50_50_RF}
@@ -240,10 +244,11 @@ avg\_sent\_per\_day                          & Traffic      & 0.404  \\ \hline
 \item Acknowledge we are testing back on ourselves, randomness in email splitting process
 \item From our intimate knowledge of the workings of the lab, we know that hierarchy discrepancies can be explained by multiple projects, directors/PMs working in different offices, etc.
 \item Do more things with dataset
-\item Evaluate methods on Enron/Hillary Clinton's emails and compare which features are consistent predictors
+\item Evaluate methods on Enron emails and compare which features are consistent predictors
 \end{itemize}
 
 \bibliographystyle{named}
+\newpage
 \bibliography{bib}
 
 
