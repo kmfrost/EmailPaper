@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.31)  29 JAN 2016 16:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.31)  29 JAN 2016 17:08
 entering extended mode
 **EmailPaper.tex
 (EmailPaper.tex
@@ -490,28 +490,21 @@ Underfull \hbox (badness 7081) in paragraph at lines 54--55
 []\OT1/ptm/m/n/10 Using fea-tures ex-tracted from email meta-data,
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 61.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 67.
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 61.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 67.
 
-Underfull \hbox (badness 3000) in paragraph at lines 61--62
-[]\OT1/ptm/m/n/10 Maybe add para-graph about algorithm-specific
- []
-
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 87.
-
-Underfull \hbox (badness 2189) in paragraph at lines 90--91
-[]\OT1/ptm/m/n/10 Time pe-riod (1114 days/3.05 years, from
+Overfull \hbox (69.98434pt too wide) in paragraph at lines 85--93
+ [][] 
  []
 
 [2]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 101.
- <Pictures/adj_matrix.png, id=113, 1861.95625pt x 1059.96pt>
+ <Pictures/adj_matrix.png, id=115, 1861.95625pt x 1059.96pt>
 File: Pictures/adj_matrix.png Graphic file (type png)
 
 <use Pictures/adj_matrix.png>
@@ -522,7 +515,9 @@ Overfull \hbox (9.03374pt too wide) in paragraph at lines 110--111
  [][] 
  []
 
-<Pictures/3_level_tree.png, id=114, 1861.95625pt x 1059.96pt>
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 122.
+<Pictures/3_level_tree.png, id=116, 1861.95625pt x 1059.96pt>
 File: Pictures/3_level_tree.png Graphic file (type png)
 
 <use Pictures/3_level_tree.png>
@@ -538,7 +533,7 @@ Overfull \hbox (7.4842pt too wide) in paragraph at lines 140--163
  [][] 
  []
 
-<Pictures/Unique_subjects_rec_hist.png, id=115, 546.54187pt x 273.27094pt>
+<Pictures/Unique_subjects_rec_hist.png, id=117, 546.54187pt x 273.27094pt>
 File: Pictures/Unique_subjects_rec_hist.png Graphic file (type png)
 
 <use Pictures/Unique_subjects_rec_hist.png>
@@ -546,7 +541,7 @@ Package pdftex.def Info: Pictures/Unique_subjects_rec_hist.png used on input li
 ne 168.
 (pdftex.def)             Requested size: 187.89914pt x 93.94914pt.
 
-<Pictures/Hubs_hist.png, id=116, 551.05875pt x 304.13625pt>
+<Pictures/Hubs_hist.png, id=118, 551.05875pt x 304.13625pt>
 File: Pictures/Hubs_hist.png Graphic file (type png)
 
 <use Pictures/Hubs_hist.png>
@@ -575,14 +570,14 @@ l.180
 l.180 
        <./Pictures/adj_matrix.png> <./Pictures/3_level_tree.png> <./Pictures/Un
 ique_subjects_rec_hist.png>]
-<Pictures/FeatureAnalysis.png, id=125, 362.10281pt x 217.5628pt>
+<Pictures/FeatureAnalysis.png, id=127, 362.10281pt x 217.5628pt>
 File: Pictures/FeatureAnalysis.png Graphic file (type png)
 
 <use Pictures/FeatureAnalysis.png>
 Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 185.
 (pdftex.def)             Requested size: 187.89914pt x 112.8976pt.
 
-<Pictures/SplitAnalysisWithLine.png, id=126, 455.45157pt x 255.95625pt>
+<Pictures/SplitAnalysisWithLine.png, id=128, 455.45157pt x 255.95625pt>
 File: Pictures/SplitAnalysisWithLine.png Graphic file (type png)
 
 <use Pictures/SplitAnalysisWithLine.png>
@@ -590,7 +585,7 @@ Package pdftex.def Info: Pictures/SplitAnalysisWithLine.png used on input line
 201.
 (pdftex.def)             Requested size: 187.89914pt x 105.59886pt.
 
-<Pictures/Prediction_50_50_RF.jpg, id=127, 607.26875pt x 341.275pt>
+<Pictures/Prediction_50_50_RF.jpg, id=129, 607.26875pt x 341.275pt>
 File: Pictures/Prediction_50_50_RF.jpg Graphic file (type jpg)
 
 <use Pictures/Prediction_50_50_RF.jpg>
@@ -675,10 +670,10 @@ Package rerunfilecheck Info: File `EmailPaper.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 252.
  ) 
 Here is how much of TeX's memory you used:
- 9063 strings out of 493673
- 132163 string characters out of 3141530
- 237621 words of memory out of 3000000
- 12219 multiletter control sequences out of 15000+200000
+ 9065 strings out of 493673
+ 132184 string characters out of 3141530
+ 238657 words of memory out of 3000000
+ 12220 multiletter control sequences out of 15000+200000
  23658 words of font info for 63 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
  29i,11n,35p,1335b,387s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -688,9 +683,9 @@ Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/Program Fi
 les (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/Program Files (x86)/M
 iKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/Program Files (x86)/MiKTeX 2.9/f
 onts/type1/urw/times/utmri8a.pfb>
-Output written on EmailPaper.pdf (6 pages, 235509 bytes).
+Output written on EmailPaper.pdf (6 pages, 236172 bytes).
 PDF statistics:
- 176 PDF objects out of 1000 (max. 8388607)
- 47 named destinations out of 1000 (max. 500000)
+ 178 PDF objects out of 1000 (max. 8388607)
+ 48 named destinations out of 1000 (max. 500000)
  124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
