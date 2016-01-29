@@ -62,15 +62,11 @@ Some research has been done in trying to combine the two different types of feat
 \end{itemize}
 
 \section{Data Collection} \label{Data Collection}
-For over the past decade, the Enron dataset has been widely used to study email behaviors because it is one of the only datasets available comprised of real-world corporate emails.  A list of ground truth job titles was compiled by [ref labels here].  However, there are issues with these labels.  For example, Jeff Dasovich had the most emails out of any employee in the database, and is labeled as "employee".  In reality, Jeff Dasovich served as the Director for State Government Affairs. Additionally, over the period that the dataset covers, Enron was undergoing turmoil where directors changed and job titles were shifting.  Instead of working with uncertain labels, we decided to generate a new dataset from an organization with which we had intimate knowledge.
+For over the past decade, the Enron dataset has been widely used to study email behaviors because it is one of the only datasets available comprised of real-world corporate emails.  A list of ground truth job titles was compiled by [ref labels here].  However, there are issues with these labels.  For example, Jeff Dasovich had the most emails out of any employee in the database, and is labeled as "employee".  In reality, Jeff Dasovich served as the Director for State Government Affairs. Additionally, over the period that the dataset covers, Enron was undergoing turmoil where directors changed and job titles shifted.  Instead of working with uncertain labels, we decided to generate a new dataset from an organization with which we had intimate knowledge, our own center.  
+\par
+The center divides its employees into six main areas: director, graduate student, operations, outreach, and research.  These labels are also very stable.  Furthermore, we understand the intimate details for the rare case where the label has changed, i.e. when a graduate student graduates and gets hired on as a researcher. We also have inside knowledge as to personal relationships within the center which may be revealed in the data.
 
 \begin{itemize}
-\item Motivation for new data set
-    \begin{itemize}
-    \item No ground truth hierarchy for Enron
-    \item Cite Dasovich listed as an "Employee" when his real title was  Director for State Government Affairs
-    \item Intimate knowledge of lab hierarchy/structure and personal interactions
-    \end{itemize}
 \item Anonymization process
 \item First (37) vs. second ring (32) subjects for a total of 69 employees analyzed
     \begin{itemize}
