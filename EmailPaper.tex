@@ -64,10 +64,22 @@ Some research has been done in trying to combine the two different types of feat
 \section{Data Collection} \label{Data Collection}
 For over the past decade, the Enron dataset has been widely used to study email behaviors because it is one of the only datasets available comprised of real-world corporate emails.  A list of ground truth job titles was compiled by [ref labels here].  However, there are issues with these labels.  For example, Jeff Dasovich had the most emails out of any employee in the database, and is labeled as "employee".  In reality, Jeff Dasovich served as the Director for State Government Affairs. Additionally, over the period that the dataset covers, Enron was undergoing turmoil where directors changed and job titles shifted.  Instead of working with uncertain labels, we decided to generate a new dataset from an organization with which we had intimate knowledge, our own center.  
 \par
-The center divides its employees into six main areas: director, graduate student, operations, outreach, and research.  These labels are also very stable.  Furthermore, we understand the intimate details for the rare case where the label has changed, i.e. when a graduate student graduates and gets hired on as a researcher. We also have inside knowledge as to personal relationships within the center which may be revealed in the data.
+The center divides its employees into six main areas: directors, graduate students, operations, outreach, and research.  These labels are very stable.  Furthermore, we understand the intimate details for the rare case where the label has changed, i.e. when a graduate student graduates and gets hired on as a researcher. We also have inside knowledge as to personal relationships within the center which may be revealed in the data.
+\par 
+Internal Review Board approved the study after reviewing a thorough proposal.  Each participant signed a waiver that detailed the specifics of the study.  Special care was taken to protect the privacy of those involved in the study.  During the collection process, all subject and body text was hashed, and all data was collected using scripts without any researchers observing the email contents.  The following information was extracted from participants' emails:  
+\begin{itemize}
+\item Destination and source email address
+\item Email timestamp
+\item Subject prefix (if any)
+\item Hash of subject after removing prefix
+\item Hash of body text
+\item Length of subject in characters
+\item Length of body text in characters
+\item Whether email was encrypted/signed
+\end{itemize}
+
 
 \begin{itemize}
-\item Anonymization process
 \item First (37) vs. second ring (32) subjects for a total of 69 employees analyzed
     \begin{itemize}
     \item The first ring consisted of participants who signed release forms to collect metadata
@@ -75,20 +87,9 @@ The center divides its employees into six main areas: director, graduate student
     \end{itemize}
 \item Statistics
     \begin{itemize}
-    \item Data collected
-        \begin{itemize}
-        \item Destination and source email address
-        \item Email timestamp
-        \item Subject prefix (if any)
-        \item Hash of subject after removing prefix
-        \item Hash of body text
-        \item Length of subject in characters
-        \item Length of body text in characters
-        \item Whether email was encrypted/signed
-        \end{itemize}
     \item Number of people (32118 distinct email addresses)
-    \item Number of emails (2,276,770 in recipients table)
-    \item Time period (1114 days/3.05 years, from 11/6/12-11/25/15(ish))
+    \item Number of emails (2,276,770 in recipients table and 585,096 in email detail)
+    \item Time period (1114 days/3.05 years, from 11/6/12-11/25/15(ish)) compared to Enron (2 years-ish)
     \end{itemize}
 \end{itemize}
 
@@ -233,6 +234,8 @@ avg\_sent\_per\_day                          & Traffic      & 0.404  \\ \hline
 
 
 \section{Conclusions and Future Work} \label{Conclusions}
+This work presented a new dataset, approximatley the size of Enron, that was carefully collected from employee emails with particular attention to protect participant privacy.
+
 \begin{itemize}
 \item Presented new dataset that was carefully cleaned with inside knowledge and has accurate labels.
 \item Random Forests are shown to be powerful classifiers for this data.  They classified with high accuracy
