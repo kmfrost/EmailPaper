@@ -66,7 +66,7 @@ For over the past decade, the Enron dataset has been widely used to study email 
 \par
 The center divides its employees into six main areas: directors, graduate students, operations, outreach, and research.  These labels are very stable.  Furthermore, we understand the intimate details for the rare case where the label has changed, i.e. when a graduate student graduates and gets hired on as a researcher. We also have inside knowledge as to personal relationships within the center which may be revealed in the data.
 \par 
-Internal Review Board approved the study after reviewing a thorough proposal.  Each participant signed a waiver that detailed the specifics of the study.  Special care was taken to protect the privacy of those involved in the study.  During the collection process, all subject and body text was hashed, and all data was collected using scripts without any researchers observing the email contents.  The following information was extracted from participants' emails:  
+An Internal Review Board approved the study after reviewing a thorough proposal.  Each of the 37 participants signed a waiver that detailed the specifics of the study.  Special care was taken to protect the privacy of those involved in the study.  During the collection process, all subject and body text was hashed, and all email  metadata was stored in a database using scripts without any researchers observing any email details.  The following information was extracted from participants' emails:  
 \begin{itemize}
 \item Destination and source email address
 \item Email timestamp
@@ -78,13 +78,10 @@ Internal Review Board approved the study after reviewing a thorough proposal.  E
 \item Whether email was encrypted/signed
 \end{itemize}
 
+\par
+In an effort to increase the number of employees to analyze, statistics were also calculated for former center employees or others who had known affiliation with the center.  These second-ring employees were included in the study if their job title was known and if they were involved in at least 100 emails in the database.  This added 32 subjects to the study, for a total of 69 employees to analyze.
 
 \begin{itemize}
-\item First (37) vs. second ring (32) subjects for a total of 69 employees analyzed
-    \begin{itemize}
-    \item The first ring consisted of participants who signed release forms to collect metadata
-    \item The second ring consisted of employees who did not sign a release form, but had known affiliation with the lab.  We also ensured that there were at least 100 emails in the database for each of these employees.
-    \end{itemize}
 \item Statistics
     \begin{itemize}
     \item Number of people (32118 distinct email addresses)
@@ -246,8 +243,8 @@ This work presented a new dataset, approximatley the size of Enron, that was car
 \item Evaluate methods on Enron emails and compare which features are consistent predictors
 \end{itemize}
 
+\clearpage
 \bibliographystyle{named}
-\newpage
 \bibliography{bib}
 
 
