@@ -84,12 +84,20 @@ R.~Shams and R.E. Mercer.
 \newblock In {\em 2013 {IEEE} 13th {International} {Conference} on {Data}
   {Mining} ({ICDM})}, pages 657--666, December 2013.
 
-\bibitem[\protect\citeauthoryear{Shetty and Adibi}{2004}]{shetty_enron_2004}
+\bibitem[\protect\citeauthoryear{Shetty and Adibi}{2004a}]{shetty_enron_2004}
 Jitesh Shetty and Jafar Adibi.
 \newblock The {Enron} email dataset database schema and brief statistical
   report.
 \newblock {\em Information sciences institute technical report, University of
   Southern California}, 4, 2004.
+
+\bibitem[\protect\citeauthoryear{Shetty and Adibi}{2004b}]{shetty_status_2004}
+Jitesh Shetty and Jafar Adibi.
+\newblock Ex employee status report., 2004.
+\newblock [\url{http://www.isi.edu/\~adibi/Enron/Enron\_Employee\_Status.xls}].
+  \_Internet
+  Archive\_.[\url{https://web.archive.org/web/20131126121206/http://www.isi.edu/\~adibi/Enron/Enron\_Employee\_Status.xls}],
+  Accessed 1/30/2016.
 
 \bibitem[\protect\citeauthoryear{Sofershtein and
   Cohen}{2015}]{sofershtein_predicting_2015}

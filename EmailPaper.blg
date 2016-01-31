@@ -1,6 +1,8 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: EmailPaper.aux
 The style file: named.bst
 Database file #1: bib.bib
+Warning--entry type for "shetty_status_2004" isn't style-file defined
+--line 364 of file bib.bib
 Warning--empty journal in nordbo_data_2014
 Warning--empty booktitle in sofershtein_predicting_2015
-(There were 2 warnings)
+(There were 3 warnings)
