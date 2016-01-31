@@ -97,7 +97,7 @@ In an effort to increase the number of employees to analyze, statistics were als
 \end{table}
 
 \section{Features} \label{Features}
-In total, 102 different features were extracted from the email data: 70 traffic-based and 32 graph-based.  Below, all features will be described in both categories. An in-depth description will be presented for the top two features in each category.  This ranking comes from an information gain ranker was used to determine the most important features.  Section 5 goes into more detail on this topic.
+In total, 101 different features were extracted from the email data: 70 traffic-based and 31 graph-based.  Below, all features will be described in both categories. An in-depth description will be presented for the top two features in each category.  This ranking comes from an information gain ranker was used to determine the most important features.  Section 5 goes into more detail on this topic.
 
 \subsection{Traffic-Based Features}
 The traffic-based features were those extracted purely from email metadata.  Some of these features were very basic, such as total number of emails, total sent, and total received.  Other features came from the types of emails.  For example, the number of emails sent and received were counted for each of the recipient types: to, cc, and bcc.  Similarly, the number of emails sent and received as replies or forwards were also used as features.  The number of unique email addresses communicated with and the number of unique email subjects involving each person, both sent and received, were counted as features to be used.  The average number of recipients on emails sent and received for each participant were calculated.  It was hypothesized that staff members had more inter-center communications while graduate students communicated more with the university.  To investigate this, the number of emails sent and received from within the center and within the university, based on the domain of the email address, were calculated.  
@@ -127,7 +127,14 @@ In addition to tracking metadata statistics, features can also be derived from m
         \label{fig:adj_matrix}
 \end{figure}
 
-With this representation, several statistics can be calculated about the people in the graph.  
+With this representation, several statistics can be calculated about the people in the graph.  The average neighbor degree was calculated for both the partial and the full graph.  The degree of a node $i$ is the number of other nodes connected to node $i$.  Therefore for a node $i$, this metric averages the degree of each node in the neighborhood of $i$, that is all nodes connected to $i$.  Mathematically, this is:
+\begin{equation}
+k_{avg,i} = \frac{1}{|N(i)|}\sum_{j \in N(i)}k_j
+\end{equation}
+where $N(i)$ are the neighbors of node $i$ and $k_j$ is the degree of node $j$.
+The distances between nodes were also used to generate some features.  The average shortest path metric calculates the length of the shortest paths between node $i$ and all other nodes in the graph $G$, and it returns the average of these path lengths.  Similarly, the maximum shortest path length, or eccentricity, was used as a feature in the learning algorithm.  
+\par
+Many of the social features were based on existing graph theory concepts and algorithms. If a subgraph of a graph $G$ is maximally connected, that is all nodes are connected directly to each other, then this is called a clique.  The number of cliques to which a node belongs was used as a feature.  The hubs and authorities of each node in both graph were calculated.  The terms hubs and authorities come from the Hyperlink-Induced Topic Serach (HITS algorithm) developed by \cite{kleinberg_hubs_1999}.  This algorithm was originally designed to rate web pages, but has since been applied to social networks. A node's authority is just that- a measure of its importance over other nodes.  A node's hub score is a measure of how well-connected it is to other nodes.  The histogram of hub values in the full graph broken down by class is shown in Figure \ref{fig:social_ex_hist}.  Note that directors on average have the highest hub score and graduate students have the lowest. Another algorithm used to generate features was the pagerank algorithm, developed by Google \cite{page_pagerank_1999} also to rank webpages for search results.  The assumption is that the most important webpages will be linked to frequently by other pages.  Therefore, the ranking is determined by estimating the quality and quantity of links to a node.  The square clustering coefficient for each node was used as a feature.  This method, developed by \cite{lind_cycles_2005} measures the probability that two neighbors of node $i$ are also neighbors to a fourth node $j$.  The higher the clustering coefficient, the more connected the node is within its neighborhood.  The triange clustering coefficient was also used as a metric.  This value, developed by \cite{saramaki_generalizations_2007}, is the same as the square clustering coefficient but instead determines the probability of connected triangles involving each node.
 
 \begin{figure}[H]
     \centering
@@ -136,12 +143,17 @@ With this representation, several statistics can be calculated about the people 
         \label{fig:social_ex_hist}
 \end{figure}
 
-\section{Analysis} \label{Analysis}
+\par
+By far, most of the social-based features came from different centrality measures.  This includes closeness centrality, betweenness centrality, degree centrality, \cite{borgatti2011analyzing}, current flow closeness centrality, current flow betweenness centrality \cite{brandes2005centrality}, communicability centrality, communicability betweenness centrality \cite{estrada2008communicability}, and load centrality \cite{newman2001scientific}.
+\par
+All of these different graph statistics were used as inputs into the machine learning algorithm to characterize each node's importance in the social graph.
 
+
+\section{Analysis} \label{Analysis}
+The biggest limitation of this email dataset is the lack of participants.  Because of the low sample size, but great number of features, random forests were selected as the classification method.  The java-based software package Weka was used to run the random forest algorithm described in \cite{Breiman2001}.
+\par
+Random forests are an ensemble method of machine learning.  The random forest builds many random trees.  A random tree is a machine learning algorithm that uses training data learns a series of rules to use for classification.  These rules are constructed in a hierarchy that visually resembles a tree.  Each decision is based on what rule will maximize the information gained.  An example random tree with depth 3, meaning it has three levels of rules, is shown below in Figure \ref{fig:ex_tree}.
 \begin{itemize}
-\item Because of low sample size but high number of features, selected random forest as classification method
-    \begin{itemize}
-    \item Describe Random Trees
     \begin{figure}[H]
     \centering
         \includegraphics[width=0.5\textwidth]{3_level_tree}
@@ -151,7 +163,6 @@ With this representation, several statistics can be calculated about the people 
 
     \item Random Forests use bootstrap AND bagging on random trees - use random components, create many, very deep trees, take a vote to classify
     \item Biggest advantage: doesn't overfit
-    \end{itemize}
 
 \item Used information gain as feature selection method.  Describe this process
 
@@ -213,7 +224,7 @@ avg\_sent\_per\_day                          & Traffic      & 0.404  \\ \hline
 Two tests were run on the data.  In the first, the goal was to classify employees of the center based on their email behavior.  In the second, the official hierarchy from the organization chart was compared to relationships displayed in the data.
 
 \subsection{Classification Results}
-After splitting the data randomly in half, the training data was input into the random forest algorithm described in Section \ref{Analysis}.  The model from this algorithm was used to test the remaining data and output prediction labels.  These results are shown below in Figure \ref{fig:result_hist}.  The accuracy of this method was 97.1\%.
+After splitting the data randomly in half, the training data was input into the random forest algorithm described in Section \ref{Analysis}.  The model from this algorithm was used to test the remaining data and output prediction labels.  These results are shown below in Figure \ref{fig:result_hist}.  The accuracy of this method using all features was 97.1\%.
 
 \begin{figure}[H]
     \centering
@@ -222,7 +233,7 @@ After splitting the data randomly in half, the training data was input into the 
         \label{fig:result_hist}
 
 \end{figure}
-It is important to note that the two misclassifications above were for second ring employees.  All participants in the study were correctly classified, and 93.75\% of second ring employees were correctly classified.  The outreach employee is a part-time employee of the center, and was classified as a graduate student, which makes sense.  There was the most training data available for graduate students, and only two training examples for outreach.  Similarly, the research employee was also mislabeled as a graduate student.  From our inside knowledge, we know that this person was a post-doctoral researcher.  Post-docs function similarly to both researchers and graduate students, so this classification also makes sense.
+It is important to note that the two misclassifications above were for second ring employees.  All participants in the study were correctly classified, and 93.75\% of second ring employees were correctly classified.  The outreach employee operates as a teaching faculty for the center, and was classified as a graduate student, which makes sense.  There was the most training data available for graduate students, and only two training examples for outreach.  Similarly, the research employee was also mislabeled as a graduate student.  From our inside knowledge, we know that this person was a post-doctoral researcher.  Post-docs function similarly to both researchers and graduate students, so this classification also makes sense.
 \par
 Note that this method relies on some assumptions.  One is that employees with the same title exhibit similar email behavior.  Overall, based on the success of the algorithm and the distributions of the histograms, this seems to prove true.  Another premise underlying this analysis is that peoples' email behaviors are consistent over time.  This seems to be true as well.  However, it should be noted that results did vary slightly with different random splits.  Inconsistent behavior over time may have been a factor in this.
 

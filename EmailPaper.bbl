@@ -11,6 +11,30 @@ Eman~M. Bahgat, Sherine Rady, and Walaa Gad.
   2015, {Beni} {Suef}, {Egypt}}, volume 407, pages 321--331. Springer
   International Publishing, Cham, 2016.
 
+\bibitem[\protect\citeauthoryear{Borgatti and
+  Halgin}{2011}]{borgatti2011analyzing}
+Stephen~P Borgatti and Daniel~S Halgin.
+\newblock Analyzing affiliation networks.
+\newblock {\em The Sage handbook of social network analysis}, pages 417--433,
+  2011.
+
+\bibitem[\protect\citeauthoryear{Brandes and
+  Fleischer}{2005}]{brandes2005centrality}
+Ulrik Brandes and Daniel Fleischer.
+\newblock {\em Centrality measures based on current flow}.
+\newblock Springer, 2005.
+
+\bibitem[\protect\citeauthoryear{Breiman}{2001}]{Breiman2001}
+Leo Breiman.
+\newblock Random forests.
+\newblock {\em Machine Learning}, 45(1):5--32, 2001.
+
+\bibitem[\protect\citeauthoryear{Estrada and
+  Hatano}{2008}]{estrada2008communicability}
+Ernesto Estrada and Naomichi Hatano.
+\newblock Communicability in complex networks.
+\newblock {\em Physical Review E}, 77(3):036111, 2008.
+
 \bibitem[\protect\citeauthoryear{Fisher \bgroup \em et al.\egroup
   }{2006}]{fisher_revisiting_2006}
 Danyel Fisher, A.~J. Brush, Eric Gleave, and Marc~A. Smith.
@@ -45,10 +69,21 @@ Parambir~S. Keila and David~B. Skillicorn.
 \newblock {\em Computational \& Mathematical Organization Theory},
   11(3):183--199, 2005.
 
+\bibitem[\protect\citeauthoryear{Kleinberg}{1999}]{kleinberg_hubs_1999}
+Jon~M. Kleinberg.
+\newblock Hubs, authorities, and communities.
+\newblock {\em ACM Computing Surveys (CSUR)}, 31(4es):5, 1999.
+
 \bibitem[\protect\citeauthoryear{Klimt and Yang}{2004}]{klimt_introducing_2004}
 Bryan Klimt and Yiming Yang.
 \newblock Introducing the {Enron} {Corpus}.
 \newblock In {\em {CEAS}}, 2004.
+
+\bibitem[\protect\citeauthoryear{Lind \bgroup \em et al.\egroup
+  }{2005}]{lind_cycles_2005}
+Pedro~G. Lind, Marta~C. González, and Hans~J. Herrmann.
+\newblock Cycles and clustering in bipartite networks.
+\newblock {\em Physical Review E}, 72(5), November 2005.
 
 \bibitem[\protect\citeauthoryear{Martin \bgroup \em et al.\egroup
   }{2005}]{martin_analyzing_2005}
@@ -56,11 +91,23 @@ Steve Martin, Blaine Nelson, Anil Sewani, Karl Chen, and Anthony~D. Joseph.
 \newblock Analyzing {Behavioral} {Features} for {Email} {Classification}.
 \newblock In {\em {CEAS}}, 2005.
 
+\bibitem[\protect\citeauthoryear{Newman}{2001}]{newman2001scientific}
+Mark~EJ Newman.
+\newblock Scientific collaboration networks. ii. shortest paths, weighted
+  networks, and centrality.
+\newblock {\em Physical review E}, 64(1):016132, 2001.
+
 \bibitem[\protect\citeauthoryear{Nordbø}{2014}]{nordbo_data_2014}
 André Nordbø.
 \newblock Data {Visualization} for {Discovery} of {Digital} {Evidence} in
   {Email}.
 \newblock 2014.
+
+\bibitem[\protect\citeauthoryear{Page \bgroup \em et al.\egroup
+  }{1999}]{page_pagerank_1999}
+Lawrence Page, Sergey Brin, Rajeev Motwani, and Terry Winograd.
+\newblock The {PageRank} citation ranking: bringing order to the {Web}.
+\newblock 1999.
 
 \bibitem[\protect\citeauthoryear{Radicati and
   Levenstein}{2015}]{radicati_emails_2015}
@@ -75,6 +122,14 @@ Ryan Rowe, German Creamer, Shlomo Hershkop, and Salvatore~J. Stolfo.
 \newblock In {\em Proceedings of the 9th {WebKDD} and 1st {SNA}-{KDD} 2007
   workshop on {Web} mining and social network analysis}, pages 109--117. ACM,
   2007.
+
+\bibitem[\protect\citeauthoryear{Saramäki \bgroup \em et al.\egroup
+  }{2007}]{saramaki_generalizations_2007}
+Jari Saramäki, Mikko Kivelä, Jukka-Pekka Onnela, Kimmo Kaski, and János
+  Kertész.
+\newblock Generalizations of the clustering coefficient to weighted complex
+  networks.
+\newblock {\em Physical Review E}, 75(2), February 2007.
 
 \bibitem[\protect\citeauthoryear{Shams and
   Mercer}{2013}]{shams_classifying_2013}
