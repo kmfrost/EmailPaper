@@ -44,7 +44,7 @@ Email correspondence has become the predominant method of communication for busi
 Talk about applications of determining work structure from email behavior? \\
 Why problem is important/hard/unsolved\\
 
-Organization charts do not always accurately reflect relationships within workplace. This paper seeks to determine if true behaviors are instead exhibited in corporate email communication patterns.
+Organization charts do not always accurately reflect relationships within workplace.  This paper seeks to determine if true behaviors are instead exhibited in corporate email communication patterns.
 
 Email is a pervasive medium for communication in modern society - particularly in the workplace.  In 2015, there were estimated over 2.6 billion email users, and it is projected that by the end of 2019, over one third of the global population will be using email.  In fact, the average business email sends or receives 112 emails per day, accounting for 54.7\% of worldwide email traffic \cite{radicati_emails_2015}. Retention of large email archives has become common practice with decreasing memory size and cost \cite{fisher_revisiting_2006}.  In that study, out of 600 employees at a high-tech company, the average employee had 28,660 emails stored in 133 folders which is a significant increase from 10 years earlier.  This trove of interesting information can be leveraged to analyze the relationships between coworkers.
 \par
@@ -195,19 +195,11 @@ avg\_sent\_per\_day                          & Traffic      & 0.404  \\ \hline
 \end{tabular}
 \end{table}
 
-\item Looked at prediction accuracy vs. number of features
-
-\begin{figure}[H]
-    \centering
-        \includegraphics[width=0.4\textwidth]{FeatureAnalysis}
-        \caption{Prediction accuracy compared to number of features used for analysis.}
-        \label{fig:feat_analysis}
-\end{figure}
-
 
 
 \item Explain splitting process (train on random \% of emails, test on the rest)
 \item Looked into optimal train/test split:
+\end{itemize}
 
 \begin{figure}[H]
     \centering
@@ -216,9 +208,8 @@ avg\_sent\_per\_day                          & Traffic      & 0.404  \\ \hline
         \label{fig:split_analysis}
 \end{figure}
 
-\item Based on the above result, I used a 50/50 split for the analysis of the classifier.
+Based on the above result, I used a 50/50 split for the analysis of the classifier.
 
-\end{itemize}
 
 \section{Results} \label{Results}
 Two tests were run on the data.  In the first, the goal was to classify employees of the center based on their email behavior.  In the second, the official hierarchy from the organization chart was compared to relationships displayed in the data.
@@ -236,6 +227,14 @@ After splitting the data randomly in half, the training data was input into the 
 It is important to note that the two misclassifications above were for second ring employees.  All participants in the study were correctly classified, and 93.75\% of second ring employees were correctly classified.  The outreach employee operates as a teaching faculty for the center, and was classified as a graduate student, which makes sense.  There was the most training data available for graduate students, and only two training examples for outreach.  Similarly, the research employee was also mislabeled as a graduate student.  From our inside knowledge, we know that this person was a post-doctoral researcher.  Post-docs function similarly to both researchers and graduate students, so this classification also makes sense.
 \par
 Note that this method relies on some assumptions.  One is that employees with the same title exhibit similar email behavior.  Overall, based on the success of the algorithm and the distributions of the histograms, this seems to prove true.  Another premise underlying this analysis is that peoples' email behaviors are consistent over time.  This seems to be true as well.  However, it should be noted that results did vary slightly with different random splits.  Inconsistent behavior over time may have been a factor in this.
+
+In order to determine which features were necessary to the analysis, the algorithm was run several times.  The first run used only the top 20 features from Figure \ref{tab:ranked_feats}, and the classification accuracy was recorded.  For each subsequent run, the least useful feature was removed from the input to the system.  Using only the top 20 features resulted in 3 classification errors, or 95.6\% accuracy.  This is only one more error than was found using all 101 features.  Even using just the top thee features resulted in classification accuracy over 80\%.  Therefore, a very good classifier can be built using much less features if the features are selected properly.
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.4\textwidth]{FeatureAnalysis}
+        \caption{Prediction accuracy compared to number of features used for analysis.}
+        \label{fig:feat_analysis}
+\end{figure}
 
 \subsection{Hierarchy Analysis}
 The ultimate goal of this research was to determine if the relationships present in the email data confirmed or conflicted with the official organization chart.  To test this, we compiled a list of the true directors for all non-director employees from the organization chart.  Next, we determined which director each of these employees emailed with the most.  Surprisingly, only 57.58\% of employees communicate most frequently with their official director.  This is understandable in cases where the director works in a different location than his or her employees.  This result points to possible issues in the construction of the organization chart.
