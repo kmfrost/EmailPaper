@@ -11,8 +11,6 @@
 \usepackage{soul}
 \usepackage{xcolor}
 \usepackage{float}
-\usepackage{mathtools}
-\usepackage{empheq}
 \usepackage{comment}
 \restylefloat{table}
 \usepackage{listings}
@@ -22,6 +20,11 @@
 \usepackage{fancybox}
 \usepackage{framed}
 \usepackage{mathrsfs}
+\usepackage{url}
+
+\hypersetup{breaklinks=true}
+\urlstyle{same}
+
 
 \graphicspath{{Pictures/}}
 
@@ -41,6 +44,7 @@ Email correspondence has become the predominant method of communication for busi
 Talk about applications of determining work structure from email behavior? \\
 Why problem is important/hard/unsolved\\
 
+Organization charts do not always accurately reflect relationships within workplace. This paper seeks to determine if true behaviors are instead exhibited in corporate email communication patterns.
 
 Email is a pervasive medium for communication in modern society - particularly in the workplace.  In 2015, there were estimated over 2.6 billion email users, and it is projected that by the end of 2019, over one third of the global population will be using email.  In fact, the average business email sends or receives 112 emails per day, accounting for 54.7\% of worldwide email traffic \cite{radicati_emails_2015}. Retention of large email archives has become common practice with decreasing memory size and cost \cite{fisher_revisiting_2006}.  In that study, out of 600 employees at a high-tech company, the average employee had 28,660 emails stored in 133 folders which is a significant increase from 10 years earlier.  This trove of interesting information can be leveraged to analyze the relationships between coworkers.
 \par
@@ -58,14 +62,14 @@ Relational ties can be modeled as a graph network where nodes represent people a
 Some research has been done in trying to combine the two different types of features.  An example of this approach is seen in \cite{rowe_automated_2007}, which combined features such as number of emails, response time, cliques, and degree centrality into a ``Social Score'' which was used to rank Enron employees.  The purpose of this paper is to further unite the two branches of research by aggregating old and novel email traffic statistics with social graph features and applying them to a new, clean dataset.
 
 \section{Data Collection} \label{Data Collection}
-For over the past decade, the Enron dataset has been widely used to study email behaviors because it is one of the only datasets available comprised of real-world corporate emails.  A list of ground truth job titles was compiled by [ref labels here].  However, there are issues with these labels.  For example, Jeff Dasovich had the most emails out of any employee in the database, and is labeled as "employee".  In reality, Jeff Dasovich served as the Director for State Government Affairs. Additionally, over the period that the dataset covers, Enron was undergoing turmoil where directors changed and job titles shifted.  Instead of working with uncertain labels, we decided to generate a new dataset from an organization with which we had intimate knowledge, our own center.  
+For over the past decade, the Enron dataset has been widely used to study email behaviors because it is one of the only datasets available comprised of real-world corporate emails.  A list of ground truth job titles was compiled by \cite{shetty_status_2004}.  However, there are issues with these labels.  For example, Jeff Dasovich had the most emails out of any employee in the database, and is labeled as "employee".  In reality, Jeff Dasovich served as the Director for State Government Affairs. Additionally, over the period that the dataset covers, Enron was undergoing turmoil where directors changed and job titles shifted.  Instead of working with uncertain labels, we decided to generate a new dataset from an organization with which we had intimate knowledge, our own center.  
 \par
 The center divides its employees into six main areas: directors, graduate students, operations, outreach, and research.  These labels are very stable.  Furthermore, we understand the intimate details for the rare case where the label has changed, i.e. when a graduate student graduates and gets hired on as a researcher. We also have inside knowledge as to personal relationships within the center which may be revealed in the data.
 \par 
 An Internal Review Board approved the study after reviewing a thorough proposal.  Each of the 37 participants signed a waiver that detailed the specifics of the study.   The following information was extracted from participants' emails:  
 \begin{itemize}
 \item Destination and source email address
-\item Email timestamp
+\item Email time stamp
 \item Subject prefix (if any)
 \item Hash of subject after removing prefix
 \item Hash of body text
@@ -80,39 +84,57 @@ In an effort to increase the number of employees to analyze, statistics were als
 
 \begin{table}[H]
 \centering
-\caption{Comparing our databse to the Enron email corpus.  Our internal database is more modern, has more emails, and covers a longer time peroid.  However, it is comprised of less people than the Enron dataset.}
+\caption{Comparing our database to the Enron email corpus.  Our internal database is more modern, has more emails, and covers a longer time period.  However, it is comprised of less people than the Enron dataset.}
 \label{tab:db_stats}
 \begin{tabular}{l|l|l|ll}
 \cline{2-3}
-                                                & Our Database    & Enron         &  &  \\ \cline{1-3}
-\multicolumn{1}{|l|}{Time Period}               & 11/2012-11/2015 & 1/2000-9/2002 &  &  \\
-\multicolumn{1}{|l|}{Distinct Email Addresses}  & 32,118          & 75,406        &  &  \\
-\multicolumn{1}{|l|}{Number of Participants}    & 32              & 149           &  &  \\
-\multicolumn{1}{|l|}{Number of Distinct Emails} & 585,096         & 252,759       &  &  \\ \cline{1-3}
+                                               & Our Database    & Enron         &  &  \\ \cline{1-3}
+\multicolumn{1}{|l|}{Time Period}              & 11/2012-11/2015 & 1/2000-9/2002 &  &  \\
+\multicolumn{1}{|l|}{Distinct Email Addresses} & 32,118          & 75,406        &  &  \\
+\multicolumn{1}{|l|}{Participants}             & 32              & 149           &  &  \\
+\multicolumn{1}{|l|}{Distinct Emails}          & 585,096         & 252,759       &  &  \\ \cline{1-3}
 \end{tabular}
 \end{table}
 
-
 \section{Features} \label{Features}
-In total, 102 different features were extracted from the email data: 70 traffic-based and 32 graph-based.
-\begin{itemize}
-\item Briefly talk about ranker
-\end{itemize}
+In total, 102 different features were extracted from the email data: 70 traffic-based and 32 graph-based.  Below, all features will be described in both categories. An in-depth description will be presented for the top two features in each category.  This ranking comes from an information gain ranker was used to determine the most important features.  Section 5 goes into more detail on this topic.
+
 \subsection{Traffic-Based Features}
-\begin{itemize}
-\item Highlight top 3 traffic-based features
-\end{itemize}
+The traffic-based features were those extracted purely from email metadata.  Some of these features were very basic, such as total number of emails, total sent, and total received.  Other features came from the types of emails.  For example, the number of emails sent and received were counted for each of the recipient types: to, cc, and bcc.  Similarly, the number of emails sent and received as replies or forwards were also used as features.  The number of unique email addresses communicated with and the number of unique email subjects involving each person, both sent and received, were counted as features to be used.  The average number of recipients on emails sent and received for each participant were calculated.  It was hypothesized that staff members had more inter-center communications while graduate students communicated more with the university.  To investigate this, the number of emails sent and received from within the center and within the university, based on the domain of the email address, were calculated.  
+\par
+Other useful information collected from emails included the timestamp, the character counts of the subject and body, and the presence of any attachments. From the time stamp, the time of day for each email was available.  Using this information, the average number of emails sent, received, and combined were calculated.  The total number of emails sent and received after hours (between 6pm and 7am EST or anytime on weekends) and the number of emails sent and received after hours within the center were also used as metrics.  The mean and variance of the number of characters in the subject and body were calculated.  These metrics were also broken down between emails sent and received.  The raw numbers of attachments sent and received were computed as well as the average number of attachments sent and received per email.  Digitally signing an email appears as an attachment, so features were calculated from the total number of signed emails sent and received, unique email addresses with signed emails, and unique subjects from signed emails.
+\par
+The features above in general involved raw email counts.  To normalize newer employees, features were also added where possible such that the metric was calculated as a percentage of all emails.  For example, the percentage of emails that after hours out of all emails that were sent or the percentage of all received emails with unique subjects compared to all received emails.
+\par
+The best traffic-based feature for predicting employee status was the number of unique subjects received.  This number represents the number of distinct conversations in which an individual was involved.  It is intuitive that the higher the status of a person, the more conversations they would be in.  This feature is shown in the histogram in Figure \ref{fig:traffic_ex_hist} with normalized values.  The second best traffic feature was the number of emails received that were signed.  Signed emails usually signal sensitive information.  Only certain groups within the center deal with this type of information, therefore it is understandable that this feature could help divide the subjects by title.  Finally, the third best traffic feature was the number of emails received as forwards.  Typically, those higher in the chain of command are forwarded on emails where graduate students and lower-level employees are more likely to get either replies or emails sent directly to them.  Notice that there are intuitive explanations behind all of the features selected by the ranker.
+
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.4\textwidth]{Unique_subjects_rec_hist}
+        \caption{Histogram of unique subjects received by job title.}
+        \label{fig:traffic_ex_hist}
+\end{figure}
+
+
 \subsection{Social Network Features}
-\begin{itemize}
-\item Talk about how social graphs were created
+In addition to tracking metadata statistics, features can also be derived from modeling the emails as a social network.  A social network is composed of nodes, which represent people, and edges, which represent the emails between people.  For this analysis, two different graphs were generated.  In the full graph, an edge existed between any two individuals between which at least one email was exchanged.  A second graph was generated as a subset of the first.  In this partial graph, an edge was drawn between two nodes if they had exchanged at least 10 emails.  A representation of the full graph is shown below in Figure \ref{fig:adj_matrix}.  This figure has two axes, both representing the employees of the center.  The color at each coordinate indicates how much communication existed between the two employees.  Some employees never exchanged any emails, while others exchanged many.
+
 \begin{figure}[H]
     \centering
         \includegraphics[width=0.5\textwidth]{adj_matrix}
         \caption{Adjacency matrix representing the social connections of the workplace.}
-        \label{fig:var_imp}
+        \label{fig:adj_matrix}
 \end{figure}
-\item Highlight top 3 social-based features
-\end{itemize}
+
+With this representation, several statistics can be calculated about the people in the graph.  
+
+\begin{figure}[H]
+    \centering
+        \includegraphics[width=0.4\textwidth]{Hubs_hist}
+        \caption{Histogram of hubs from social graph by job title.}
+        \label{fig:social_ex_hist}
+\end{figure}
 
 \section{Analysis} \label{Analysis}
 
@@ -154,29 +176,13 @@ pg\_current\_flow\_closeness\_cent           & Graph        & 0.492  \\
 avg\_rec\_per\_day                           & Traffic      & 0.489  \\
 avg\_emails\_per\_day                        & Traffic      & 0.479  \\
 pg\_avg\_shortest\_paths                     & Graph        & 0.476  \\
-pg\_colseness\_centrality                    & Graph        & 0.476  \\
+pg\_closeness\_centrality                    & Graph        & 0.476  \\
 unique\_addresses\_received\_signed          & Traffic      & 0.457  \\
 sent\_cc                                     & Traffic      & 0.43   \\
 rec\_re                                      & Traffic      & 0.43   \\
 avg\_sent\_per\_day                          & Traffic      & 0.404  \\ \hline
 \end{tabular}
 \end{table}
-\item Manually looked at feature breakdown compared to classes
-
-\begin{figure}[H]
-    \centering
-        \includegraphics[width=0.4\textwidth]{Unique_subjects_rec_hist}
-        \caption{Histogram of unique subjects received by job title.}
-        \label{fig:traffic_ex_hist}
-\end{figure}
-
-
-\begin{figure}[H]
-    \centering
-        \includegraphics[width=0.4\textwidth]{Hubs_hist}
-        \caption{Histogram of hubs from social graph by job title.}
-        \label{fig:social_ex_hist}
-\end{figure}
 
 \item Looked at prediction accuracy vs. number of features
 
@@ -187,11 +193,7 @@ avg\_sent\_per\_day                          & Traffic      & 0.404  \\ \hline
         \label{fig:feat_analysis}
 \end{figure}
 
-\end{itemize}
 
-\section{Results} \label{Results}
-\subsection{Classification Results}
-\begin{itemize}
 
 \item Explain splitting process (train on random \% of emails, test on the rest)
 \item Looked into optimal train/test split:
@@ -205,9 +207,13 @@ avg\_sent\_per\_day                          & Traffic      & 0.404  \\ \hline
 
 \item Based on the above result, I used a 50/50 split for the analysis of the classifier.
 
-\item Classification Results
-\item Assumption: employees with the same title exhibit
-\item Assumption: Email behavior is consistent over time
+\end{itemize}
+
+\section{Results} \label{Results}
+Two tests were run on the data.  In the first, the goal was to classify employees of the center based on their email behavior.  In the second, the official hierarchy from the organization chart was compared to relationships displayed in the data.
+
+\subsection{Classification Results}
+After splitting the data randomly in half, the training data was input into the random forest algorithm described in Section \ref{Analysis}.  The model from this algorithm was used to test the remaining data and output prediction labels.  These results are shown below in Figure \ref{fig:result_hist}.  The accuracy of this method was 97.1\%.
 
 \begin{figure}[H]
     \centering
@@ -216,35 +222,22 @@ avg\_sent\_per\_day                          & Traffic      & 0.404  \\ \hline
         \label{fig:result_hist}
 
 \end{figure}
-
-\item Even the errors are explainable (not much data on Outreach.  The researcher that was misclassified was mislabelled as a graduate student, and this person is a post-doc.
-\item Both misclassifications were second-ring 
+It is important to note that the two misclassifications above were for second ring employees.  All participants in the study were correctly classified, and 93.75\% of second ring employees were correctly classified.  The outreach employee is a part-time employee of the center, and was classified as a graduate student, which makes sense.  There was the most training data available for graduate students, and only two training examples for outreach.  Similarly, the research employee was also mislabeled as a graduate student.  From our inside knowledge, we know that this person was a post-doctoral researcher.  Post-docs function similarly to both researchers and graduate students, so this classification also makes sense.
+\par
+Note that this method relies on some assumptions.  One is that employees with the same title exhibit similar email behavior.  Overall, based on the success of the algorithm and the distributions of the histograms, this seems to prove true.  Another premise underlying this analysis is that peoples' email behaviors are consistent over time.  This seems to be true as well.  However, it should be noted that results did vary slightly with different random splits.  Inconsistent behavior over time may have been a factor in this.
 
 \subsection{Hierarchy Analysis}
-    \begin{itemize}
-    \item Only 57.58\% of employees communicate most frequently with their director from the organization chart.
-    \item 72.73\% of graduate students and researchers communicate most frequently with their primary program manager.
-    \end{itemize}
-\item Many of the discrepancies make sense to those of us with insider knowledge and reflect formal choices made in generating the org chart
-
-\end{itemize}
-
+The ultimate goal of this research was to determine if the relationships present in the email data confirmed or conflicted with the official organization chart.  To test this, we compiled a list of the true directors for all non-director employees from the organization chart.  Next, we determined which director each of these employees emailed with the most.  Surprisingly, only 57.58\% of employees communicate most frequently with their official director.  This is understandable in cases where the director works in a different location than his or her employees.  This result points to possible issues in the construction of the organization chart.
+\par
+To further investigate the accuracy of the organization chart, we also compiled a list of the project manager for graduate students and researchers in the study.  In the case of an employee being on multiple projects, ground truth was selected to be the project that primarily funds the employee.  Some employees in this group were not included in this list because they did not have a project manager or because they worked at the center before an official project structure was in place.  This time, 72.73\% of graduate students and researchers communicate most frequently with their primary program manager.  The relation between employees to project managers appears to be stronger than that with directors.  Many of the discrepancies can be explained by employees participating in multiple projects and therefore having multiple project managers.
 
 
 \section{Conclusions and Future Work} \label{Conclusions}
-This work presented a new dataset, approximatley the size of Enron, that was carefully collected from employee emails with particular attention to protect participant privacy.
+This work presented a new dataset, approximately the size of Enron, that was carefully collected from volunteers' emails with particular attention to protect participant privacy.  Unlike Enron, we used our inside knowledge, to label the people in this dataset has accurate job title.  A variety of statistics were calculated from this dataset, and from these statistics feature selection identified those key to making strong behavioral predictions.  Random Forests were shown to be powerful classifiers for this data.  They predicted employee job titles based on email data with very high accuracy, even employees that had only secondhand data was available.  Our intimate knoweldge is able to interpret the few classification errors produced by the algorithm.  However, there is the possibility of bias within this analysis in that training and testing are performed on the same people.  Therefore, in future work we hope to futher investigate this dataset and apply this wealth of information to other problems.  We also aim to evaluate these methods on other datasets, such as the Enron emails, and compare the features selected to identify any consistent predictors.
 
-\begin{itemize}
-\item Presented new dataset that was carefully cleaned with inside knowledge and has accurate labels.
-\item Random Forests are shown to be powerful classifiers for this data.  They classified with high accuracy
-\item Used both traffic-based and graph features helped improve accuracy
-\item Acknowledge we are testing back on ourselves, randomness in email splitting process
-\item From our intimate knowledge of the workings of the lab, we know that hierarchy discrepancies can be explained by multiple projects, directors/PMs working in different offices, etc.
-\item Do more things with dataset
-\item Evaluate methods on Enron emails and compare which features are consistent predictors
-\end{itemize}
 
 \clearpage
+\Urlmuskip=0mu plus 1mu\relax
 \bibliographystyle{named}
 \bibliography{bib}
 
