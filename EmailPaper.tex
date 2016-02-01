@@ -99,15 +99,15 @@ In total, 98 different features were extracted from the email data: 67 traffic-b
 \subsection{Traffic-Based Features}
 Some of the traffic-based features were very basic, such as total number of emails, total sent, and total received.  Other features came from the types of emails.  For example, the number of emails sent and received were counted for both of the recipient types: to or cc.  Similarly, the number of emails sent and received as replies or forwards were also used as features.  The number of unique email addresses communicated with and the number of unique email subjects involving each person, both sent and received, were counted as features to be used.  The average number of recipients on emails sent and received for each participant were calculated.  It was hypothesized that staff members had more inter-center communications while graduate students communicated more with the university.  To investigate this, the number of emails sent and received from within the center and within the university, based on the domain of the email address, were calculated.  
 
-Other useful information collected from emails included the timestamp, the character counts of the subject and body, and the presence of any attachments. From the time stamp, the time of day for each email was available.  Using this information, the average number of emails sent, received, and combined were calculated.  The total number of emails sent and received after hours (between 6pm and 7am EST or anytime on weekends) and the number of emails sent and received after hours within the center were also used as metrics.  The mean and variance of the number of characters in the subject and body were calculated.  These metrics were also broken down between emails sent and received.  The raw numbers of attachments sent and received were computed as well as the average number of attachments sent and received per email.  Digitally signing an email is a type of attachment.  Additional features were calculated from the total number of signed emails sent and received, unique email addresses with signed emails, and unique subjects from signed emails.
+Other useful information collected from emails included the timestamp, the character counts of the subject and body, and the presence of any attachments. From the time stamp, the time of day for each email was available.  Using this information, the average number of emails sent, received, and combined were calculated.  The total number of emails sent and received after hours (between 6pm and 7am EST or anytime on weekends) and the number of emails sent and received after hours within the center were also used as metrics.  The mean and variance of the number of characters in the subject and body were calculated.  These metrics were also broken down between emails sent and received.  The number of attachments sent and received were computed as well as the average number of attachments sent and received per email.  Digitally signing an email is a type of attachment.  Additional features were calculated from the total number of signed emails sent and received, unique email addresses with signed emails, and unique subjects from signed emails.
 
 The features above in general involved raw email counts.  To normalize some of the features, metrics were additionally calculated as a percentage of all emails. Examples of this include the percentage of emails that after hours out of all emails that were sent or the percentage of all received emails with unique subjects compared to all received emails.
 
-The best traffic-based feature for predicting employee status was the number of unique subjects received.  This number represents the number of distinct conversations in which an individual was involved.  It is intuitive that the higher the status of a person, the more conversations they would be in.  This feature is shown in the histogram in Figure \ref{fig:traffic_ex_hist} with normalized values. 
+The best traffic-based feature for predicting employee status was the number of unique subjects received.  This number represents the number of distinct conversations in which an individual was involved.  It is intuitive that the higher the status of a person, the more conversations they would be in.  This feature is shown in the histogram in Figure \ref{fig:traffic_ex_hist}. 
 \begin{figure}[H]
     \centering
         \includegraphics[width=0.5\textwidth]{Unique_subjects_rec_hist}
-        \caption{Histogram of unique subjects received by job title.  The feature value in this plot has been normalized so that all values fall between 0 and 1.  Note that by using different thresholds, meaningful splits in the data can be made.  For example, the two people with feature value > 0.8 are exclusively from the director class.}
+        \caption{Histogram of unique subjects received by job title.  The feature value for this plot has been normalized so that all values fall between 0 and 1.  Note that by using different thresholds, meaningful splits in the data can be made.  For example, the two people with feature value $> 0.8$ are exclusively from the director class.}
         \label{fig:traffic_ex_hist}
 \end{figure}
 
@@ -120,7 +120,7 @@ In addition to tracking metadata statistics, features can also be derived from m
 \begin{figure}[H]
     \centering
         \includegraphics[width=0.5\textwidth]{adj_matrix}
-        \caption{Adjacency matrix representing the social connections of the workplace.}
+        \caption{The adjacency matrix representing the social connections of the center.  This graph is very well connected with just one component.  Nonetheless, there are groups who never exchanged a single email.}
         \label{fig:adj_matrix}
 \end{figure}
 
@@ -131,13 +131,13 @@ k_{avg,i} = \frac{1}{|N(i)|}\sum_{j \in N(i)}k_j
 where $N(i)$ are the neighbors of node $i$ and $k_j$ is the degree of node $j$.
 The distances between nodes were also used to generate some features.  The average shortest path metric calculates the length of the shortest paths between node $i$ and all other nodes in the graph $G$, and it returns the average of these path lengths.  Similarly, the maximum shortest path length, or eccentricity, was used as a feature in the learning algorithm.  
 
-Many of the social features were based on existing graph theory concepts and algorithms. If a subgraph of a graph $G$ is maximally connected, that is all nodes are connected directly to each other, then this is called a clique.  The number of cliques to which a node belongs was used as a feature.  The hubs and authorities of each node in both graph were calculated.  The terms hubs and authorities come from the Hyperlink-Induced Topic Search (HITS algorithm) developed by \cite{kleinberg_hubs_1999}.  This algorithm was originally designed to rate web pages, but has since been applied to social networks. A node's authority is just that -- a measure of its importance over other nodes.  A node's hub score is a measure of how well-connected it is to other nodes.  The histogram of hub values in the full graph broken down by class is shown in Figure \ref{fig:social_ex_hist}.  Note that directors on average have the highest hub score and graduate students have the lowest. Another algorithm used to generate features was the pagerank algorithm, developed by Google 
+Many of the social features were based on existing graph theory concepts and algorithms. If a subgraph of a graph $G$ is maximally connected, that is all nodes are connected directly to each other, then this is called a clique.  The number of cliques to which a node belongs was used as a feature.  The hubs and authorities of each node in both graphs were calculated.  The terms hubs and authorities come from the Hyperlink-Induced Topic Search (HITS algorithm) developed by \cite{kleinberg_hubs_1999}.  This algorithm was originally designed to rate web pages, but has since been applied to social networks. A node's authority is just that -- a measure of its importance over other nodes.  A node's hub score is a measure of how well-connected it is to other nodes.  The histogram of hub values in the full graph broken down by class is shown in Figure \ref{fig:social_ex_hist}.  Another algorithm used to generate features was the pagerank algorithm, developed by Google 
 \newline \cite{page_pagerank_1999} also to rank webpages for search results.  The assumption is that the most important webpages will be linked to frequently by other pages.  Therefore, the ranking is determined by estimating the quality and quantity of links to a node.  The square clustering coefficient for each node was used as a feature.  This method, developed by \cite{lind_cycles_2005} measures the probability that two neighbors of node $i$ are also neighbors to a fourth node $j$.  The higher the clustering coefficient, the more connected the node is within its neighborhood.  The triangle clustering coefficient was also used as a metric.  This value, developed by \cite{saramaki_generalizations_2007}, is the same as the square clustering coefficient but instead determines the probability of connected triangles involving each node.
 
 \begin{figure}[H]
     \centering
         \includegraphics[width=0.5\textwidth]{Hubs_hist}
-        \caption{Histogram of hubs from social graph by job title.}
+        \caption{Histogram of hubs from social graph by job title.  Note that directors on average have the highest hub score and graduate students have the lowest. [NOTE: I got my data mixed up and this is exactly the same as the other histogram, I'll fix it!]}
         \label{fig:social_ex_hist}
 \end{figure}
 
@@ -153,7 +153,7 @@ Random forests are an ensemble method of machine learning.  The random forest bu
 \begin{figure}[H]
     \centering
         \includegraphics[width=0.5\textwidth]{3_level_tree}
-        \caption{Example random tree of depth 3.}
+        \caption{Example random tree of depth 3.  This demonstrates how just a few simple rules can be used to find class divisions within the data.}
         \label{fig:ex_tree}
 \end{figure}
 
@@ -216,7 +216,7 @@ To determine which features were necessary to the analysis, the algorithm was ru
 \begin{figure}[H]
     \centering
         \includegraphics[width=0.5\textwidth]{FeatureAnalysis}
-        \caption{Prediction accuracy compared to number of features used for analysis.}
+        \caption{Prediction accuracy compared to number of features used for analysis.  Note that the accuracy is still very high, 95.6\%, when only twenty features are used.  The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 98 features. }
         \label{fig:feat_analysis}
 \end{figure}
 
