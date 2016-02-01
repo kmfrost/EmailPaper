@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.31)  31 JAN 2016 20:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.31)  31 JAN 2016 21:16
 entering extended mode
 **EmailPaper.tex
 (EmailPaper.tex
@@ -355,24 +355,32 @@ Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
 )
-Package hyperref Info: Option `breaklinks' set `true' on input line 25.
+("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\paralist\paralist.sty"
+Package: paralist 2015/12/30 v2.5 Extended list environments
+\pltopsep=\skip54
+\plpartopsep=\skip55
+\plitemsep=\skip56
+\plparsep=\skip57
+\pl@lab=\toks40
+)
+Package hyperref Info: Option `breaklinks' set `true' on input line 26.
 
 (EmailPaper.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 31.
-LaTeX Font Info:    ... okay on input line 31.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 31.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
+LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 32.
  ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 ) ("D:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
@@ -382,15 +390,15 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 \scratchbox=\box34
 \nofMPsegments=\count120
 \nofMParguments=\count121
-\everyMPshowfont=\toks40
+\everyMPshowfont=\toks41
 \MPscratchCnt=\count122
 \MPscratchDim=\dimen131
 \MPnumerator=\count123
 \makeMPintoPDFobject=\count124
-\everyMPtoPDFconversion=\toks41
+\everyMPtoPDFconversion=\toks42
 )
 \AtBeginShipoutBox=\box35
-Package hyperref Info: Link coloring OFF on input line 31.
+Package hyperref Info: Link coloring OFF on input line 32.
  ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -399,34 +407,34 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count125
 )
-LaTeX Info: Redefining \ref on input line 31.
-LaTeX Info: Redefining \pageref on input line 31.
-LaTeX Info: Redefining \nameref on input line 31.
+LaTeX Info: Redefining \ref on input line 32.
+LaTeX Info: Redefining \pageref on input line 32.
+LaTeX Info: Redefining \nameref on input line 32.
 
 (EmailPaper.out) (EmailPaper.out)
 \@outlinefile=\write5
 \c@lstlisting=\count126
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 38.
-LaTeX Font Info:    Try loading font information for U+msa on input line 38.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
+LaTeX Font Info:    Try loading font information for U+msa on input line 39.
 
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 38.
+LaTeX Font Info:    Try loading font information for U+msb on input line 39.
 
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 38.
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 39.
 
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\jknappen\ursfs.fd"
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 38.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 39.
 
-Underfull \hbox (badness 10000) in paragraph at lines 44--46
+Underfull \hbox (badness 10000) in paragraph at lines 45--47
 
  []
 
@@ -437,50 +445,50 @@ Missing character: There is no ¸ in font ptmr7t!
 
 
 ]
-Underfull \hbox (badness 7081) in paragraph at lines 58--59
+Underfull \hbox (badness 7081) in paragraph at lines 59--60
 []\OT1/ptm/m/n/10 Using fea-tures ex-tracted from email meta-data,
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 71.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 72.
 ("D:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsptm.fd"
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 71.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
 
-Overfull \hbox (63.59422pt too wide) in paragraph at lines 89--97
+Overfull \hbox (37.20462pt too wide) in paragraph at lines 90--98
  [][] 
  []
 
 
-Underfull \vbox (badness 5403) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 102.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 103.
 
 <Pictures/Unique_subjects_rec_hist.png, id=118, 546.54187pt x 273.27094pt>
 File: Pictures/Unique_subjects_rec_hist.png Graphic file (type png)
 
 <use Pictures/Unique_subjects_rec_hist.png>
 Package pdftex.def Info: Pictures/Unique_subjects_rec_hist.png used on input li
-ne 114.
+ne 115.
 (pdftex.def)             Requested size: 187.89914pt x 93.94914pt.
  [3pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.122 
+l.123 
        <./Pictures/Unique_subjects_rec_hist.png>]
 <Pictures/adj_matrix.png, id=125, 1861.95625pt x 1059.96pt>
 File: Pictures/adj_matrix.png Graphic file (type png)
 
 <use Pictures/adj_matrix.png>
-Package pdftex.def Info: Pictures/adj_matrix.png used on input line 125.
+Package pdftex.def Info: Pictures/adj_matrix.png used on input line 126.
 (pdftex.def)             Requested size: 234.8775pt x 133.70769pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 125--126
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 126--127
  [][] 
  []
 
@@ -490,10 +498,10 @@ Missing character: There is no ¤ in font ptmr7t!
 File: Pictures/Hubs_hist.png Graphic file (type png)
 
 <use Pictures/Hubs_hist.png>
-Package pdftex.def Info: Pictures/Hubs_hist.png used on input line 141.
+Package pdftex.def Info: Pictures/Hubs_hist.png used on input line 142.
 (pdftex.def)             Requested size: 187.89914pt x 103.70195pt.
 
-Underfull \hbox (badness 1533) in paragraph at lines 147--148
+Underfull \hbox (badness 1533) in paragraph at lines 148--149
 \OT1/ptm/m/n/10 dif-fer-ent cen-tral-ity mea-sures. This in-cludes close-
  []
 
@@ -501,10 +509,10 @@ Underfull \hbox (badness 1533) in paragraph at lines 147--148
 File: Pictures/3_level_tree.png Graphic file (type png)
 
 <use Pictures/3_level_tree.png>
-Package pdftex.def Info: Pictures/3_level_tree.png used on input line 158.
+Package pdftex.def Info: Pictures/3_level_tree.png used on input line 159.
 (pdftex.def)             Requested size: 234.8775pt x 133.70769pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 158--159
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 159--160
  [][] 
  []
 
@@ -513,15 +521,15 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.161 \end{figure}
+l.162 \end{figure}
                   pdfTeX warning (ext4): destination with the same identifier (
 name{figure.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.161 \end{figure}
+l.162 \end{figure}
                    <./Pictures/adj_matrix.png> <./Pictures/Hubs_hist.png>]
-Overfull \hbox (8.8459pt too wide) detected at line 168
+Overfull \hbox (8.8459pt too wide) detected at line 169
 []\OML/cmm/m/it/10 I\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Class\OT1/cmr/m/n/10 ; \O
 ML/cmm/m/it/10 Attribute\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 H\OT1/cmr/m/n/10 (
 \OML/cmm/m/it/10 Class\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 H\O
@@ -530,7 +538,7 @@ te\OT1/cmr/m/n/10 )
  []
 
 
-Overfull \hbox (24.2441pt too wide) in paragraph at lines 176--199
+Overfull \hbox (24.2441pt too wide) in paragraph at lines 177--200
  [][] 
  []
 
@@ -539,14 +547,14 @@ has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.202 
+l.203 
        <./Pictures/3_level_tree.png>]
 <Pictures/SplitAnalysisWithLine.png, id=174, 455.45157pt x 255.95625pt>
 File: Pictures/SplitAnalysisWithLine.png Graphic file (type png)
 
 <use Pictures/SplitAnalysisWithLine.png>
 Package pdftex.def Info: Pictures/SplitAnalysisWithLine.png used on input line 
-205.
+206.
 (pdftex.def)             Requested size: 187.89914pt x 105.59886pt.
 
 <Pictures/Prediction_50_50_RF.jpg, id=177, 607.26875pt x 341.275pt>
@@ -554,10 +562,10 @@ File: Pictures/Prediction_50_50_RF.jpg Graphic file (type jpg)
 
 <use Pictures/Prediction_50_50_RF.jpg>
 Package pdftex.def Info: Pictures/Prediction_50_50_RF.jpg used on input line 22
-0.
+1.
 (pdftex.def)             Requested size: 234.8775pt x 131.99272pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 220--221
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 221--222
  [][] 
  []
 
@@ -565,26 +573,26 @@ Overfull \hbox (9.03374pt too wide) in paragraph at lines 220--221
 File: Pictures/FeatureAnalysis.png Graphic file (type png)
 
 <use Pictures/FeatureAnalysis.png>
-Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 232.
+Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 233.
 (pdftex.def)             Requested size: 187.89914pt x 112.8976pt.
  [6pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.239 \par
+l.240 \par
           pdfTeX warning (ext4): destination with the same identifier (name{fig
 ure.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.239 \par
+l.240 \par
           pdfTeX warning (ext4): destination with the same identifier (name{fig
 ure.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.239 \par
+l.240 \par
            <./Pictures/SplitAnalysisWithLine.png (PNG copy)> <./Pictures/Predic
 tion_50_50_RF.jpg> <./Pictures/FeatureAnalysis.png>] [7
 
@@ -671,26 +679,26 @@ Underfull \hbox (badness 1418) in paragraph at lines 199--203
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 253.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 254.
  [9
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 253.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 254.
  (EmailPaper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 253.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 253.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 254.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 254.
 Package rerunfilecheck Info: File `EmailPaper.out' has not changed.
 (rerunfilecheck)             Checksum: 93506940631FAED9A6454FFAA35C1470;629.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 253.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 254.
  ) 
 Here is how much of TeX's memory you used:
- 8302 strings out of 493673
- 118504 string characters out of 3141530
- 221535 words of memory out of 3000000
- 11456 multiletter control sequences out of 15000+200000
+ 8428 strings out of 493673
+ 120294 string characters out of 3141530
+ 223565 words of memory out of 3000000
+ 11578 multiletter control sequences out of 15000+200000
  23046 words of font info for 63 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 29i,11n,35p,1953b,413s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,11n,35p,1955b,413s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<D:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Program Fi
@@ -702,7 +710,7 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/urw/times/utmr8a.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on EmailPaper.pdf (9 pages, 307593 bytes).
+Output written on EmailPaper.pdf (9 pages, 307606 bytes).
 PDF statistics:
  256 PDF objects out of 1000 (max. 8388607)
  63 named destinations out of 1000 (max. 500000)
