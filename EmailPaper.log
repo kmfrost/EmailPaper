@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.22)  1 FEB 2016 16:39
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.22)  1 FEB 2016 16:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -615,7 +615,7 @@ gnored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.233 \clearpage
+l.231 \clearpage
                  <./Pictures/FeatureAnalysis.png>] (./EmailPaper.bbl
 Underfull \hbox (badness 6078) in paragraph at lines 16--20
 []\OT1/ptm/m/n/10 Stephen P Bor-gatti and
@@ -699,17 +699,17 @@ Underfull \hbox (badness 1418) in paragraph at lines 199--203
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 239.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 237.
  [9
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 239.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 237.
  (./EmailPaper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 239.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 239.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 237.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 237.
 Package rerunfilecheck Info: File `EmailPaper.out' has not changed.
 (rerunfilecheck)             Checksum: 18AA5F6C04F4D19AEAE4B60A1B98ED62;618.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 239.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 237.
  ) 
 Here is how much of TeX's memory you used:
  8536 strings out of 494985
@@ -718,7 +718,7 @@ Here is how much of TeX's memory you used:
  11548 multiletter control sequences out of 15000+600000
  21968 words of font info for 62 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 29i,11n,35p,1335b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,11n,35p,1341b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -729,7 +729,7 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on EmailPaper.pdf (9 pages, 290323 bytes).
+Output written on EmailPaper.pdf (9 pages, 290297 bytes).
 PDF statistics:
  257 PDF objects out of 1000 (max. 8388607)
  224 compressed objects within 3 object streams
