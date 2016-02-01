@@ -112,7 +112,7 @@ The best traffic-based feature for predicting employee status was the number of 
 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.4\textwidth]{Unique_subjects_rec_hist}
+        \includegraphics[width=0.5\textwidth]{Unique_subjects_rec_hist}
         \caption{Histogram of unique subjects received by job title.}
         \label{fig:traffic_ex_hist}
 \end{figure}
@@ -139,7 +139,7 @@ Many of the social features were based on existing graph theory concepts and alg
 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.4\textwidth]{Hubs_hist}
+        \includegraphics[width=0.5\textwidth]{Hubs_hist}
         \caption{Histogram of hubs from social graph by job title.}
         \label{fig:social_ex_hist}
 \end{figure}
@@ -212,16 +212,13 @@ The dataset did not have enough labeled employees to split the training and test
 
 \section{Results} \label{Results}
 Two tests were run on the data.  In the first, the goal was to classify employees of the center based on their email behavior.  In the second, the official hierarchy from the organization chart was compared to relationships displayed in the data.
-
 \subsection{Classification Results}
 After splitting the data randomly in half, the training data was input into the random forest algorithm described in Section \ref{Analysis}.  The model from this algorithm was used to test the remaining data and output prediction labels.  These results are shown below in Figure \ref{fig:result_hist}.  In this figure, the number of people in each class is plotted with the incorrect predictions shown.  Note that only two predictions were wrong: one person each in research and outreach were misclassified.  The overall accuracy of this method using all features was 97.1\%.
-
 \begin{figure}[H]
     \centering
         \includegraphics[width=0.5\textwidth]{Prediction_50_50_RF}
         \caption{Prediction accuracy for test set using Random Forest model.  Data was split such that 50\% was used as training data and 50\% was used as testing data.}
         \label{fig:result_hist}
-
 \end{figure}
 It is important to note that the two misclassifications above were for second ring employees.  All participants in the study were correctly classified, and 93.75\% of second ring employees were correctly classified.  The misclassified outreach employee operates as a teaching faculty for the center, and was classified as a graduate student.  This is an understandable error because this person is less involved in project work and daily functions of the center.  This behavior is likely to appear as a graduate student instead of outreach.  Furthermore, there were 30 graduate students, the most training out of any class, and only two training examples for outreach.  It makes sense that, lacking training data, an uncertain sample be classified as part of the largest class.  The research employee was also mislabeled as a graduate student.  From our inside knowledge, we know that this person was a post-doctoral researcher.  Post-docs function similarly to both researchers and graduate students, so this classification also makes sense.
 \par

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.31)  31 JAN 2016 21:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.31)  31 JAN 2016 23:06
 entering extended mode
 **EmailPaper.tex
 (EmailPaper.tex
@@ -467,15 +467,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 103.
 
-<Pictures/Unique_subjects_rec_hist.png, id=118, 546.54187pt x 273.27094pt>
+<Pictures/Unique_subjects_rec_hist.png, id=118, 718.18312pt x 411.78844pt>
 File: Pictures/Unique_subjects_rec_hist.png Graphic file (type png)
 
 <use Pictures/Unique_subjects_rec_hist.png>
 Package pdftex.def Info: Pictures/Unique_subjects_rec_hist.png used on input li
 ne 115.
-(pdftex.def)             Requested size: 187.89914pt x 93.94914pt.
- [3pdfTeX warning (ext4): destination with the same identifier (name{figure.1})
- has been already used, duplicate ignored
+(pdftex.def)             Requested size: 234.8775pt x 134.67162pt.
+
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 115--116
+ [][] 
+ []
+
+[3pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
+has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
@@ -494,14 +499,34 @@ Overfull \hbox (9.03374pt too wide) in paragraph at lines 126--127
 
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¤ in font ptmr7t!
-<Pictures/Hubs_hist.png, id=132, 551.05875pt x 304.13625pt>
+<Pictures/Hubs_hist.png, id=132, 676.77844pt x 403.5075pt>
 File: Pictures/Hubs_hist.png Graphic file (type png)
 
 <use Pictures/Hubs_hist.png>
 Package pdftex.def Info: Pictures/Hubs_hist.png used on input line 142.
-(pdftex.def)             Requested size: 187.89914pt x 103.70195pt.
+(pdftex.def)             Requested size: 234.8775pt x 140.03528pt.
 
-<Pictures/3_level_tree.png, id=139, 1861.95625pt x 1059.96pt>
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 142--143
+ [][] 
+ []
+
+
+Underfull \vbox (badness 1596) has occurred while \output is active []
+
+ [4pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.155 \par
+          pdfTeX warning (ext4): destination with the same identifier (name{fig
+ure.3}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.155 \par
+           <./Pictures/adj_matrix.png> <./Pictures/Hubs_hist.png>]
+<Pictures/3_level_tree.png, id=164, 1861.95625pt x 1059.96pt>
 File: Pictures/3_level_tree.png Graphic file (type png)
 
 <use Pictures/3_level_tree.png>
@@ -512,19 +537,7 @@ Overfull \hbox (9.03374pt too wide) in paragraph at lines 159--160
  [][] 
  []
 
-[4pdfTeX warning (ext4): destination with the same identifier (name{figure.2}) 
-has been already used, duplicate ignored
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.162 \end{figure}
-                  pdfTeX warning (ext4): destination with the same identifier (
-name{figure.3}) has been already used, duplicate ignored
-
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.162 \end{figure}
-                   <./Pictures/adj_matrix.png> <./Pictures/Hubs_hist.png>]
 Overfull \hbox (8.8459pt too wide) detected at line 169
 []\OML/cmm/m/it/10 I\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Class\OT1/cmr/m/n/10 ; \O
 ML/cmm/m/it/10 Attribute\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 H\OT1/cmr/m/n/10 (
@@ -545,7 +558,7 @@ has been already used, duplicate ignored
                                                   \fi \fi 
 l.203 
        <./Pictures/3_level_tree.png>]
-<Pictures/SplitAnalysisWithLine.png, id=174, 455.45157pt x 255.95625pt>
+<Pictures/SplitAnalysisWithLine.png, id=176, 455.45157pt x 255.95625pt>
 File: Pictures/SplitAnalysisWithLine.png Graphic file (type png)
 
 <use Pictures/SplitAnalysisWithLine.png>
@@ -553,46 +566,48 @@ Package pdftex.def Info: Pictures/SplitAnalysisWithLine.png used on input line
 206.
 (pdftex.def)             Requested size: 187.89914pt x 105.59886pt.
 
-<Pictures/Prediction_50_50_RF.jpg, id=177, 607.26875pt x 341.275pt>
+<Pictures/Prediction_50_50_RF.jpg, id=179, 520.94624pt x 307.1475pt>
 File: Pictures/Prediction_50_50_RF.jpg Graphic file (type jpg)
 
 <use Pictures/Prediction_50_50_RF.jpg>
-Package pdftex.def Info: Pictures/Prediction_50_50_RF.jpg used on input line 22
-1.
-(pdftex.def)             Requested size: 234.8775pt x 131.99272pt.
+Package pdftex.def Info: Pictures/Prediction_50_50_RF.jpg used on input line 21
+9.
+(pdftex.def)             Requested size: 234.8775pt x 138.48222pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 221--222
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 219--220
  [][] 
  []
 
-<Pictures/FeatureAnalysis.png, id=179, 362.10281pt x 217.5628pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+<Pictures/FeatureAnalysis.png, id=181, 441.14813pt x 251.43938pt>
 File: Pictures/FeatureAnalysis.png Graphic file (type png)
 
 <use Pictures/FeatureAnalysis.png>
-Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 233.
-(pdftex.def)             Requested size: 187.89914pt x 112.8976pt.
+Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 230.
+(pdftex.def)             Requested size: 187.89914pt x 107.09627pt.
  [6pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
  has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.240 \par
-          pdfTeX warning (ext4): destination with the same identifier (name{fig
-ure.6}) has been already used, duplicate ignored
+l.233 \end{figure}
+                  pdfTeX warning (ext4): destination with the same identifier (
+name{figure.6}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.240 \par
-          pdfTeX warning (ext4): destination with the same identifier (name{fig
-ure.7}) has been already used, duplicate ignored
+l.233 \end{figure}
+                   <./Pictures/SplitAnalysisWithLine.png (PNG copy)> <./Picture
+s/Prediction_50_50_RF.jpg>] [7pdfTeX warning (ext4): destination with the same 
+identifier (name{figure.7}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.240 \par
-           <./Pictures/SplitAnalysisWithLine.png (PNG copy)> <./Pictures/Predic
-tion_50_50_RF.jpg> <./Pictures/FeatureAnalysis.png>] [7
-
-] (EmailPaper.bbl
+l.245 \clearpage
+                 <./Pictures/FeatureAnalysis.png>] (EmailPaper.bbl
 Underfull \hbox (badness 6078) in paragraph at lines 16--20
 []\OT1/ptm/m/n/10 Stephen P Bor-gatti and
  []
@@ -675,22 +690,22 @@ Underfull \hbox (badness 1418) in paragraph at lines 199--203
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 254.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 251.
  [9
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 254.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 251.
  (EmailPaper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 254.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 254.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 251.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 251.
 Package rerunfilecheck Info: File `EmailPaper.out' has not changed.
 (rerunfilecheck)             Checksum: 93506940631FAED9A6454FFAA35C1470;629.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 254.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 251.
  ) 
 Here is how much of TeX's memory you used:
  8428 strings out of 493673
  120294 string characters out of 3141530
- 223565 words of memory out of 3000000
+ 224565 words of memory out of 3000000
  11578 multiletter control sequences out of 15000+200000
  23046 words of font info for 63 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
@@ -706,9 +721,9 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/urw/times/utmr8a.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on EmailPaper.pdf (9 pages, 307922 bytes).
+Output written on EmailPaper.pdf (9 pages, 331543 bytes).
 PDF statistics:
- 256 PDF objects out of 1000 (max. 8388607)
+ 258 PDF objects out of 1000 (max. 8388607)
  63 named destinations out of 1000 (max. 500000)
  124 words of extra memory for PDF output out of 10000 (max. 10000000)
 
