@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.31)  31 JAN 2016 21:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2015.8.31)  31 JAN 2016 21:41
 entering extended mode
 **EmailPaper.tex
 (EmailPaper.tex
@@ -481,7 +481,7 @@ ne 115.
                                                   \fi \fi 
 l.123 
        <./Pictures/Unique_subjects_rec_hist.png>]
-<Pictures/adj_matrix.png, id=125, 1861.95625pt x 1059.96pt>
+<Pictures/adj_matrix.png, id=126, 1861.95625pt x 1059.96pt>
 File: Pictures/adj_matrix.png Graphic file (type png)
 
 <use Pictures/adj_matrix.png>
@@ -494,18 +494,14 @@ Overfull \hbox (9.03374pt too wide) in paragraph at lines 126--127
 
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¤ in font ptmr7t!
-<Pictures/Hubs_hist.png, id=131, 551.05875pt x 304.13625pt>
+<Pictures/Hubs_hist.png, id=132, 551.05875pt x 304.13625pt>
 File: Pictures/Hubs_hist.png Graphic file (type png)
 
 <use Pictures/Hubs_hist.png>
 Package pdftex.def Info: Pictures/Hubs_hist.png used on input line 142.
 (pdftex.def)             Requested size: 187.89914pt x 103.70195pt.
 
-Underfull \hbox (badness 1533) in paragraph at lines 148--149
-\OT1/ptm/m/n/10 dif-fer-ent cen-tral-ity mea-sures. This in-cludes close-
- []
-
-<Pictures/3_level_tree.png, id=138, 1861.95625pt x 1059.96pt>
+<Pictures/3_level_tree.png, id=139, 1861.95625pt x 1059.96pt>
 File: Pictures/3_level_tree.png Graphic file (type png)
 
 <use Pictures/3_level_tree.png>
@@ -698,7 +694,7 @@ Here is how much of TeX's memory you used:
  11578 multiletter control sequences out of 15000+200000
  23046 words of font info for 63 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 29i,11n,35p,1955b,413s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,11n,35p,1956b,413s stack positions out of 5000i,500n,10000p,200000b,50000s
 {D:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<D:/Progra
 m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/Program 
 Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><D:/Program Fi
@@ -710,7 +706,7 @@ KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><D:/Program Files (x86)/MiKTe
 X 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts
 /type1/urw/times/utmr8a.pfb><D:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/
 times/utmri8a.pfb>
-Output written on EmailPaper.pdf (9 pages, 307606 bytes).
+Output written on EmailPaper.pdf (9 pages, 307922 bytes).
 PDF statistics:
  256 PDF objects out of 1000 (max. 8388607)
  63 named destinations out of 1000 (max. 500000)
