@@ -74,7 +74,7 @@ An Internal Review Board approved the study after reviewing a thorough proposal.
 \item Length of body text in characters
 \item Whether email was signed
 \end{compactitem}
-
+\par
 Table \ref{tab:db_stats} compares statistics between our dataset and the Enron corpus.  Our internal database is more modern, has more emails, and covers a longer time period.  However, it is comprised of less people than the Enron dataset.
 Special care was taken to protect the privacy of those involved in the study.  During the collection process, all subject and body text was hashed, and all email metadata was stored in a database using scripts without any researchers observing any email details. Furthermore, any identifying information has been omitted from this report.
 
@@ -92,13 +92,13 @@ Special care was taken to protect the privacy of those involved in the study.  D
 \end{tabular}
 \end{table}
 
-Statistics were also calculated for former center employees or others who had known affiliation with the center.  These second-ring employees were included in the classification algorithm if their job title was known and if they were involved in at least 100 emails in the database.  This added 32 labelled subjects, for a total of 69 employees to analyze.
+Statistics were also calculated for former center employees or others who had known affiliation with the center.  These employees' email folders were not used to build the database.  However, these second-ring employees were included in the classification algorithm if their job title was known and if they were involved in at least 100 emails in the database, meaning that they had exchanged significant communication with employees directly involved in the study.  This added 32 labelled subjects, for a total of 69 employees to analyze.
 
 \section{Features} \label{Features}
-In total, 101 different features were extracted from the email data: 70 traffic-based and 31 graph-based.  Below, all features will be described in both categories.  This ranking comes from an information gain ranker which was used to determine the most important features.  Section 5 goes into more detail on this feature analysis.
+In total, 101 different features were extracted from the email data: 70 traffic-based and 31 graph-based.  The traffic-based features are those extracted purely from the collected email metadata.  The social features, on the other hand, first model the email patterns in a graphical network and then calculate statistics from this model.  Below, all features will be described in both categories.  This ranking comes from an information gain ranker which was used to determine the most important features.  Section 5 goes into more detail on this feature analysis.
 
 \subsection{Traffic-Based Features}
-The traffic-based features are those extracted purely from email metadata.  Some of these features were very basic, such as total number of emails, total sent, and total received.  Other features came from the types of emails.  For example, the number of emails sent and received were counted for each of the recipient types: to or cc.  Similarly, the number of emails sent and received as replies or forwards were also used as features.  The number of unique email addresses communicated with and the number of unique email subjects involving each person, both sent and received, were counted as features to be used.  The average number of recipients on emails sent and received for each participant were calculated.  It was hypothesized that staff members had more inter-center communications while graduate students communicated more with the university.  To investigate this, the number of emails sent and received from within the center and within the university, based on the domain of the email address, were calculated.  
+Some of the traffic-based features were very basic, such as total number of emails, total sent, and total received.  Other features came from the types of emails.  For example, the number of emails sent and received were counted for each of the recipient types: to or cc.  Similarly, the number of emails sent and received as replies or forwards were also used as features.  The number of unique email addresses communicated with and the number of unique email subjects involving each person, both sent and received, were counted as features to be used.  The average number of recipients on emails sent and received for each participant were calculated.  It was hypothesized that staff members had more inter-center communications while graduate students communicated more with the university.  To investigate this, the number of emails sent and received from within the center and within the university, based on the domain of the email address, were calculated.  
 
 Other useful information collected from emails included the timestamp, the character counts of the subject and body, and the presence of any attachments. From the time stamp, the time of day for each email was available.  Using this information, the average number of emails sent, received, and combined were calculated.  The total number of emails sent and received after hours (between 6pm and 7am EST or anytime on weekends) and the number of emails sent and received after hours within the center were also used as metrics.  The mean and variance of the number of characters in the subject and body were calculated.  These metrics were also broken down between emails sent and received.  The raw numbers of attachments sent and received were computed as well as the average number of attachments sent and received per email.  Digitally signing an email is a type of attachment.  Additional features were calculated from the total number of signed emails sent and received, unique email addresses with signed emails, and unique subjects from signed emails.
 
@@ -170,7 +170,7 @@ Mutual information represents how much information, typically in terms of bits, 
 
 \begin{table}[H]
 \centering
-\caption{Top 20 features ranked by the information gain method.  Note that out of the to 20, there are 12 traffic-based features and 8 that are graph-based.}
+\caption{Top 20 features ranked by the information gain method}
 \label{tab:ranked_feats}
 \begin{tabular}{|l|l|c|}
 \hline
@@ -197,18 +197,9 @@ avg\_sent\_per\_day                    & Traffic      & 0.404  \\ \hline
 \end{tabular}
 \end{table}
 
-The dataset did not have enough labeled employees to split the training and testing sets by people.  Instead, all emails in the database were randomly assigned to either the training or testing set.  Then, statistics were calculated for all 69 people using the training emails and testing emails separately.  This is a possible source of bias, but was the only choice for such a small sample size.  In order to determine the optimal percentage split for the emails, a series of runs was performed varying the size of the training data from 10\% to 90\% of the emails.  For each split, the data was run through the random forest algorithm and the prediction accuracy recorded.  The optimal test split was to use 50\% of the emails for training and the other 50\% for testing.  This result is plotted in Figure \ref{fig:split_analysis}.  Based on this result, I used a 50/50 split for the analysis of the classifier.
-
-\begin{figure}[H]
-    \centering
-        \includegraphics[width=0.4\textwidth]{SplitAnalysisWithLine}
-        \caption{Prediction accuracy compared to percentage of data used for training.}
-        \label{fig:split_analysis}
-\end{figure}
-
 
 \section{Results} \label{Results}
-Two tests were run on the data.  In the first, the goal was to classify employees of the center based on their email behavior.  In the second, the official hierarchy from the organization chart was compared to relationships displayed in the data.
+Two tests were run on the data.  In the first, the goal was to classify employees of the center based on their email behavior.  In the second, the official hierarchy from the organization chart was compared to relationships displayed in the data.  The ultimate goal of this research was to determine if the relationships present in the email data confirmed or conflicted with the official organization chart.
 
 \subsection{Classification Results}
 After splitting the data randomly in half, the training data was input into the random forest algorithm described in Section \ref{Analysis}.  The model from this algorithm was used to test the remaining data and output prediction labels.  These results are shown below in Figure \ref{fig:result_hist}.  In this figure, the number of people in each class is plotted with the incorrect predictions shown.  Note that only two predictions were wrong: one person each in research and outreach were misclassified.  The overall accuracy of this method using all features was 97.1\%.
@@ -218,26 +209,26 @@ After splitting the data randomly in half, the training data was input into the 
         \caption{Prediction accuracy for test set using Random Forest model.  Data was split such that 50\% was used as training data and 50\% was used as testing data.}
         \label{fig:result_hist}
 \end{figure}
-It is important to note that the two misclassifications above were for second ring employees.  All participants in the study were correctly classified, and 93.75\% of second ring employees were correctly classified.  The misclassified outreach employee operates as a teaching faculty for the center, and was classified as a graduate student.  This is an understandable error because this person is less involved in project work and daily functions of the center.  This behavior is likely to appear as a graduate student instead of outreach.  Furthermore, there were 30 graduate students, the most training out of any class, and only two training examples for outreach.  It makes sense that, lacking training data, an uncertain sample be classified as part of the largest class.  The research employee was also mislabeled as a graduate student.  From our inside knowledge, we know that this person was a post-doctoral researcher.  Post-docs function similarly to both researchers and graduate students, so this classification also makes sense.
+It is important to note that the two misclassifications above were for second ring employees.  All participants in the study were correctly classified, and 93.75\% of second ring employees were correctly classified.  
 
-Note that this method relies on some assumptions.  One is that employees with the same title exhibit similar email behavior.  Overall, based on the success of the algorithm and the distributions of the histograms, this seems to prove true.  Another premise underlying this analysis is that peoples' email behaviors are consistent over time.  This seems to be true as well.  However, it should be noted that results did vary slightly with different random splits.  Inconsistent behavior over time may have been a factor in this.
+Note that this method relies on some assumptions.  One is that employees with the same title exhibit similar email behavior.  Overall, based on the success of the algorithm and the distributions of the histograms, this seems to prove true.  Another premise underlying this analysis is that peoples' email behaviors are consistent over time.  This seems to be true as well.
 
-In order to determine which features were necessary to the analysis, the algorithm was run several times.  The first run used only the top 20 features from Figure \ref{tab:ranked_feats}, and the classification accuracy was recorded.  For each subsequent run, the least useful feature was removed from the input to the system.  Using only the top 20 features resulted in 3 classification errors, or 95.6\% accuracy.  This is only one more error than was found using all 101 features.  Even using just the top thee features resulted in classification accuracy over 80\%.  Therefore, a very good classifier can be built using much less features if the features are selected properly.
+To determine which features were necessary to the analysis, the algorithm was run several times.  The first run used only the top 20 features from Figure \ref{tab:ranked_feats}, and the classification accuracy was recorded.  For each subsequent run, the least useful feature according to the feature analysis was removed from the input to the system.  Using only the top 20 features resulted in 3 classification errors, or 95.6\% accuracy.  This is only one more error than was found using all 101 features.  Even using just the top thee features resulted in classification accuracy over 80\%.  Therefore, a very good classifier can be built using much less features if the features are selected properly.
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.4\textwidth]{FeatureAnalysis}
+        \includegraphics[width=0.5\textwidth]{FeatureAnalysis}
         \caption{Prediction accuracy compared to number of features used for analysis.}
         \label{fig:feat_analysis}
 \end{figure}
 
 \subsection{Hierarchy Analysis}
-The ultimate goal of this research was to determine if the relationships present in the email data confirmed or conflicted with the official organization chart.  To test this, we compiled a list of the true directors for all non-director employees from the organization chart.  Next, we determined which director each of these employees emailed with the most.  Surprisingly, only 57.58\% of employees communicate most frequently with their official director.  This is understandable in cases where the director works in a different location than his or her employees.  This result points to possible issues in the construction of the organization chart.
+To evaluate the organizational chart, we determined the true directors for all non-director employees.  Next, we determined which director each of these employees emailed with the most.  Surprisingly, only 57.58\% of employees communicate most frequently with their official director.  This is understandable in cases where the director works in a different location than his or her employees.  This result points to possible discrepancies between the official organization chart and the functional  relationships within the center.
 \par
 To further investigate the accuracy of the organization chart, we also compiled a list of the project managers for graduate students and researchers in the study.  In the case of an employee being on multiple projects, ground truth was selected to be the project that primarily funds the employee.  Some employees in this group were not included in this list because they did not have a project manager or because they worked at the center before an official project structure was in place.  This time, 72.73\% of graduate students and researchers communicate most frequently with their primary program manager.  The relation between employees to project managers appears to be stronger than that with directors.  Many of the discrepancies can be explained by employees participating in multiple projects and therefore having multiple project managers.
 
 
 \section{Conclusions and Future Work} \label{Conclusions}
-This work presented a new dataset, approximately the size of Enron, that was carefully collected from volunteers' emails with particular attention to protect participant privacy.  Unlike Enron, we used our inside knowledge to label the people in this dataset with accurate job titles.  A variety of statistics were calculated from this dataset, and from these statistics feature selection identified those key to making strong behavioral predictions.  Random Forests were shown to be powerful classifiers for this data.  They predicted employee job titles based on email data with very high accuracy, even for employees for whom only secondhand data was available.  Our intimate knowledge is able to interpret the few classification errors produced by the algorithm.  However, there is the possibility of bias within this analysis in that training and testing are performed on the same people.  Therefore, in future work we hope to further investigate this dataset and apply this wealth of information to other problems.  We also aim to evaluate these methods on other datasets, such as the Enron emails, and compare the features selected to identify any consistent predictors.
+This work presented a new dataset, approximately the size of Enron, that was carefully collected from volunteers' emails with particular attention to protect participant privacy.  Unlike Enron, we used our inside knowledge to label the people in this dataset with accurate job titles.  A variety of statistics were calculated from this dataset, and from these statistics feature selection identified those key to making strong behavioral predictions.  Random Forests were shown to be powerful classifiers for this data.  They predicted employee job titles based on email data with very high accuracy, even for employees for whom only secondhand data was available.  Our intimate knowledge is able to interpret the few classification errors produced by the algorithm.  However, there is the possibility of bias within this analysis in that training and testing are performed on the same people.  Therefore, in future work we hope to further investigate this dataset and apply this wealth of information to other problems.
 
 
 \clearpage
