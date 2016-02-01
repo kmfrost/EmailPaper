@@ -153,18 +153,21 @@ All of these different graph statistics were used as inputs into the machine lea
 The biggest limitation of this email dataset is the lack of participants.  Because of the low sample size, but great number of features, random forests were selected as the classification method.  The java-based software package Weka was used to run the random forest algorithm described in \cite{Breiman2001}.
 \par
 Random forests are an ensemble method of machine learning.  The random forest builds many random trees.  A random tree is a machine learning algorithm that uses training data learns a series of rules to use for classification.  These rules are constructed in a hierarchy that visually resembles a tree.  Each decision is based on what rule will maximize the information gained.  An example random tree with depth 3, meaning it has three levels of rules, is shown below in Figure \ref{fig:ex_tree}.
-\begin{itemize}
-    \begin{figure}[H]
+\begin{figure}[H]
     \centering
         \includegraphics[width=0.5\textwidth]{3_level_tree}
         \caption{Example random tree of depth 3.}
         \label{fig:ex_tree}
 \end{figure}
+\par
+Random forests build many, deep random trees with slight random variations.  Individually, these random trees will overfit the data.  However, these many random trees are combined through a process of bootstrap aggregating, or bagging.  This process involves each random tree generating a new training data set by sampling observations from the input training set with replacement.  These subsamples are used to build the random trees.  For this analysis, one third of the data was used as a test set and the rest was for training.  Just as the samples were subsampled, so were the features.  For each random tree, a subset of features is selected.  Only this subset can be used as rules for that tree.  In this implementation, each tree used a subsample of 15 features. Once a tree is built, the remaining samples from the training set are used as a test set and predicted labels for these points are generated. In this analysis, 750 random trees were generated. After all the trees are built, the majority vote on each sample prediction is the final predicted label.  Using this random forest model reduces the overall variance and increases the accuracy of the model compared to a single random tree.
+\par
+Random forests can be difficult to interpret because the ensemble method obscures which features are more meaningful than others.  To better understand which features were better label predictors, an attribute analysis algorithm was performed.  Since random trees use information gain to dictate splits, information gain was used as the evaluation criteria for the features.  Specifically, each attribute was evaluated by measured the information gain with respect to the class.  Information gain is calculated as follows for each attributed:
+\begin{equation}
+I(Class; Attribute) = H(Class) - H(Class | Attribute)
+\end{equation} \label{eq:info_gained}
+Where $I(Class; Attribute)$ represents the mutual information between the class and the attribute.  This value represents how much information, typically in terms of bits, knowledge of the attribute informs the prediction of the class.  In this model, both the attribute and the class are treated as random variables.  In the above equation $H(Class)$ is the entropy of the class variable.  The entropy of a random variable is a measure of the uncertainty associated with that random variable. In Equation \ref{eq:info_gained} above, $H(Class | Attribute)$ represents the conditional entropy of the Class given the Attribute value.  After this information gained value was calculated for each feature, they were ranked in order of most important to least.  Table \ref{tab:ranked_feats} shows the top twenty features from this analysis.
 
-    \item Random Forests use bootstrap AND bagging on random trees - use random components, create many, very deep trees, take a vote to classify
-    \item Biggest advantage: doesn't overfit
-
-\item Used information gain as feature selection method.  Describe this process
 
 \begin{table}[H]
 \centering
@@ -172,7 +175,7 @@ Random forests are an ensemble method of machine learning.  The random forest bu
 \label{tab:ranked_feats}
 \begin{tabular}{|l|l|l|}
 \hline
-Feature                                      & Feature      & Ranker \\\hline
+Feature                                      & Feature      & InfoGained \\\hline
 unique\_subjects\_received                   & Traffic      & 0.728  \\
 total\_received\_signed                      & Traffic      & 0.728  \\
 rec\_fw                                      & Traffic      & 0.719  \\
@@ -195,11 +198,7 @@ avg\_sent\_per\_day                          & Traffic      & 0.404  \\ \hline
 \end{tabular}
 \end{table}
 
-
-
-\item Explain splitting process (train on random \% of emails, test on the rest)
-\item Looked into optimal train/test split:
-\end{itemize}
+The dataset did not have enough labeled employees to split the training and testing sets by people.  Instead, all emails in the database were randomly assigned to either the training or testing set.  Then, statistics were calculated for all 69 people using the training emails and testing emails separately.  This is a possible source of bias, but was the only choice for such a small sample size.  In order to determine the optimal percentage split for the emails, a series of runs was performed varying the size of the training data from 10\% to 90\% of the emails.  For each split, the data was run through the random forest algorithm and the prediction accuracy recorded.  The optimal test split was to use 50\% of the emails for training and the other 50\% for testing.  This result is plotted in Figure \ref{fig:split_analysis}.  Based on this result, I used a 50/50 split for the analysis of the classifier.
 
 \begin{figure}[H]
     \centering
@@ -208,7 +207,6 @@ avg\_sent\_per\_day                          & Traffic      & 0.404  \\ \hline
         \label{fig:split_analysis}
 \end{figure}
 
-Based on the above result, I used a 50/50 split for the analysis of the classifier.
 
 
 \section{Results} \label{Results}
