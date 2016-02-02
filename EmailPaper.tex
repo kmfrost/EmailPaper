@@ -51,7 +51,7 @@ This paper continues by discussing the related works in Section~\ref{Related Wor
 
 Email is a pervasive medium for communication in modern society\textemdash{}particularly in the workplace.  In 2015, there were over 2.6 billion email users.  It is projected that by the end of 2019, over one third of the global population will be using email.  In fact, the average business email user sends and receives a total of 112 emails per day.  Corporate email alone accounts for 54.7\% of worldwide email traffic~\cite{radicati_emails_2015}. Retention of large email archives has become common practice with decreasing memory size and cost~\cite{fisher_revisiting_2006}.  Out of 600 employees at a high-tech company, the average employee had 28,660 emails stored in 133 folders which is a significant increase over the past ten years.  This is a trove of interesting information that could be leveraged to analyze employee roles in an organization.
 
-Since the Enron email dataset was released in 2004 \cite{klimt_introducing_2004}, this dataset has been extensively researched on topics including spam classification \cite{martin_analyzing_2005}, \cite{gaber_e-mail_2016}, \cite{shams_classifying_2013}; email categorization \cite{he_novel_2014}, \cite{keila_structure_2005}; and recipient prediction \cite{sofershtein_predicting_2015}, \cite{hu_towards_2012}.  However, there are known flaws and discrepancies with even the most recent versions of this dataset\textemdash{}ranging from misspelled email addresses~\cite{nordbo_data_2014} to duplicate emails~\cite{waterman_big_2014}. In one of the most popular forms of the dataset~\cite{shetty_enron_2004}, the database includes 253,735 emails sent as ``CC'' and  253,713 emails sent as ``BCC''.  Further inspection reveals that emails sent as one type or the other were almost always mistakenly recorded as both.
+Since the Enron email dataset was released in 2004 \cite{klimt_introducing_2004}, it has been extensively researched on topics including spam classification \cite{martin_analyzing_2005}, \cite{gaber_e-mail_2016}, \cite{shams_classifying_2013}; email categorization \cite{he_novel_2014}, \cite{keila_structure_2005}; and recipient prediction \cite{sofershtein_predicting_2015}, \cite{hu_towards_2012}.  However, there are known flaws and discrepancies with even the most recent versions of this dataset\textemdash{}ranging from misspelled email addresses~\cite{nordbo_data_2014} to duplicate emails~\cite{waterman_big_2014}. In one of the most popular forms of the dataset~\cite{shetty_enron_2004}, the database includes 253,735 emails sent as ``CC'' and  253,713 emails sent as ``BCC''.  Further inspection reveals that emails sent as one type or the other were almost always mistakenly recorded as both.
 
 The existing literature on analyzing social email behavior is mainly divided into two categories: traffic-based and social-based~\cite{tang_email_2013}.  Traffic-based methods calculate statistics based only on email patterns while social-based methods extract information by representing the email traffic as a social graph.
 
@@ -63,9 +63,9 @@ Instead of considering only traffic-based or social-based analytics, these can b
 
 \section{Data Collection} \label{Data Collection}
 
-Over the past decade, the Enron dataset has been widely used to study email behaviors because it is one of the only datasets available comprised of real-world corporate emails.  A list of ground truth job titles was compiled by~\cite{shetty_status_2004}.  However, there are known issues with these labels.  Due to difficulties with the Enron dataset, this study uses a new dataset generated from volunteers in one of the university's centers.  The center divides its employees into six main areas: directors, graduate students, operations, outreach, project management (PM), and research.
+Over the past decade, the Enron dataset has been widely used to study email behaviors because it is one of the only datasets available comprised of real-world corporate emails.  A list of ground truth job titles was compiled by~\cite{shetty_status_2004}.  However, there are known issues with these labels.  Due to difficulties with the Enron dataset, as described in Section~\ref{Related Works}, this study uses a new dataset generated from volunteers in one of the university's centers.  The center divides its employees into six main areas: directors, graduate students, operations, outreach, project management (PM), and research.
 
-Due to the inherant privacy concerns, researchers worked with the Internal Review Board (IRB) to approve a dataset which maintains participants' privacy.  This dataset is meant to be representative of metadata which any company could used without violating the privacy of their employees.  Special care was taken to protect the privacy of those involved in the study.  During the collection process, all subject and body text was hashed, and all email metadata was stored in a database using scripts without any researchers observing any email text. Furthermore, any identifying information has been omitted from this publication.
+Due to the inherant privacy concerns, researchers worked with the Internal Review Board (IRB) to approve a dataset which maintains participants' privacy.  This dataset is meant to be representative of metadata which any company could use without violating the privacy of their employees.  Special care was taken to protect the privacy of those involved in the study.  During the collection process, all subject and body text was hashed, and all email metadata was stored in a database using scripts without any researchers observing any email text. Furthermore, any identifying information has been omitted from this publication.
 The following is the metadata provided from each email:
 \begin{compactitem}
 \item Destination and source email address
@@ -82,22 +82,24 @@ Table~\ref{tab:db_stats} compares statistics between this internal dataset and t
 
 \begin{table}[H]
 \centering
-\caption{A comparison between the internal dataset and the Enron email corpus}
+\caption{A comparison between the internal dataset and the Enron email corpus.}
 \label{tab:db_stats}
-\begin{tabular}{l|l|l|ll}
-\cline{2-3}
-                                         & Center          & Enron         &  &  \\ \cline{1-3}
-\multicolumn{1}{|l|}{Time}               & 11/2012-11/2015 & 1/2000-9/2002 &  &  \\
-\multicolumn{1}{|l|}{Distinct Addresses} & 32,118          & 75,406        &  &  \\
-\multicolumn{1}{|l|}{Participants}       & 32              & 149           &  &  \\
-\multicolumn{1}{|l|}{Distinct Emails}    & 585,096         & 252,759       &  &  \\ \cline{1-3}
+\resizebox{0.5\textwidth}{!}{%
+\begin{tabular}{@{}lrr@{}}
+\toprule
+                   & Center          & Enron         \\ \midrule
+Time               & 11/2012-11/2015 & 1/2000-9/2002 \\
+Distinct Addresses & 32,118          & 75,406        \\
+Participants       & 32              & 249           \\
+Distinct Emails    & 585,096         & 252,759       \\ \bottomrule
 \end{tabular}
+}
 \end{table}
 
 While the study includes only 37 volunteers, the email metadata from these volunteers identified 32 additional employees of the center.  These additional employees were included in the study when ground truth for their job was available and when they were identified in at least 100 email metadata records.  This provides 69 total employees in the study.
 
 \section{Features} \label{Features}
-The study includes 98 features that were extracted from the email data: 67 traffic-based and 31 graph-based.  The traffic-based features are those calculated purely from the collected email metadata.  The social features, on the other hand, first model the email patterns in a graphical network and then calculate statistics from this model.  In the following sections, all features from each of the two categories are described. 
+The study includes 98 features that were extracted from the email data: 67 traffic-based and 31 social-based.  The traffic-based features are those calculated purely from the collected email metadata.  The social features, on the other hand, first model the email patterns in a graphical network and then calculate statistics from this model.  In the following sections, all features from each of the two categories are described. 
 
 \subsection{Traffic-Based Features}
 The simplest traffic-based features used include total number of emails, total sent, and total received.  Other features are calculated based on whether recipients were the primary recipient of the email or were copied on the email.  Similarly, the number of emails sent and received as replies or forwards were also used as features.  Features also included the number of unique email address connections, both sent and received,  and the number of unique email subjects, both sent and received.  The average number of recipients on emails sent and received for each participant were calculated.  It was hypothesized that staff members had more external communications while graduate students communicated more within the university.  To investigate this, the number of emails sent and received from within the center and within the university, based on the domain of the email address, were calculated.  
@@ -129,7 +131,7 @@ In addition to tracking metadata statistics, features are also derived from mode
 
 With this representation, several statistics can be calculated about the people in the graph.  The average neighbor degree was calculated for both the partial and the full graph.  The degree of a node $i$ is the number of other nodes connected to node $i$.  Therefore for a node $i$, this metric averages the degree of each node in the neighborhood of $i$, that is all nodes connected to $i$.  Mathematically, this is:
 \begin{equation}
-k_{avg,i} = \frac{1}{|N(i)|}\sum_{j \in N(i)}k_j
+k_{\text{avg},i} = \frac{1}{|N(i)|}\sum_{j \in N(i)}k_j
 \end{equation}
 where $N(i)$ are the neighbors of node $i$ and $k_j$ is the degree of node $j$.
 The distances between nodes were also used to generate some features.  The average shortest path metric calculates the length of the shortest paths between node $i$ and all other nodes in the graph $G$, and it returns the average of these path lengths.  Similarly, the maximum shortest path length, or eccentricity, was used as a feature in the learning algorithm.  
@@ -149,12 +151,12 @@ Another algorithm used to generate features was the pagerank algorithm, develope
 
 The majority of the social-based features were centrality measures.  This includes closeness centrality, betweenness centrality, degree centrality~\cite{borgatti2011analyzing}, current flow closeness centrality, current flow betweenness centrality~\cite{brandes2005centrality}, communicability centrality, communicability betweenness centrality~\cite{estrada2008communicability}, and load centrality~\cite{newman2001scientific}.
 
-All of these different graph statistics were used as inputs into the machine learning algorithm to characterize each node's importance in the social graph.
+All of these different graph statistics were used as inputs into the random forest algorithm to characterize each node's importance in the social graph.
 
 
 \section{Analysis} \label{Analysis}
 
-Due to the large number of features and relatively low number of participants, a classification method must be carefully chosen to avoid overfitting the data.  While tree based classifiers can be susceptible to overfitting, the random forest is robust to overfitting issues and was therefore chosen for this study.  The java-based software package Weka was used to generate the random forest based on the algorithm described in~\cite{Breiman2001}.
+Due to the large number of features and relatively low number of participants, a classification method was carefully chosen to avoid overfitting the data.  While tree based classifiers can be susceptible to overfitting, the random forest is robust to overfitting issues and was therefore chosen for this study.  The java-based software package Weka was used to generate the random forest based on the algorithm described in~\cite{Breiman2001}.
 
 Random forests are an ensemble method of machine learning.  The random forest builds many random trees.  A random tree is a machine learning algorithm that uses training data to learn a series of rules for classification.  These rules are constructed in a hierarchy that visually resembles a tree.  Each decision is based on what rule will maximize the information gained.  An example random tree with depth three (i.e., it has three levels of rules) is shown below in Figure~\ref{fig:ex_tree}.
 \begin{figure}[H]
@@ -164,15 +166,15 @@ Random forests are an ensemble method of machine learning.  The random forest bu
         \label{fig:ex_tree}
 \end{figure}
 
-Random forests build many deep random trees with slight random variations.  Individually, these random trees will overfit the data.  However, these many random trees are combined through a process of bootstrap aggregating, or bagging.  This process involves each random tree generating a new training data set by sampling observations from the input training set with replacement.  These subsamples are used to build the random trees.  For this analysis, each of the 750 trees selects $\frac{2N}{3}$ samples to train the trees where $N$ is the number of data points in the overall training set.  Just as the samples were subsampled, so were the features.  Only this subset of features can be used as rules for that tree.  In this implementation, each tree used a subsample of 15 features.
+Random forests build many deep random trees with slight random variations.  Individually, these random trees will overfit the data.  However, these many random trees are combined through a process of bootstrap aggregating, or bagging.  This process involves each random tree generating a new training data set by sampling observations from the input training set with replacement.  These subsamples are used to build the random trees.  For this analysis, each of the 750 trees selects $\frac{2N}{3}$ samples to train the trees where $N$ is the number of data points in the overall training set.  Just as the samples were subsampled, so were the features.  Only this subset of features can be used as rules for that tree.  In this implementation, each tree used a subsample of 15 random features.
 
 After all the trees are built, the test data is run through all the random trees in the forest.  Each tree outputs a prediction label for each data point, and the majority vote on each sample is the final predicted label.  Using this random forest model reduces the overall variance and increases the accuracy of the model compared to a single random tree.
 
 Random forests can be difficult to interpret because the ensemble method obscures which features are most meaningful.  An attribute analysis helps to better understand which features are better label predictors.  Since random trees use information gain to dictate splits, information gain was used as the evaluation criteria for the features.  Specifically, each attribute was evaluated by measuring the information gain with respect to the class.  Information gain is calculated as follows for each of the attributes:
 \begin{equation}
-I(Class; Attribute) = H(Class) - H(Class | Attribute)
+I(\text{Class}; \text{Attribute}) = H(\text{Class}) - H(\text{Class} | \text{Attribute})
 \end{equation} \label{eq:info_gained}
-where $I(Class; Attribute)$ represents the mutual information between the class and the attribute, $H(Class)$ is the entropy of the class variable, and  $H(Class | Attribute)$ represents the conditional entropy of the Class given the Attribute value.  
+where $I(\text{Class}; \text{Attribute})$ represents the mutual information between the class and the attribute, $H(Class)$ is the entropy of the class variable, and  $H(\text{Class} | \text{Attribute})$ represents the conditional entropy of the Class given the Attribute value.  
 
 Mutual information represents how much information, typically in terms of bits, knowledge of the attribute informs the prediction of the class.  In this model, both the attribute and the class are treated as random variables.  The entropy of a random variable is a measure of the uncertainty associated with it. After this information gained value was calculated for each feature, they were ranked in order of most important to least.  Table~\ref{tab:ranked_feats} shows the top twenty features from this analysis and the features' corresponding information gain.
 
@@ -180,7 +182,7 @@ Mutual information represents how much information, typically in terms of bits, 
 
 \begin{table}[H]
 \centering
-\caption{Top 20 features ranked by the information gain method}
+\caption{Top 20 features ranked by the information gain method.}
 \label{tab:ranked_feats}
 \resizebox{0.5\textwidth}{!}{%
 \begin{tabular}{@{}lrr@{}}
@@ -241,7 +243,7 @@ The director of each employee is predicted by the algorithm to be the director t
 To identify each employee's project manager ground truth is selected to be the project that primarily funds the employee.  This time, 72.73\% of graduate students and researchers communicate most frequently with their primary program manager.  The relation between employees to project managers appears to be stronger than that with directors.  Many of the errors in this classification are due to employees who work with multiple project managers.  
 
 \section{Conclusions and Future Work} \label{Conclusions}
-This work presents a new dataset, approximately the size of Enron, that was carefully collected from volunteers' emails with particular attention to protect participant privacy.  The new dataset includes accurate labels executed by researchers with intmiate knowledge of the center and its employees.  A variety of statistics were calculated from this dataset, and were used in conjunction with a random forest algorithm to automatically classify the center's employees.  Random Forests are shown to be powerful classifiers for this data by predicting employee job titles based on email data with very high accuracy, even for employees for whom only secondhand data is available in the dataset.  Using only 3 features, employees are successfully classified higher than 80\% of the time and are classified over 95\% of the time when 20 features are used.  The email data was also used to show that emails could be used to predict an employee's primary program manager, but had a worse chance of being able to identify the director associated with the employee on the official organizational chart.  This work has shown that it is possible to generate important organizational information from using carefully processed email metadata without compromising the privacy of employees.  Future work in this area will attempt to provide more insight into an organization's organic heirarchy and to apply these algorithms to other datasets to determine the general applicability of the results.
+This work presents a new dataset, approximately the size of Enron, that was carefully collected from volunteers' emails with particular attention to protect participant privacy.  The new dataset includes accurate labels executed by researchers with intimate knowledge of the center and its employees.  A variety of statistics were calculated from this dataset, and were used in conjunction with a random forest algorithm to automatically classify the center's employees.  Random Forests are shown to be powerful classifiers for this data by predicting employee job titles based on email data with very high accuracy, even for employees for whom only secondhand data is available in the dataset.  Using only 3 features, employees are successfully classified higher than 80\% of the time and are classified over 95\% of the time when 20 features are used.  The email data was also used to show that emails could be used to predict an employee's primary program manager, but had a worse chance of being able to identify the director associated with the employee on the official organizational chart.  This work has shown that it is possible to generate important organizational information from using carefully processed email metadata without compromising the privacy of employees.  Future work in this area will attempt to provide more insight into an organization's organic heirarchy and to apply these algorithms to other datasets to determine the general applicability of the results.
 
 \clearpage
 \Urlmuskip=0mu plus 1mu\relax
