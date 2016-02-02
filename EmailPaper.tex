@@ -22,6 +22,7 @@
 \usepackage{mathrsfs}
 \usepackage{url}
 \usepackage{paralist}
+\usepackage{booktabs}
 
 \hypersetup{breaklinks=true}
 \urlstyle{same}
@@ -175,35 +176,38 @@ where $I(Class; Attribute)$ represents the mutual information between the class 
 
 Mutual information represents how much information, typically in terms of bits, knowledge of the attribute informs the prediction of the class.  In this model, both the attribute and the class are treated as random variables.  The entropy of a random variable is a measure of the uncertainty associated with it. After this information gained value was calculated for each feature, they were ranked in order of most important to least.  Table~\ref{tab:ranked_feats} shows the top twenty features from this analysis and the features' corresponding information gain.
 
+
+
 \begin{table}[H]
 \centering
 \caption{Top 20 features ranked by the information gain method}
 \label{tab:ranked_feats}
-\begin{tabular}{|l|l|c|}
-\hline
-Feature                                & Feature      & InfoGained \\\hline
-unique\_subjects\_received             & Traffic      & 0.728  \\
-total\_received\_signed                & Traffic      & 0.728  \\
-rec\_fw                                & Traffic      & 0.719  \\
-fg\_hubs                               & Graph        & 0.589  \\
-pg\_communicability\_cent              & Graph        & 0.554  \\
-pg\_comm\_between\_cent                & Graph        & 0.554  \\
-rec\_cc                                & Traffic      & 0.507  \\
-rec\_fw\_perc                          & Traffic      & 0.503  \\
-pg\_degree\_centrality                 & Graph        & 0.492  \\
-pg\_pagerank                           & Graph        & 0.492  \\
-pg\_current\_flow\_close\_cent         & Graph        & 0.492  \\
-avg\_rec\_per\_day                     & Traffic      & 0.489  \\
-avg\_emails\_per\_day                  & Traffic      & 0.479  \\
-pg\_avg\_shortest\_paths               & Graph        & 0.476  \\
-pg\_closeness\_centrality              & Graph        & 0.476  \\
-unique\_addresses\_rec\_signed         & Traffic      & 0.457  \\
-sent\_cc                               & Traffic      & 0.43   \\
-rec\_re                                & Traffic      & 0.43   \\
-avg\_sent\_per\_day                    & Traffic      & 0.404  \\ \hline
+\resizebox{0.5\textwidth}{!}{%
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Feature                                      & Feature Type & Ranker \\ \midrule
+unique\_subjects\_received                   & Traffic      & 0.728  \\
+total\_received\_signed                      & Traffic      & 0.728  \\
+rec\_fw                                      & Traffic      & 0.719  \\
+fg\_hubs                                     & Graph        & 0.589  \\
+pg\_communicability\_centrality              & Graph        & 0.554  \\
+pg\_communicability\_betweenness\_centrality & Graph        & 0.554  \\
+rec\_cc                                      & Traffic      & 0.507  \\
+rec\_fw\_perc                                & Traffic      & 0.503  \\
+pg\_degree\_centrality                       & Graph        & 0.492  \\
+pg\_pagerank                                 & Graph        & 0.492  \\
+pg\_current\_flow\_closeness\_centrality     & Graph        & 0.492  \\
+avg\_rec\_per\_day                           & Traffic      & 0.489  \\
+avg\_emails\_per\_day                        & Traffic      & 0.479  \\
+pg\_avg\_shortest\_paths                     & Graph        & 0.476  \\
+pg\_colseness\_centrality                    & Graph        & 0.476  \\
+unique\_addresses\_received\_signed          & Traffic      & 0.457  \\
+sent\_cc                                     & Traffic      & 0.43   \\
+rec\_re                                      & Traffic      & 0.43   \\
+avg\_sent\_per\_day                          & Traffic      & 0.404  \\ \bottomrule
 \end{tabular}
+}
 \end{table}
-
 
 \section{Results} \label{Results}
 
