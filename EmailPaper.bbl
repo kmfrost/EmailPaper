@@ -6,10 +6,9 @@ Eman~M. Bahgat, Sherine Rady, and Walaa Gad.
 \newblock An {E}-mail {Filtering} {Approach} {Using} {Classification}
   {Techniques}.
 \newblock In Tarek Gaber, Aboul~Ella Hassanien, Nashwa El-Bendary, and Nilanjan
-  Dey, editors, {\em The 1st {International} {Conference} on {Advanced}
-  {Intelligent} {System} and {Informatics} ({AISI}2015), {November} 28-30,
-  2015, {Beni} {Suef}, {Egypt}}, volume 407, pages 321--331. Springer
-  International Publishing, Cham, 2016.
+  Dey, editors, {\em {AISI}2015, {November} 28-30, 2015, {Beni} {Suef},
+  {Egypt}}, volume 407, pages 321--331. Springer International Publishing,
+  Cham, 2016.
 
 \bibitem[\protect\citeauthoryear{Borgatti and
   Halgin}{2011}]{borgatti2011analyzing}
@@ -51,16 +50,13 @@ Linton~C. Freeman.
   }{2014}]{he_novel_2014}
 Bin He, Zefeng Li, and Nan Yang.
 \newblock A {Novel} {Approach} for {Email} {Clustering} {Based} on {Semantics}.
-\newblock In {\em Web {Information} {System} and {Application} {Conference}
-  ({WISA}), 2014 11th}, pages 269--272, September 2014.
+\newblock In {\em {WISA}, 2014}, pages 269--272, September 2014.
 
 \bibitem[\protect\citeauthoryear{Hu \bgroup \em et al.\egroup
   }{2012}]{hu_towards_2012}
 Qi~Hu, S.~Bao, Jingmin Xu, Wenli Zhou, Min Li, and Heyuan Huang.
 \newblock Towards building effective email recipient recommendation service.
-\newblock In {\em 2012 {IEEE} {International} {Conference} on {Service}
-  {Operations} and {Logistics}, and {Informatics} ({SOLI})}, pages 398--403,
-  July 2012.
+\newblock In {\em {SOLI} 2012}, pages 398--403, July 2012.
 
 \bibitem[\protect\citeauthoryear{Keila and
   Skillicorn}{2005}]{keila_structure_2005}
@@ -136,8 +132,7 @@ Jari Saramäki, Mikko Kivelä, Jukka-Pekka Onnela, Kimmo Kaski, and János
 R.~Shams and R.E. Mercer.
 \newblock Classifying {Spam} {Emails} {Using} {Text} and {Readability}
   {Features}.
-\newblock In {\em 2013 {IEEE} 13th {International} {Conference} on {Data}
-  {Mining} ({ICDM})}, pages 657--666, December 2013.
+\newblock In {\em {ICDM} 2013}, pages 657--666, December 2013.
 
 \bibitem[\protect\citeauthoryear{Shetty and Adibi}{2004a}]{shetty_enron_2004}
 Jitesh Shetty and Jafar Adibi.
@@ -191,8 +186,7 @@ K.~Krasnow Waterman and Paula~J. Bruening.
 Garnett Wilson and Wolfgang Banzhaf.
 \newblock Discovery of email communication networks from the {Enron} corpus
   with a genetic algorithm using social network analysis.
-\newblock In {\em Evolutionary {Computation}, 2009. {CEC}'09. {IEEE} {Congress}
-  on}, pages 3256--3263. IEEE, 2009.
+\newblock In {\em {CEC}'09}, pages 3256--3263. IEEE, 2009.
 
 \bibitem[\protect\citeauthoryear{Yelupula and
   Ramaswamy}{2008}]{yelupula_social_2008}
