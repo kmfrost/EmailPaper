@@ -5,3 +5,5 @@
 *.out
 ijcai*
 *.gz
+*.bbl
+*.blg
