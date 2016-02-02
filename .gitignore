@@ -1,1 +1,5 @@
 *.bak
+*.pdf
+*.log
+*.aux
+*.out
