@@ -32,7 +32,7 @@
 
 \begin{document}
 \title{Data Mining Academic Emails to Model Employee Behaviors and Analyze Organizational Structure}
-\author{Classification, Data Mining, Ensemble Methods, Feature Selection/Construction, AI and Social Sciences}
+\author{IJCAI-16 Submission 2354}
 \maketitle
 
 \begin{abstract}
@@ -165,7 +165,7 @@ Random forests are an ensemble method of machine learning, comprised of many ran
         \label{fig:ex_tree}
 \end{figure}
 
-Random forests build many deep random trees with slight random variations.  Individually, these random trees will overfit the data.  However, these many random trees are combined through a process of bootstrap aggregating, or bagging.  This process involves each random tree generating a new training data set by sampling observations from the input training set with replacement.  These subsamples are used to build the random trees.  For this analysis, each of the 750 trees selects $\frac{2N}{3}$ samples to train the trees where $N$ is the number of data points in the overall training set.  Just as the samples were subsampled, so were the features.  Only this subset of features can be used as rules for that tree.  In this implementation, each tree used a subsample of 15 random features.
+Random forests build many deep random trees with slight random variations.  Individually, these random trees will overfit the data.  However, these many random trees are combined through a process of bootstrap aggregating, or bagging.  In random trials, 750 trees per forest performed optimally for the data.  Therefore, this value was used throughout the analysis.  The bagging process involves each random tree generating a new training data set by sampling observations from the input training set with replacement.  These subsamples are used to build the random trees.  For this analysis, each tree selects $\frac{2N}{3}$ samples to train the trees where $N$ is the number of data points in the overall training set.  Just as the samples were subsampled, so were the features.  Only this subset of features can be used as rules for that tree.  In this implementation, each tree used a subsample of 15 random features.
 
 After all the trees are built, the test data is run through all the random trees in the forest.  Each tree outputs a prediction label for each data point, and the majority vote on each sample is the final predicted label.  Using this random forest model reduces the overall variance and increases the accuracy of the model compared to a single random tree.
 
@@ -183,29 +183,29 @@ Mutual information represents how well knowledge of the attribute informs the pr
 \centering
 \caption{Top 20 features ranked by the information gain method.}
 \label{tab:ranked_feats}
-\resizebox{0.5\textwidth}{!}{%
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}lrr@{}}
 \toprule
 Feature                                      & Type         & Ranker \\ \midrule
-unique\_subjects\_received                   & Traffic      & 0.728  \\
-total\_received\_signed                      & Traffic      & 0.728  \\
-rec\_fw                                      & Traffic      & 0.719  \\
-fg\_hubs                                     & Graph        & 0.589  \\
-pg\_communicability\_centrality              & Graph        & 0.554  \\
-pg\_communicability\_betweenness\_centrality & Graph        & 0.554  \\
-rec\_cc                                      & Traffic      & 0.507  \\
-rec\_fw\_perc                                & Traffic      & 0.503  \\
-pg\_degree\_centrality                       & Graph        & 0.492  \\
-pg\_pagerank                                 & Graph        & 0.492  \\
-pg\_current\_flow\_closeness\_centrality     & Graph        & 0.492  \\
-avg\_rec\_per\_day                           & Traffic      & 0.489  \\
-avg\_emails\_per\_day                        & Traffic      & 0.479  \\
-pg\_avg\_shortest\_paths                     & Graph        & 0.476  \\
-pg\_colseness\_centrality                    & Graph        & 0.476  \\
-unique\_addresses\_received\_signed          & Traffic      & 0.457  \\
-sent\_cc                                     & Traffic      & 0.43   \\
-rec\_re                                      & Traffic      & 0.43   \\
-avg\_sent\_per\_day                          & Traffic      & 0.404  \\ \bottomrule
+Unique subjects received                     & Traffic      & 0.728  \\
+Total signed emails received                 & Traffic      & 0.728  \\
+Number of emails received as forwards        & Traffic      & 0.719  \\
+Full graph hubs                              & Graph        & 0.589  \\
+Partial graph communicability centrality     & Graph        & 0.554  \\
+PG communicability betweenness centrality    & Graph        & 0.554  \\
+Number of emails received as CC              & Traffic      & 0.507  \\
+Percentage of emails received as forwards    & Traffic      & 0.503  \\
+Partial graph degree centrality              & Graph        & 0.492  \\
+Partial graph pagerank                       & Graph        & 0.492  \\
+PG current flow closeness centrality         & Graph        & 0.492  \\
+Average number of emails received per day    & Traffic      & 0.489  \\
+Average total emails per day                 & Traffic      & 0.479  \\
+Partial graph average shortest paths         & Graph        & 0.476  \\
+Partial graph closeness centrality           & Graph        & 0.476  \\
+Unique email addresses from signed emails    & Traffic      & 0.457  \\
+Number of emails sent as CC                  & Traffic      & 0.43   \\
+Number of emails received as replies         & Traffic      & 0.43   \\
+Average emails sent per day                  & Traffic      & 0.404  \\ \bottomrule
 \end{tabular}
 }
 \end{table}
@@ -226,7 +226,7 @@ Data was split by randomly assigning each email to either the training or testin
 
 Note that this method relies on some assumptions.  One is that employees with the same title exhibit similar email behavior.  Overall, based on the success of the algorithm and the distributions of the histograms, this seems to prove true.  Another premise underlying this analysis is that peoples' email behaviors are consistent over time.  This seems to be true as well for the time range in this study.
 
-To determine which features were necessary to the analysis, the algorithm was run several times with a subset of the features.  The first subset used only the top 20 features from Table~\ref{tab:ranked_feats}.  Using only these features resulted in 3 classification errors, or 95.6\% accuracy.  This is only one more error than was found using all 98 features.  For each subsequent run, the least useful feature according to the feature analysis was removed from the input to the system until only one feature remained.  A plot of this analysis is shown below in Figure \ref{fig:feat_analysis}  Even using just the top thee features resulted in classification accuracy over 80\%.  Therefore, a very good classifier can be built using much fewer features if the features are selected properly.
+To determine which features were necessary to the analysis, the algorithm was run several times with a subset of the features.  The first subset used only the top 20 features from Table~\ref{tab:ranked_feats}.  Using only these features resulted in 3 classification errors, or 95.6\% accuracy.  This is only one more error than was found using all 98 features.  For each subsequent run, the least useful feature according to the feature analysis was removed from the input to the system until only one feature remained.  A plot of this analysis is shown below in Figure \ref{fig:feat_analysis}.  Even using just the top thee features resulted in classification accuracy over 80\%.  Therefore, a very good classifier can be built using much fewer features if the features are selected properly.
 \begin{figure}[H]
     \centering
         \includegraphics[width=0.5\textwidth]{FeatureAnalysis}
