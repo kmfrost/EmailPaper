@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.22)  1 FEB 2016 13:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.5.22)  1 FEB 2016 17:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -218,7 +218,6 @@ File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Option `draft' set `true' on input line 4319.
 Package hyperref Info: Hyper figures OFF on input line 4443.
 Package hyperref Info: Link nesting OFF on input line 4448.
 Package hyperref Info: Hyper index ON on input line 4451.
@@ -418,11 +417,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box35
-
-
-Package hyperref Warning: Draft mode on.
-
 Package hyperref Info: Link coloring OFF on input line 32.
+
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
@@ -434,6 +430,11 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 32.
 LaTeX Info: Redefining \pageref on input line 32.
 LaTeX Info: Redefining \nameref on input line 32.
+
+(./EmailPaper.out) (./EmailPaper.out)
+\@outlinefile=\write5
+\openout5 = `EmailPaper.out'.
+
 \c@lstlisting=\count126
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
@@ -458,11 +459,6 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 
 LaTeX Warning: No \author given.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 41--43
-
- []
-
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¸ in font ptmr7t!
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
@@ -470,78 +466,97 @@ Missing character: There is no ¸ in font ptmr7t!
 
 
 ]
-Underfull \hbox (badness 7081) in paragraph at lines 55--56
+Underfull \hbox (badness 7081) in paragraph at lines 54--55
 []\OT1/ptm/m/n/10 Using fea-tures ex-tracted from email meta-data,
  []
 
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 68.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 67.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 68.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 67.
 
-Overfull \hbox (37.20462pt too wide) in paragraph at lines 85--93
- [][] 
- []
-
-[2]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 100.
- <Pictures/Unique_subjects_rec_hist.png, id=14, 956.82469pt x 498.36188pt>
-File: Pictures/Unique_subjects_rec_hist.png Graphic file (type png)
-
-<use Pictures/Unique_subjects_rec_hist.png>
-Package pdftex.def Info: Pictures/Unique_subjects_rec_hist.png used on input li
-ne 110.
-(pdftex.def)             Requested size: 234.8775pt x 122.33165pt.
-
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 110--111
+Overfull \hbox (37.20462pt too wide) in paragraph at lines 84--92
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3 <./Pictures/Unique_subjects_rec_hist.png>]
-<Pictures/adj_matrix.png, id=19, 1861.95625pt x 1059.96pt>
+ [2]
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 99.
+
+<Pictures/Unique_subjects_rec_hist.png, id=119, 956.82469pt x 498.36188pt>
+File: Pictures/Unique_subjects_rec_hist.png Graphic file (type png)
+
+<use Pictures/Unique_subjects_rec_hist.png>
+Package pdftex.def Info: Pictures/Unique_subjects_rec_hist.png used on input li
+ne 109.
+(pdftex.def)             Requested size: 234.8775pt x 122.33165pt.
+
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 109--110
+ [][] 
+ []
+
+[3pdfTeX warning (ext4): destination with the same identifier (name{figure.1}) 
+has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.115 
+       <./Pictures/Unique_subjects_rec_hist.png>]
+<Pictures/adj_matrix.png, id=128, 1861.95625pt x 1059.96pt>
 File: Pictures/adj_matrix.png Graphic file (type png)
 
 <use Pictures/adj_matrix.png>
-Package pdftex.def Info: Pictures/adj_matrix.png used on input line 123.
+Package pdftex.def Info: Pictures/adj_matrix.png used on input line 122.
 (pdftex.def)             Requested size: 234.8775pt x 133.70769pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 123--124
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 122--123
  [][] 
  []
 
 Missing character: There is no Ã in font ptmr7t!
 Missing character: There is no ¤ in font ptmr7t!
-<Pictures/Hubs_hist.png, id=20, 866.48718pt x 489.32813pt>
+<Pictures/Hubs_hist.png, id=134, 866.48718pt x 489.32813pt>
 File: Pictures/Hubs_hist.png Graphic file (type png)
 
 <use Pictures/Hubs_hist.png>
-Package pdftex.def Info: Pictures/Hubs_hist.png used on input line 140.
+Package pdftex.def Info: Pictures/Hubs_hist.png used on input line 139.
 (pdftex.def)             Requested size: 234.8775pt x 132.63554pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 140--141
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 139--140
  [][] 
  []
 
-[4 <./Pictures/adj_matrix.png> <./Pictures/Hubs_hist.png>]
-<Pictures/3_level_tree.png, id=30, 1861.95625pt x 1059.96pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4pdfTeX warning (ext4): destination with the same identifier (name{figure.2})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.143 
+       <./Pictures/adj_matrix.png>]
+<Pictures/3_level_tree.png, id=158, 1861.95625pt x 1059.96pt>
 File: Pictures/3_level_tree.png Graphic file (type png)
 
 <use Pictures/3_level_tree.png>
-Package pdftex.def Info: Pictures/3_level_tree.png used on input line 156.
+Package pdftex.def Info: Pictures/3_level_tree.png used on input line 155.
 (pdftex.def)             Requested size: 234.8775pt x 133.70769pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 156--157
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 155--156
  [][] 
  []
 
 
-Overfull \hbox (8.8459pt too wide) detected at line 166
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (8.8459pt too wide) detected at line 165
 []\OML/cmm/m/it/10 I\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 Class\OT1/cmr/m/n/10 ; \O
 ML/cmm/m/it/10 Attribute\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 H\OT1/cmr/m/n/10 (
 \OML/cmm/m/it/10 Class\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 ^^@ \OML/cmm/m/it/10 H
@@ -549,42 +564,61 @@ ML/cmm/m/it/10 Attribute\OT1/cmr/m/n/10 ) = \OML/cmm/m/it/10 H\OT1/cmr/m/n/10 (
 bute\OT1/cmr/m/n/10 )
  []
 
+[5pdfTeX warning (ext4): destination with the same identifier (name{figure.3}) 
+has been already used, duplicate ignored
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.168 M
+       utual information represents how much information, typically in terms...
+pdfTeX warning (ext4): destination with the same identifier (name{figure.4}) ha
+s been already used, duplicate ignored
 
- [5 <./Pictures/3_level_tree.png>]
-<Pictures/Prediction_50_50_RF.jpg, id=34, 520.94624pt x 307.1475pt>
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.168 M
+       utual information represents how much information, typically in terms...
+ <./Pictures/Hubs_hist.png> <./Pictures/3_level_tree.png>]
+<Pictures/Prediction_50_50_RF.jpg, id=176, 520.94624pt x 307.1475pt>
 File: Pictures/Prediction_50_50_RF.jpg Graphic file (type jpg)
 
 <use Pictures/Prediction_50_50_RF.jpg>
 Package pdftex.def Info: Pictures/Prediction_50_50_RF.jpg used on input line 20
-8.
+7.
 (pdftex.def)             Requested size: 234.8775pt x 138.48222pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 208--209
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 207--208
  [][] 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-<Pictures/FeatureAnalysis.png, id=35, 441.14813pt x 251.43938pt>
+<Pictures/FeatureAnalysis.png, id=178, 441.14813pt x 251.43938pt>
 File: Pictures/FeatureAnalysis.png Graphic file (type png)
 
 <use Pictures/FeatureAnalysis.png>
-Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 219.
+Package pdftex.def Info: Pictures/FeatureAnalysis.png used on input line 218.
 (pdftex.def)             Requested size: 234.8775pt x 133.87225pt.
 
-Overfull \hbox (9.03374pt too wide) in paragraph at lines 219--220
+Overfull \hbox (9.03374pt too wide) in paragraph at lines 218--219
  [][] 
  []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [6 <./Pictures/Prediction_50_50_RF.jpg>] [7 <./Pictures/FeatureAnalysis.png>]
-(./EmailPaper.bbl
+ [6pdfTeX warning (ext4): destination with the same identifier (name{figure.5})
+ has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.222 
+       <./Pictures/Prediction_50_50_RF.jpg>] [7pdfTeX warning (ext4): destinati
+on with the same identifier (name{figure.6}) has been already used, duplicate i
+gnored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.231 \clearpage
+                 <./Pictures/FeatureAnalysis.png>] (./EmailPaper.bbl
 Underfull \hbox (badness 6078) in paragraph at lines 16--20
 []\OT1/ptm/m/n/10 Stephen P Bor-gatti and
  []
@@ -639,12 +673,14 @@ Underfull \hbox (badness 5893) in paragraph at lines 128--133
 
 
 Underfull \hbox (badness 1062) in paragraph at lines 150--156
-\OT1/ptm/m/n/10 isi . edu / []adibi / Enron / Enron[]Employee[]Status . xls$].
+\OT1/ptm/m/n/10 isi . edu / []adibi / Enron / Enron[]Employee[]Status . xls$[]]
+.
  []
 
 
 Underfull \hbox (badness 2717) in paragraph at lines 150--156
-[]\OT1/ptm/m/n/10 Internet Archive[].[$https : / / web . archive . org / web /
+[]\OT1/ptm/m/n/10 Internet Archive[].[[]$https : / / web . archive . org / web 
+/
  []
 
 [8
@@ -665,24 +701,26 @@ Underfull \hbox (badness 1418) in paragraph at lines 199--203
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 240.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 237.
  [9
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 240.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 237.
  (./EmailPaper.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 240.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 240.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 240.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 237.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 237.
+Package rerunfilecheck Info: File `EmailPaper.out' has not changed.
+(rerunfilecheck)             Checksum: 18AA5F6C04F4D19AEAE4B60A1B98ED62;618.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 237.
  ) 
 Here is how much of TeX's memory you used:
- 8456 strings out of 494985
- 120509 string characters out of 6180356
- 219816 words of memory out of 5000000
- 11535 multiletter control sequences out of 15000+600000
+ 8536 strings out of 494985
+ 121728 string characters out of 6180356
+ 222277 words of memory out of 5000000
+ 11548 multiletter control sequences out of 15000+600000
  21968 words of font info for 62 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 29i,11n,35p,1335b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 29i,11n,35p,1341b,413s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
@@ -693,10 +731,10 @@ sfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><
 /usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on EmailPaper.pdf (9 pages, 284539 bytes).
+Output written on EmailPaper.pdf (9 pages, 291226 bytes).
 PDF statistics:
- 84 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 31 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 257 PDF objects out of 1000 (max. 8388607)
+ 224 compressed objects within 3 object streams
+ 62 named destinations out of 1000 (max. 500000)
+ 119 words of extra memory for PDF output out of 10000 (max. 10000000)
 
