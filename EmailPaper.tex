@@ -24,6 +24,8 @@
 \usepackage{paralist}
 \usepackage{booktabs}
 
+\usepackage[font=small,labelfont=bf]{caption}
+
 \hypersetup{breaklinks=true}
 \urlstyle{same}
 
@@ -79,8 +81,6 @@ The following is the metadata provided from each email:
 \item Number of attachments
 \end{compactitem}
 
-Table~\ref{tab:db_stats} compares statistics between this internal dataset and the Enron corpus.  This internal database is more modern, contains more emails, and covers a longer time period.  However, it is comprised of fewer people than the Enron dataset.
-
 \begin{table}[H]
 \centering
 \caption{A comparison between the internal dataset and the Enron email corpus.}
@@ -97,7 +97,11 @@ Distinct Emails    & 585,096         & 252,759       \\ \bottomrule
 }
 \end{table}
 
+
+Table~\ref{tab:db_stats} compares statistics between this internal dataset and the Enron corpus.  This internal database is more modern, contains more emails, and covers a longer time period.  However, it is comprised of fewer people than the Enron dataset.
+
 While the study includes only 37 volunteers, the email metadata from these volunteers identified 32 additional employees of the center.  These additional employees were included in the study when ground truth for their job was available and when they were identified in at least 100 email metadata records.  This provides 69 total employees in the study.
+
 
 \section{Features} \label{Features}
 The study includes 98 features that were extracted from the email data: 67 traffic-based and 31 social-based.  The traffic-based features are those calculated purely from the collected email metadata.  The social features, on the other hand, first model the email patterns in a graphical network and then calculate statistics from this model.  In the following sections, all features from each of the two categories are described. 
@@ -112,7 +116,7 @@ The features above in general involved raw email counts.  To normalize some of t
 The best traffic-based feature for predicting employee status was the number of unique subjects received.  This is deemed best because it produces the highest information gain in the feature ranker described in Section~\ref{Analysis}.  This number represents the number of distinct conversations in which an individual was involved.  It is intuitive that people who are involved in more conversations are higher in an organization.  This feature is shown in the histogram in Figure~\ref{fig:traffic_ex_hist}.  It is clear from the figure that GradStudents participated in far fewer email conversations than any other group.  Researchers generated more emails on average, but fewer than the Program Managers.  The directors of the center participate in the most email conversations, by far. 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.5\textwidth]{Unique_subjects_rec_hist}
+        \includegraphics[width=\columnwidth,trim={1mm 20mm 1mm 2mm},clip]{Unique_subjects_rec_hist}
         \caption{Histogram of unique subjects received by job title.  The feature value for this plot has been normalized so that all values fall between 0 and 1.  Note that by using different thresholds, meaningful splits in the data can be made.  For example, all but two graduate students have a value less than $0.1$.}
         \label{fig:traffic_ex_hist}
 \end{figure}
@@ -125,9 +129,10 @@ In addition to tracking metadata statistics, features are also derived from mode
 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.5\textwidth]{adj_matrix}
-        \caption{The adjacency matrix representing the social connections of the center.  This graph is very well connected with just one component.  Nonetheless, there are groups who never exchanged a single email.}
-        \label{fig:adj_matrix}
+    \includegraphics[width=\columnwidth,trim={4mm .5mm 0mm 5mm},clip]{adj_matrix}
+    \vspace{-17pt}
+    \caption{The adjacency matrix representing the social connections of the center.  This graph is very well connected with just one component.  Nonetheless, there are groups who never exchanged a single email.}
+    \label{fig:adj_matrix}
 \end{figure}
 
 With this representation, several statistics can be calculated about the people in the graph.  The average neighbor degree was calculated for both the partial and the full graph.  The degree of a node $i$ is the number of other nodes connected to node $i$.  Therefore for a node $i$, this metric averages the degree of each node in the neighborhood of $i$, that is all nodes connected to $i$.  Mathematically, this is:
@@ -140,7 +145,8 @@ The distances between nodes were also used to generate some features.  The avera
 Some of the social features were based on existing graph theory concepts and algorithms. If a subgraph of a graph $G$ is maximally connected, that is all nodes are connected directly to each other, then this is called a clique.  The number of cliques to which a node belongs was used as a feature.  The hubs and authorities of each node in both graphs were calculated.  The terms hubs and authorities come from the Hyperlink-Induced Topic Search (HITS algorithm) developed by~\cite{kleinberg_hubs_1999}.  This algorithm was originally designed to rate web pages, but has since been applied to social networks. A node's authority is just that\textemdash{}a measure of its importance over other nodes.  A node's hub score is a measure of how well-connected it is to other nodes.  The histogram of hub values in the full graph broken down by class is shown in Figure~\ref{fig:social_ex_hist}.  
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.5\textwidth]{Hubs_hist}
+        \includegraphics[width=\columnwidth,trim={.6mm 2mm 0.6mm 3mm},clip]{Hubs_hist}
+        \vspace{-17pt}
         \caption{Histogram of hubs from social graph by job title.  Note that directors on average have the highest hub score and graduate students have the lowest.  In fact, three out of eight directors can be identified by filtering samples on full graph hubs values $>0.6$. }
         \label{fig:social_ex_hist}
 \end{figure}
@@ -160,9 +166,10 @@ Due to the large number of features and relatively low number of participants, a
 Random forests are an ensemble method of machine learning, comprised of many random trees.  A random tree is a machine learning algorithm that uses training data to learn a series of rules for classification.  These rules are constructed in a hierarchy that visually resembles a tree.  Each decision is based on what rule will maximize the information gained.  An example random tree with depth three (i.e., it has three levels of rules) is shown below in Figure~\ref{fig:ex_tree}.
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.5\textwidth]{3_level_tree}
-        \caption{Example random tree of depth 3.  This demonstrates how just a few simple rules can be used to find significant class divisions within the data.}
-        \label{fig:ex_tree}
+    \includegraphics[width=\columnwidth,trim={0mm 2.5mm 0mm 2mm},clip]{3_level_tree}
+    \vspace{-15pt}
+    \caption{Example random tree of depth 3.  This demonstrates how just a few simple rules can be used to find significant class divisions within the data.}
+    \label{fig:ex_tree}
 \end{figure}
 
 Random forests build many deep random trees with slight random variations.  Individually, these random trees will overfit the data.  However, these many random trees are combined through a process of bootstrap aggregating, or bagging.  This process involves each random tree generating a new training data set by sampling observations from the input training set with replacement.  These subsamples are used to build the random trees.  For this analysis, each of the 750 trees selects $\frac{2N}{3}$ samples to train the trees where $N$ is the number of data points in the overall training set.  Just as the samples were subsampled, so were the features.  Only this subset of features can be used as rules for that tree.  In this implementation, each tree used a subsample of 15 random features.
@@ -183,7 +190,7 @@ Mutual information represents how well knowledge of the attribute informs the pr
 \centering
 \caption{Top 20 features ranked by the information gain method.}
 \label{tab:ranked_feats}
-\resizebox{0.5\textwidth}{!}{%
+\resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}lrr@{}}
 \toprule
 Feature                                      & Feature Type & Ranker \\ \midrule
@@ -219,9 +226,10 @@ Data was split by randomly assigning each email to either the training or testin
 
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.5\textwidth]{Prediction_50_50_RF}
-        \caption{The Random Forest algorithm was extremely accurate even for very uneven class sizes.  Note that all members of 4 classes were labelled perfectly.  There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.}
-        \label{fig:result_hist}
+    \includegraphics[width=\columnwidth,trim={1mm 2mm 1mm 3mm},clip]{Prediction_50_50_RF}
+    \vspace{-20pt}
+    \caption{The Random Forest algorithm was extremely accurate even for very uneven class sizes.  Note that all members of 4 classes were labelled perfectly.  There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.}
+    \label{fig:result_hist}
 \end{figure}
 
 Note that this method relies on some assumptions.  One is that employees with the same title exhibit similar email behavior.  Overall, based on the success of the algorithm and the distributions of the histograms, this seems to prove true.  Another premise underlying this analysis is that peoples' email behaviors are consistent over time.  This seems to be true as well for the time range in this study.
@@ -229,7 +237,8 @@ Note that this method relies on some assumptions.  One is that employees with th
 To determine which features were necessary to the analysis, the algorithm was run several times with a subset of the features.  The first subset used only the top 20 features from Table~\ref{tab:ranked_feats}.  Using only these features resulted in 3 classification errors, or 95.6\% accuracy.  This is only one more error than was found using all 98 features.  For each subsequent run, the least useful feature according to the feature analysis was removed from the input to the system until only one feature remained.  A plot of this analysis is shown below in Figure \ref{fig:feat_analysis}  Even using just the top thee features resulted in classification accuracy over 80\%.  Therefore, a very good classifier can be built using much fewer features if the features are selected properly.
 \begin{figure}[H]
     \centering
-        \includegraphics[width=0.5\textwidth]{FeatureAnalysis}
+        \includegraphics[width=.9\columnwidth,trim={1mm 6mm 1mm 3.5mm},clip]{FeatureAnalysis}
+        \vspace{-7pt}
         \caption{Prediction accuracy compared to number of features used for analysis.  Note that the accuracy is still very high, 95.6\%, when only twenty features are used.  The outcome of using only the top twenty features produces three classification errors, only one more than using the full set of 98 features. }
         \label{fig:feat_analysis}
 \end{figure}
