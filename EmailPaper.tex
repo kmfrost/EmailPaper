@@ -116,7 +116,7 @@ The features above in general involved raw email counts.  To normalize some of t
 The best traffic-based feature for predicting employee status was the number of unique subjects received.  This is because it produces the highest information gain in the feature ranker described in Section~\ref{Analysis}.  This number represents the number of distinct conversations in which an individual was involved.  It is intuitive that people who are involved in more conversations are higher in an organization.  This feature is shown in the histogram in Figure~\ref{fig:traffic_ex_hist}.  It is clear from the figure that GradStudents participated in far fewer email conversations than any other group.  Researchers generated more emails on average, but fewer than the Program Managers.  The directors of the center participate in the most email conversations. 
 \begin{figure}[t]
     \centering
-        \includegraphics[width=\columnwidth,trim={1mm 20mm 1mm 2mm},clip]{Unique_subjects_rec_hist}
+        \includegraphics[width=\columnwidth,trim={1mm 5mm 1mm 2mm},clip]{Unique_subjects_rec_hist}
         \caption{Histogram of unique subjects received by job title.  The feature value for this plot has been normalized so that all values fall between 0 and 1.  Note that by using different thresholds, meaningful splits in the data can be made.  For example, all but two graduate students have a value less than $0.1$.}
         \label{fig:traffic_ex_hist}
 \end{figure}
