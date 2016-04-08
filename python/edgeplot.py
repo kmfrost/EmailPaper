@@ -55,7 +55,10 @@ def edge2mat(edges,people):
 
 def makeplot(data,people):
     fig, ax = plt.subplots()
-    heatmap = ax.pcolor(data, cmap=plt.cm.Greys)
+    #heatmap = ax.pcolor(data, cmap=plt.get_cmap("Blues"))
+#    heatmap = ax.pcolor(data, cmap=plt.cm.seismic)
+#    heatmap = ax.pcolor(data, cmap=plt.cm.nipy_spectral)
+    heatmap = ax.pcolor(data, cmap=plt.cm.jet)
 
 
     # put the major ticks at the middle of each cell
@@ -69,6 +72,12 @@ def makeplot(data,people):
     ax.set_xticklabels(people, minor=False, rotation='vertical')
     ax.set_yticklabels(people, minor=False)
 
+    ax=plt.gca() #get the current axes
+    PCM=ax.get_children()[2] #get the mappable, the 1st and the 2nd are the x and y axes
+    cb = plt.colorbar(PCM, ax=ax) 
+    cb.set_label(r'Emails Sent ($\log_{10}$ scale)')
+
+    
 if __name__=='__main__':
     edges=read_edgelist()
     jobs=read_job()
