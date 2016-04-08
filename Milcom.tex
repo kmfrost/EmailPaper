@@ -12,7 +12,6 @@
 \usepackage{xcolor}
 \usepackage{float}
 \usepackage{comment}
-\restylefloat{table}
 \usepackage{listings}
 \usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
@@ -28,13 +27,32 @@
 
 \hypersetup{breaklinks=true}
 \urlstyle{same}
+%-----------------------------------------------------------------
+\let\labelindent\relax %% Fixes labelindent error in IEETran Class
+\usepackage{enumitem}
+\setlist[enumerate]{leftmargin = 9pt}
+\setlist[itemize]{leftmargin = 8pt}
+%-----------------------------------------------------------------
+\setlength{\skip\footins}{0.15cm}
 
 
 \graphicspath{{Pictures/}}
 
 \begin{document}
-\title{Data Mining Academic Emails to Model Employee Behaviors and Analyze Organizational Structure}
-\author{IJCAI-16 Submission 2354}
+    
+\setlength\belowdisplayskip{1.5pt}
+\setlength\abovedisplayskip{1.5pt}
+\allowdisplaybreaks
+
+	\sloppy
+    
+    \title{Data Mining Academic Emails to Model Employee Behaviors and Analyze Organizational Structure\vspace{-7.5pt}}
+    \author{\IEEEauthorblockN{Kayla M. Straub, Joseph M. Ernst, William C. Headley, Robert W. McGwier}
+        \IEEEauthorblockA{Hume Center for National Security and Technology,\\
+            Department of ECE, Virginia Tech, Blacksburg, VA 24060, USA \\
+            Email: kstraub@vt.edu, jmernst@vt.edu, cheadley@vt.edu, rwmcgwi@vt.edu}
+        \vspace{-30pt} }
+    
 \maketitle
 
 \begin{abstract}
@@ -91,7 +109,7 @@ The following is the metadata provided from each email:
                    & Center          & Enron         \\ \midrule
 Time               & 11/2012-11/2015 & 1/2000-9/2002 \\
 Distinct Addresses & 32,118          & 75,406        \\
-Participants       & 32              & 249           \\
+Participants       & 32              & 158           \\
 Distinct Emails    & 585,096         & 252,759       \\ \bottomrule
 \end{tabular}
 }
@@ -197,25 +215,25 @@ Feature                                      & Type         & Ranker \\ \midrule
 Unique subjects received                     & Traffic      & 0.728  \\
 Total signed emails received                 & Traffic      & 0.728  \\
 Number of emails received as forwards        & Traffic      & 0.719  \\
-Full graph hubs                              & Graph        & 0.589  \\
-Partial graph communicability centrality     & Graph        & 0.554  \\
-PG communicability betweenness centrality    & Graph        & 0.554  \\
+Full graph hubs                              & Social       & 0.589  \\
+Partial graph communicability centrality     & Social       & 0.554  \\
+PG communicability betweenness centrality    & Social       & 0.554  \\
 Number of emails received as CC              & Traffic      & 0.507  \\
 Percentage of emails received as forwards    & Traffic      & 0.503  \\
-Partial graph degree centrality              & Graph        & 0.492  \\
-Partial graph pagerank                       & Graph        & 0.492  \\
-PG current flow closeness centrality         & Graph        & 0.492  \\
+Partial graph degree centrality              & Social       & 0.492  \\
+Partial graph pagerank                       & Social       & 0.492  \\
+PG current flow closeness centrality         & Social       & 0.492  \\
 Average number of emails received per day    & Traffic      & 0.489  \\
 Average total emails per day                 & Traffic      & 0.479  \\
-Partial graph average shortest paths         & Graph        & 0.476  \\
-Partial graph closeness centrality           & Graph        & 0.476  \\
+Partial graph average shortest paths         & Social       & 0.476  \\
+Partial graph closeness centrality           & Social       & 0.476  \\
 Unique email addresses from signed emails    & Traffic      & 0.457  \\
 Number of emails sent as CC                  & Traffic      & 0.43   \\
 Number of emails received as replies         & Traffic      & 0.43   \\
 Average emails sent per day                  & Traffic      & 0.404  \\ \bottomrule
-\end{tabular}
-}
-\end{table}
+\end{tabular}    
+}\vspace{-10pt}
+\end{table} 
 
 \section{Results} \label{Results}
 
@@ -226,7 +244,7 @@ Data was split by randomly assigning each email to either the training or testin
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=\columnwidth,trim={1mm 2mm 1mm 3mm},clip]{Prediction_50_50_RF}
+    \includegraphics[width=\columnwidth,trim={1mm 2mm 1mm 3mm},clip]{Classification_confusion}
     \vspace{-20pt}
     \caption{The Random Forest algorithm was extremely accurate even for very uneven class sizes.  Note that all members of 4 classes were labelled perfectly.  There were only 2 errors out of 69 employees, both of which for employees who did not provide emails for the study.}
     \label{fig:result_hist}
@@ -255,7 +273,7 @@ This work presents a new dataset, approximately the size of Enron, that was coll
 
 \clearpage
 \Urlmuskip=0mu plus 1mu\relax
-\bibliographystyle{named}
+\bibliographystyle{IEEEtran}
 \bibliography{bib}
 
 
