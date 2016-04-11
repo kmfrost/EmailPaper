@@ -1,3 +1,4 @@
+import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
 import csv
@@ -5,12 +6,12 @@ import sys
 import re
 import numpy as np
 
-from math import log
+from math import log, exp
 
 #column_labels = list('ABCD')
 #row_labels = list('WXYZ')
 #data = np.random.rand(4,4)
-
+fontsize=20
 
 edges=[]
 
@@ -58,8 +59,8 @@ def makeplot(data,people):
     #heatmap = ax.pcolor(data, cmap=plt.get_cmap("Blues"))
 #    heatmap = ax.pcolor(data, cmap=plt.cm.seismic)
 #    heatmap = ax.pcolor(data, cmap=plt.cm.nipy_spectral)
-    heatmap = ax.pcolor(data, cmap=plt.cm.jet)
-
+#    heatmap = ax.pcolor(data, cmap=plt.cm.jet)
+    heatmap = ax.pcolor(data, cmap=plt.cm.viridis)
 
     # put the major ticks at the middle of each cell
     ax.set_xticks(np.arange(data.shape[0])+0.5, minor=False)
@@ -73,10 +74,17 @@ def makeplot(data,people):
     ax.set_yticklabels(people, minor=False)
 
     ax=plt.gca() #get the current axes
-    PCM=ax.get_children()[2] #get the mappable, the 1st and the 2nd are the x and y axes
+    PCM=ax.get_children()[0] #get the mappable
     cb = plt.colorbar(PCM, ax=ax) 
-    cb.set_label(r'Emails Sent ($\log_{10}$ scale)')
-
+    cb.set_label('Emails Sent')
+    text = cb.ax.yaxis.label
+    font = matplotlib.font_manager.FontProperties(size=fontsize)
+    text.set_font_properties(font)
+    ticks = [1,5,10,50,100,500,1000,3000]
+    ln_ticks = [log(x) for x in ticks]
+    cb.set_ticks(ln_ticks)
+    cb.set_ticklabels(ticks)
+    cb.ax.tick_params(labelsize=fontsize)
     
 if __name__=='__main__':
     edges=read_edgelist()
