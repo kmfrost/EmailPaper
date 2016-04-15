@@ -59,8 +59,8 @@ def makeplot(data,people):
     #heatmap = ax.pcolor(data, cmap=plt.get_cmap("Blues"))
 #    heatmap = ax.pcolor(data, cmap=plt.cm.seismic)
 #    heatmap = ax.pcolor(data, cmap=plt.cm.nipy_spectral)
-#    heatmap = ax.pcolor(data, cmap=plt.cm.jet)
-    heatmap = ax.pcolor(data, cmap=plt.cm.viridis)
+    heatmap = ax.pcolor(data, cmap=plt.cm.jet)
+#    heatmap = ax.pcolor(data, cmap=plt.cm.viridis)
 
     # put the major ticks at the middle of each cell
     ax.set_xticks(np.arange(data.shape[0])+0.5, minor=False)
@@ -104,8 +104,8 @@ if __name__=='__main__':
     for i in range(len(people_dict_sorted)):
         print people_dict_sorted[i]['role']
 
-    data=edge2mat(edges,map(lambda x:x['pid'],people_dict_sorted))
-    
-    makeplot(data,map(lambda x:x['role'],people_dict_sorted))
+#    data=edge2mat(edges,map(lambda x:x['pid'],people_dict_sorted))
+#    
+#    makeplot(data,map(lambda x:x['role'],people_dict_sorted))
 
     plt.show()
