@@ -1,7 +1,5 @@
 \documentclass[10pt,twocolumn,conference]{IEEEtran}
 \usepackage{times}
-\usepackage{ijcai16}
-\usepackage{times}
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amsthm, amssymb}
@@ -211,27 +209,27 @@ Mutual information represents how well knowledge of the attribute informs the pr
 \resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}lrr@{}}
 \toprule
-Feature                                      & Type         & Ranker \\ \midrule
-Unique subjects received                     & Traffic      & 0.728  \\
-Total signed emails received                 & Traffic      & 0.728  \\
-Number of emails received as forwards        & Traffic      & 0.719  \\
-Full graph hubs                              & Social       & 0.589  \\
-Partial graph communicability centrality     & Social       & 0.554  \\
-PG communicability betweenness centrality    & Social       & 0.554  \\
-Number of emails received as CC              & Traffic      & 0.507  \\
-Percentage of emails received as forwards    & Traffic      & 0.503  \\
-Partial graph degree centrality              & Social       & 0.492  \\
-Partial graph pagerank                       & Social       & 0.492  \\
-PG current flow closeness centrality         & Social       & 0.492  \\
+Feature                                      & Type         & Information Gain\\ \midrule
+Partial graph hubs                           & Social        & 0.589  \\
+Full graph hubs                              & Social        & 0.554  \\
+Number of emails received as forwards        & Traffic      & 0.554  \\
+Number of signed emails received             & Traffic      & 0.514  \\
+Number of signed emails received with unique subjects & Traffic & 0.514\\ 
+Partial graph current flow closeness centrality & Social    & 0.512  \\
+Partial graph pagerank                       & Social       & 0.512  \\
+Number of emails received as carbon copies   & Traffic      & 0.500  \\
+Number of emails received from Hume employees & Traffic	    & 0.492  \\
+Full graph current flow closeness centrality & Social       & 0.492  \\
+Full graph pagerank                          & Social       & 0.492  \\
 Average number of emails received per day    & Traffic      & 0.489  \\
-Average total emails per day                 & Traffic      & 0.479  \\
-Partial graph average shortest paths         & Social       & 0.476  \\
-Partial graph closeness centrality           & Social       & 0.476  \\
-Unique email addresses from signed emails    & Traffic      & 0.457  \\
-Number of emails sent as CC                  & Traffic      & 0.43   \\
-Number of emails received as replies         & Traffic      & 0.43   \\
-Average emails sent per day                  & Traffic      & 0.404  \\ \bottomrule
-\end{tabular}    
+Partial graph communicability centrality     & Social       & 0.486  \\
+Partial graph communicability betweenness centrality & Social & 0.486  \\
+Average number of emails per day (sent and received) & Traffic & 0.479    \\
+Number of emails sent to Hume employees      & Traffic	    & 0.476  \\
+Partial graph number of cliques              & Social       & 0.470  \\
+Percentage of emails received as forwards    & Traffic      & 0.451  \\
+Partial graph degree centrality				 & Social		& 0.448  \\
+Partial graph average shortest paths         & Social	    & 0.448  \\ \bottomrule\end{tabular}    
 }\vspace{-10pt}
 \end{table} 
 
@@ -271,7 +269,6 @@ To identify each employee's project manager ground truth is selected to be the p
 \section{Conclusions and Future Work} \label{Conclusions}
 This work presents a new dataset, approximately the size of Enron, that was collected from volunteers' emails with particular attention to protect participant privacy.  The new dataset includes accurate labels executed by researchers with knowledge of the center and its employees.  Statistics were calculated from this dataset, and were used with a random forest algorithm to automatically classify the center's employees.  Random Forests are shown to be powerful classifiers by predicting employee job titles with very high accuracy, even for employees for whom only secondhand data is available in the dataset.  Using only 3 features, employees are successfully classified higher than 80\% of the time and are classified over 95\% of the time when 20 features are used.  The email data was also used to show that emails could be used to predict an employee's primary program manager, but had a worse chance of being able to identify the director associated with the employee on the official organizational chart.  This work has shown that it is possible to generate important organizational information from using carefully processed email metadata without compromising the privacy of employees.  Future work will attempt to gain more insight into an organization's organic hierarchy and to apply these algorithms to other datasets to determine the general applicability of the results.
 
-\clearpage
 \Urlmuskip=0mu plus 1mu\relax
 \bibliographystyle{IEEEtran}
 \bibliography{bib}

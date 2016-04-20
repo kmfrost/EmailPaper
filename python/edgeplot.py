@@ -59,7 +59,7 @@ def makeplot(data,people):
     #heatmap = ax.pcolor(data, cmap=plt.get_cmap("Blues"))
 #    heatmap = ax.pcolor(data, cmap=plt.cm.seismic)
 #    heatmap = ax.pcolor(data, cmap=plt.cm.nipy_spectral)
-    heatmap = ax.pcolor(data, cmap=plt.cm.jet)
+    heatmap = ax.pcolor(data, cmap=plt.cm.gray)
 #    heatmap = ax.pcolor(data, cmap=plt.cm.viridis)
 
     # put the major ticks at the middle of each cell
