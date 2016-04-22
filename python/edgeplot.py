@@ -74,7 +74,7 @@ def makeplot(data,people):
     ax.set_yticklabels(people, minor=False)
 
     ax=plt.gca() #get the current axes
-    PCM=ax.get_children()[0] #get the mappable
+    PCM=ax.get_children()[3] #get the mappable
     cb = plt.colorbar(PCM, ax=ax) 
     cb.set_label('Emails Sent')
     text = cb.ax.yaxis.label
@@ -104,8 +104,8 @@ if __name__=='__main__':
     for i in range(len(people_dict_sorted)):
         print people_dict_sorted[i]['role']
 
-#    data=edge2mat(edges,map(lambda x:x['pid'],people_dict_sorted))
+    data=edge2mat(edges,map(lambda x:x['pid'],people_dict_sorted))
 #    
-#    makeplot(data,map(lambda x:x['role'],people_dict_sorted))
+    makeplot(data,map(lambda x:x['role'],people_dict_sorted))
 
     plt.show()
