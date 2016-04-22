@@ -14,6 +14,7 @@
 \usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
 \definecolor{mylilas}{RGB}{170,55,241}
+\definecolor{Gray}{gray}{0.85}
 \usepackage{fancybox}
 \usepackage{framed}
 \usepackage{mathrsfs}
@@ -206,13 +207,14 @@ Mutual information represents how well knowledge of the attribute informs the pr
 \centering
 \caption{Top 20 features ranked by the information gain.}
 \label{tab:ranked_feats}
-\resizebox{\columnwidth}{!}{%
+%\resizebox{\columnwidth}{!}{%
 \begin{tabular}{@{}lrr@{}}
 \toprule
 Feature                                      & Type         & Information Gain\\ \midrule
 Partial graph hubs                           & Social        & 0.589  \\
 Full graph hubs                              & Social        & 0.554  \\
 Number of emails received as forwards        & Traffic      & 0.554  \\
+\rowcolor{Gray}
 Number of signed emails received             & Traffic      & 0.514  \\
 Number of signed emails received with unique subjects & Traffic & 0.514\\ 
 Partial graph current flow closeness centrality & Social    & 0.512  \\
@@ -230,7 +232,8 @@ Partial graph number of cliques              & Social       & 0.470  \\
 Percentage of emails received as forwards    & Traffic      & 0.451  \\
 Partial graph degree centrality				 & Social		& 0.448  \\
 Partial graph average shortest paths         & Social	    & 0.448  \\ \bottomrule\end{tabular}    
-}\vspace{-10pt}
+%}
+\vspace{-10pt}
 \end{table} 
 
 \section{Results} \label{Results}
