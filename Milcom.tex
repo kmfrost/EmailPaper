@@ -64,9 +64,9 @@
 \begin{abstract}
 Email correspondence has become the predominant method of communication for businesses.
 If not for the inherent privacy concerns, this electronically searchable data could be used to better understand how employees interact.
-For example, after the Enron dataset was made available, researchers were able to provide great insight into employee behaviors based on the available data despite the many challenges with that dataset.
+For example, after the Enron dataset was released, researchers were able to provide great insight into employee behaviors based on the available data despite the many challenges with that dataset.
 The work in this paper demonstrates the application of a suite of methods to an appropriately anonymized email dataset created from volunteers' email metadata.
-This new dataset, from an internal email server, is first used to validate machine learning and feature extraction algorithms and then to generate insight into the interactions within the center.
+This new dataset, from an internal email server, is first used to validate feature extraction and machine learning algorithms in order to generate insight into the interactions within the center.
 Based solely on email metadata, a random forest approach modeled behavior patterns and accurately classified employees by job title.
 The algorithm performed very well not only on participants in the study but also on other members of the center who were connected to participants through email.
 Furthermore, the data revealed relationships not present in the formal operating structure.
@@ -80,7 +80,7 @@ Understanding this unofficial structure is important, but due to its informal na
 One massive source of electronically searchable information that could be used to better understand this hidden structure is the business's emails.
 However, privacy concerns inhibit most research thrusts into email analysis.  
 
-The study presented in this paper collected an appropriately anonymized email metadata dataset to demonstrate to what extent this metadata can be used to determine this organic organizational chart.
+The study presented in this paper collected an appropriately anonymized email metadata dataset to demonstrate to what extent this metadata could be used to determine this organic organizational chart.
 The study utilized email metadata from 36 voluntary participants.
 This metadata is used not only to analyze the voluntary participants, but also to what extent the non-participant members of the organization can be characterized.
 
@@ -100,8 +100,7 @@ Email is a pervasive medium for communication in modern society\textemdash{}part
 In 2015, there were over 2.6 billion email users~\cite{radicati_emails_2015}.
 Corporate email alone accounts for 54.7\% of worldwide email traffic.
 In fact, the average business email user sends and receives a total of 112 emails per day.
-Retention of large email archives has become common practice as computer memory technology imporves and becomes increasingly affordable ~\cite{fisher_revisiting_2006}.
-Out of 600 employees at a high-tech company, the average employee had 28,660 emails stored in 133 folders which is a significant increase over the past ten years.
+Retention of large email archives has become common practice as computer memory technology imporves and becomes increasingly affordable.
 This is a considerable amount of untapped information that could be leveraged to characterize employees within an organization.
 
 Since the Enron email dataset was released in 2004 \cite{klimt_introducing_2004}, it has been extensively researched on topics including spam classification~\cite{martin_analyzing_2005}; email categorization \cite{he_novel_2014}; and recipient prediction \cite{sofershtein_predicting_2015}.
@@ -109,38 +108,38 @@ However, there are known flaws and discrepancies with even the most recent versi
 
 The existing literature on analyzing social email behavior is mainly divided into two categories: traffic-based and social-based~\cite{tang_email_2013}.
 Traffic-based methods calculate statistics based only on email patterns.
-Social-based methods represent the email communications as a social graph and then extract information from this model using graph-based algorithms.
+Social-based methods represent the email communications as a social graph and then extract information from this model about the inherent relationships.
 A third type of feature that has been studied utilizes email text.
-For example, the work by Gilbert~\cite{gilbert2012phrases} showed that the wording used in an email could be used to identify whether an email is sent up or down the corporate hierarchy.
-However, this type of information is very sensitive and often unavailable for a general email study.
+For example, the work by Gilbert~\cite{gilbert2012phrases} showed that the wording used in an email could be used to make inferences about the corporate hierarchy.
+However, email text contains very sensitive infromation and is often unavailable for a general email study.
 Therefore, features based on email text are not considered in this work.
 
-Using features extracted from email metadata alone~\cite{yelupula_social_2008} was able to cluster levels of management at Enron.
+Using features extracted from email metadata alone,~\cite{yelupula_social_2008} was able to cluster levels of management at Enron.
 In addition to email traffic statistics, using features such as the presence of different email attachment types and the length of emails has been shown to successfully categorize email behavior~\cite{martin_analyzing_2005}.
 
 For social-based features, relational ties can be modeled as a graph where nodes represent people and edges represent email interactions.
-This is a useful model because many statistics can be calculated from the layout of a social graph~\cite{wasserman_social_1994}.
-A common feature that has been shown to indicate importance in a social graph is betweenness centrality, which comes in several different flavors first developed by Freeman~\cite{freeman_set_1977}.
+This is a useful model because many statistics can be calculated from a graphical layout~\cite{wasserman_social_1994}.
+A common feature used in social network analysis is betweenness centrality, which comes in several different flavors first developed by Freeman~\cite{freeman_set_1977}.
 Betweenness centrality is a measure of how many shortest paths in a graph travel over each node.
 A node with high betweenness centrality in a social graph has been shown to represent a high degree of influence on other nodes.
 In~\cite{tyler_email_2003}, a betweenness centrality algorithm was used to determine community structures within an organization.
 Other successful metrics were used in~\cite{wilson_discovery_2009}, which detected the most important email users within a corporate network without using betweenness as a feature.
-The features used in that study were: degree, the number of edges connected to a node; density, the ratio of actual edges to the number of possible edges; and proximity prestige, the ratio of nodes that can reach a node $i$ to the average distance from those nodes to $i$.
+The features used instead were: degree, the number of edges connected to a node; density, the ratio of actual edges to the number of possible edges; and proximity prestige, the ratio of nodes that can reach a node $i$ to the average distance from those nodes to $i$.
 
 Instead of considering exclusively traffic-based or social-based analytics, these features can be used jointly.
-The only example of this approach~\cite{rowe_automated_2007} combined features such as number of emails, response time, cliques, and degree centrality into a ``Social Score'', which was used to rank Enron employees.  
+The only example of this approach combined features such as number of emails, response time, cliques, and degree centrality into a ``Social Score'', which was used to rank Enron employees~\cite{rowe_automated_2007}.  
 However, this work did not report any quantifiable results.
-The aim of this paper is to utilize both types of features in order to produce a measure that compares an institution's organic chart to its official organizational chart.
+The aim of this paper is to utilize both types of features in order to produce a measureable comparison between institution's organic chart and its official organizational chart.
 
 \section{Data Collection} \label{Data Collection}
 
 Over the past decade, the Enron dataset has been widely used to study email behaviors because it is one of the only datasets available comprised of real-world corporate emails.
 Due to difficulties with the Enron dataset, as described in Section~\ref{Related Works}, this study uses a new dataset generated from volunteers in one of the university's centers.
 
-Due to the inherent privacy concerns, researchers worked with the Internal Review Board (IRB) to approve a dataset which maintains participants' privacy.
+In consideration of the inherent privacy concerns, researchers worked with the Internal Review Board (IRB) to approve a dataset which maintains participants' privacy.
 This dataset is meant to be representative of metadata which any company could use without violating the privacy of their employees.
 Special care was taken to protect the privacy of those involved in the study.
-During the collection process, all subject and body text was hashed using MD5, and all email metadata was stored in a database using scripts without any researchers observing any email text.
+During the collection process, all subject and body text was hashed using MD5, and all email metadata was stored in a secure database using scripts without any researchers observing any email text.
 Furthermore, any identifying information has been omitted from this publication.
 The following is the metadata provided from each email:
 \begin{compactitem}
@@ -189,16 +188,17 @@ The directors exhibit opposite behavior: there are only eight directors in the c
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=\columnwidth,trim={1mm 5mm 1mm 5mm},clip]{DatasetStatsBar_BW}
+    \vspace{-17pt}
 	\caption{Representation of each class in the database with respect to total number of emails and number of people.  The number of people with a given job title is often not a reliable indicator of how many emails belonged to that class.}
-	\vspace{-17pt}
+	\vspace{-15pt}
 	\label{fig:db_bar}
 \end{figure}
 
 
 \section{Features} \label{Features}
 The study includes 114 features that were extracted from the email data: 84 traffic-based and 30 social-based.
-The traffic-based features are those calculated purely from the collected email metadata.
-The social features, on the other hand, first model the email patterns in a graphical network and then calculate statistics from this model.
+The traffic-based features focus on the amount and types of emails each employee sends and receives.
+Whereas thehe social features aim to quantify relationships within the community structure of the organization.
 In the following sections, all features from each of the two categories are described. 
 
 \subsection{Traffic-Based Features}
@@ -210,41 +210,28 @@ The average number of recipients on emails sent and received for each participan
 It was hypothesized that staff members had more external communications than graduate students.
 To test this, the number of emails sent and received from within the center and the university were calculated.  
 
-Other useful information collected from emails included the time stamp, the character counts of the subject and body, and the presence of any attachments.
-From the time stamp, the time of day for each email was available.
-The total number of emails sent and received after hours and the number of emails sent and received after hours within the center were also used as metrics.
+Other useful information collected from emails included the timestamp, character counts of the subject and body, and the presence of any attachments.
+Utilizing the timestamp informaiton, the total number of emails sent and received after hours and the number of emails sent and received after hours within the center were also used as metrics.
 For this purpose, after hours was defined as between 6pm and 7am EST on weekdays or anytime on weekends.
 The mean and variance of the number of characters in the subject and body were calculated.
 These metrics were also broken down between emails sent and received.
 The number of attachments sent and received were computed as well as the average number of attachments sent and received per email.
-Digitally signing an email is a type of attachment.
-Additional features were calculated from the total number of signed emails sent and received, unique email addresses and subjects with signed emails.
+Digitally signing an email or encrypting an email are recognized as a type of attachment.
+Additional features were calculated from the total number of signed or encrypted emails sent and received as well as unique email addresses and subjects with signed or enctypted emails.
 
 The features above in general involved raw email counts.
 To normalize some of the features, metrics were additionally calculated as a percentage.
 Examples include the percentage of emails that were sent after hours and the percentage of all received emails with unique subjects out of all received emails.
 
-The best traffic-based feature for predicting employee status was the number of unique subjects received.
-This is because it produces the highest mutual information in the feature ranker described in Section~\ref{Analysis}.
-This number represents the number of distinct conversations in which an individual was involved.
-It is intuitive that people who are involved in more conversations are higher in an organization.
-
-The second best traffic feature was the number of signed emails received.
-Signed emails usually signal sensitive information.
-Only certain groups within the center deal with this type of information, therefore it is understandable that this feature could help divide the subjects by title.
-Finally, the third best traffic feature was the number of emails received as forwards.
-Typically, those higher in the chain of command are forwarded emails where graduate students and lower-level employees are more likely to receive either replies or emails sent directly to them.
-Notice that there are intuitive explanations behind all of the features selected by the ranker.
-
 \subsection{Social Network Features}
 In addition to tracking metadata statistics, features are also derived from modeling the emails as a social network.
 A social network is composed of nodes, which represent people, and edges, which represent the emails between people.  For this analysis, two different graphs were generated.
 In the full graph, an edge exists between any two individuals that exchanged at least one email.
-A second graph only produces an edge between two nodes if at least 10 emails were exchanged.
+A second graph only produces an edge between two nodes if at least 10 emails were exchanged, in order to focus on ongoing email relationships.
 A representation of the full graph is shown as an adjacency matrix in Figure~\ref{fig:adj_matrix}.
 Each of the two axes represent the employees of the center.
-The color at each coordinate indicates how much communication existed between the two employees.
-Some employees never exchanged any emails, while others exchanged many.
+The color at each coordinate indicates the volume of emails sent between the two employees.
+Some employees never exchanged any emails, while others exchanged several thousand.
 
 \begin{figure}[t]
     \centering
@@ -256,9 +243,10 @@ Some employees never exchanged any emails, while others exchanged many.
 \end{figure}
 
 With this representation, statistics can be calculated about the people in the graph.
-The average neighbor degree was calculated for both the partial and full graph.
-The degree of a node $i$ is the number of other nodes connected to node $i$.
-Therefore for a node $i$, this metric averages the degree of each node in the neighborhood of $i$, that is all nodes connected to $i$.
+The degree of each node was calculated for both the partial and full graph.
+The degree of a node $i$ is the number of other nodes connected to node $i$, and these connected nodes are called neighbors of $i$.
+Additionally, the average neighbor degree of each node was computed as a feature.
+For a node $i$, this metric averages the degree of each node in the neighborhood of $i$, that is all nodes connected to $i$.
 The distances between nodes were also used to generate some features.
 The average shortest path metric calculates the length of the shortest paths between node $i$ and all other nodes in the graph $G$, and it returns the average of these path lengths.
 Similarly, the maximum shortest path length, or eccentricity, was used as a feature in the learning algorithm.  
@@ -440,7 +428,7 @@ The most common researcher is the darkest line, the second-most common edge is m
 	\includegraphics[width=\columnwidth,trim={1mm 5mm 10mm 2mm},clip]{superior_identification_BW}
     \vspace{-18pt}
 	\caption{The official director an employee, from the organization chart, is often not the director with whom they exchange the most emails.  However, graduate students and researchers often communicate most frequently with their primary project manager.}
-	\vspace{-24pt}
+	\vspace{-22pt}
 	\label{fig:project_analysis}
 \end{figure}
 
