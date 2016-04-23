@@ -70,7 +70,7 @@ This new dataset, from an internal email server, is first used to validate featu
 Based solely on email metadata, a random forest approach modeled behavior patterns and accurately classified employees by job title.
 The algorithm performed very well not only on participants in the study but also on other members of the center who were connected to participants through email.
 Furthermore, the data revealed relationships not present in the formal operating structure.
-The result is an organic organizaiton chart which contains much fuller understanding of the center's internal structure than can be found in the official organization chart.
+The result is an organic organization chart which contains much fuller understanding of the center's internal structure than can be found in the official organization chart.
 \end{abstract}
 
 \section{Introduction}
@@ -100,7 +100,7 @@ Email is a pervasive medium for communication in modern society\textemdash{}part
 In 2015, there were over 2.6 billion email users~\cite{radicati_emails_2015}.
 Corporate email alone accounts for 54.7\% of worldwide email traffic.
 In fact, the average business email user sends and receives a total of 112 emails per day.
-Retention of large email archives has become common practice as computer memory technology imporves and becomes increasingly affordable.
+Retention of large email archives has become common practice as computer memory technology improves and becomes increasingly affordable.
 This is a considerable amount of untapped information that could be leveraged to characterize employees within an organization.
 
 Since the Enron email dataset was released in 2004 \cite{klimt_introducing_2004}, it has been extensively researched on topics including spam classification~\cite{martin_analyzing_2005}; email categorization \cite{he_novel_2014}; and recipient prediction \cite{sofershtein_predicting_2015}.
@@ -111,7 +111,7 @@ Traffic-based methods calculate statistics based only on email patterns.
 Social-based methods represent the email communications as a social graph and then extract information from this model about the inherent relationships.
 A third type of feature that has been studied utilizes email text.
 For example, the work by Gilbert~\cite{gilbert2012phrases} showed that the wording used in an email could be used to make inferences about the corporate hierarchy.
-However, email text contains very sensitive infromation and is often unavailable for a general email study.
+However, email text contains very sensitive information and is often unavailable for a general email study.
 Therefore, features based on email text are not considered in this work.
 
 Using features extracted from email metadata alone,~\cite{yelupula_social_2008} was able to cluster levels of management at Enron.
@@ -129,7 +129,7 @@ The features used instead were: degree, the number of edges connected to a node;
 Instead of considering exclusively traffic-based or social-based analytics, these features can be used jointly.
 The only example of this approach combined features such as number of emails, response time, cliques, and degree centrality into a ``Social Score'', which was used to rank Enron employees~\cite{rowe_automated_2007}.  
 However, this work did not report any quantifiable results.
-The aim of this paper is to utilize both types of features in order to produce a measureable comparison between institution's organic chart and its official organizational chart.
+The aim of this paper is to utilize both types of features in order to produce a measurable comparison between institution's organic chart and its official organizational chart.
 
 \section{Data Collection} \label{Data Collection}
 
@@ -198,7 +198,7 @@ The directors exhibit opposite behavior: there are only eight directors in the c
 \section{Features} \label{Features}
 The study includes 114 features that were extracted from the email data: 84 traffic-based and 30 social-based.
 The traffic-based features focus on the amount and types of emails each employee sends and receives.
-Whereas thehe social features aim to quantify relationships within the community structure of the organization.
+Whereas there social features aim to quantify relationships within the community structure of the organization.
 In the following sections, all features from each of the two categories are described. 
 
 \subsection{Traffic-Based Features}
@@ -211,13 +211,13 @@ It was hypothesized that staff members had more external communications than gra
 To test this, the number of emails sent and received from within the center and the university were calculated.  
 
 Other useful information collected from emails included the timestamp, character counts of the subject and body, and the presence of any attachments.
-Utilizing the timestamp informaiton, the total number of emails sent and received after hours and the number of emails sent and received after hours within the center were also used as metrics.
+Utilizing the timestamp information, the total number of emails sent and received after hours and the number of emails sent and received after hours within the center were also used as metrics.
 For this purpose, after hours was defined as between 6pm and 7am EST on weekdays or anytime on weekends.
 The mean and variance of the number of characters in the subject and body were calculated.
 These metrics were also broken down between emails sent and received.
 The number of attachments sent and received were computed as well as the average number of attachments sent and received per email.
 Digitally signing an email or encrypting an email are recognized as a type of attachment.
-Additional features were calculated from the total number of signed or encrypted emails sent and received as well as unique email addresses and subjects with signed or enctypted emails.
+Additional features were calculated from the total number of signed or encrypted emails sent and received as well as unique email addresses and subjects with signed or encrypted emails.
 
 The features above in general involved raw email counts.
 To normalize some of the features, metrics were additionally calculated as a percentage.
@@ -261,8 +261,8 @@ A node's authority is just that\textemdash{}a measure of its importance over oth
 A node's hub score is a measure of how well-connected it is to other nodes.
 
 Another algorithm used to generate features was the pagerank algorithm, developed by Google 
-\cite{page_pagerank_1999} also to rank webpages for search results.
-The assumption is that the most important webpages will be linked to frequently by other pages.
+\cite{page_pagerank_1999} also to rank web pages for search results.
+The assumption is that the most important web pages will be linked to frequently by other pages.
 Therefore, the ranking is determined by estimating the quality and quantity of links to a node.
 The square clustering coefficient for each node was used as a feature.
 Say there exists a node $i$ with neighbors $j$ and $k$.
@@ -437,7 +437,7 @@ The most common researcher is the darkest line, the second-most common edge is m
 	\centering
 	\includegraphics[width=\columnwidth,trim={0mm 1mm 0mm 1mm},clip]{orgChart_3con_BW}
     \vspace{-17pt}
-	\caption{Project organization chart generated from the email data. This analysis could be used in corporate merges or restructurings in order to better understand the communication network of an organization.}
+	\caption{Project organization chart generated from the email data. This analysis could be used in corporate merges or restructuring in order to better understand the communication network of an organization.}
 	\vspace{-18pt}
 	\label{fig:org_chart}
 \end{figure}
@@ -449,7 +449,7 @@ Statistics were calculated from this dataset, and were used with a random forest
 Random Forests are shown to be powerful classifiers by predicting employee job titles with very high accuracy, even for employees for whom only secondhand data is available in the dataset.
 The email data was also used to show that emails could be used to predict an employee's primary program manager, but had a worse chance of being able to identify the director associated with the employee on the official organizational chart.
 This work has shown that it is possible to generate important organizational information from using carefully processed email metadata without compromising the privacy of employees.
-These methods could be applied to organizational analysis, anomalous behvaior detection, leadership identification of any communications system.
+These methods could be applied to organizational analysis, anomalous behavior detection, leadership identification of any communications system.
 Future work will attempt to further explore the center's organic hierarchy through this data as well as to apply these algorithms to other datasets to determine the general applicability of the results.
 
 \Urlmuskip=0mu plus 1mu\relax
