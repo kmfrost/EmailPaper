@@ -238,7 +238,7 @@ Some employees never exchanged any emails, while others exchanged several thousa
     \includegraphics[width=\columnwidth,trim={4mm 0mm 0mm 5mm},clip]{adj_matrix}
     \vspace{-14pt}
     \caption{The adjacency matrix representing the social connections of the center.  There are groups within the center that exchanged thousands of emails as well as groups who never exchanged a single email.}
-    \vspace{-14pt}
+    \vspace{-16pt}
     \label{fig:adj_matrix}
 \end{figure}
 
@@ -394,7 +394,7 @@ Therefore, the classification accuracy for the study participants is $96.8\%$, c
     \includegraphics[width=0.85\columnwidth,trim={1mm 8mm 10mm 0mm},clip]{Classification_confusion_BW}
     \vspace{-15pt}
     \caption{The random forest algorithm was extremely accurate even for very uneven class sizes.  Note that all members of the four smallest classes were labeled perfectly.  There were only three errors out of $69$ employees, two of which for employees who did not provide emails for the study.}
-    \vspace{-16pt}
+    \vspace{-12pt}
     \label{fig:result_hist}
 \end{figure}
 
@@ -433,7 +433,6 @@ In the case of project managers, the organic and official hierarchys more closel
 These statistics are depicted for all classes in Fig.~\ref{fig:project_analysis}.
 
 
-
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=\columnwidth,trim={1mm 5mm 10mm 2mm},clip]{superior_identification_BW}
@@ -445,10 +444,13 @@ These statistics are depicted for all classes in Fig.~\ref{fig:project_analysis}
 
 \section{Conclusions and Future Work} \label{Conclusions}
 This work presents a new dataset, larger than Enron, that was collected from volunteers' emails with particular attention to protect participant privacy.
-The new dataset includes accurate labels executed by researchers with knowledge of the center and its employees.
+The new dataset includes accurate labels prepared by researchers with knowledge of the center and its employees.
 Statistics were calculated from this dataset, and were used with a random forest algorithm to automatically classify the center's employees.
-Random forests are shown to be powerful classifiers by predicting employee job titles with very high accuracy, even for employees for whom only secondhand data is available in the dataset.
-The email data was also used to show that emails could be used to predict an employee's primary program manager, but had a worse chance of being able to identify the director associated with the employee on the official organizational chart.
+Random forests are shown to be powerful classifiers by predicting employee job titles with $96\%$ accuracy, even for employees for whom only secondhand data is available in the dataset.
+
+These results demonstrate the difference between an organic organiziational chart and the official corporate hierarchy.
+The email data was also used to show that emails could be used to predict an employee's primary program manager with $92\%$ accuracy.
+It has a worse chance, $52.63\%$, of being able to identify the director associated with the employee on the official organizational chart.
 This work has shown that it is possible to generate important organizational information from using carefully processed email metadata without compromising the privacy of employees.
 These methods could be applied to organizational analysis, anomalous behavior detection, leadership identification of any communications system.
 Future work will attempt to further explore the center's organic hierarchy through this data as well as to apply these algorithms to other datasets to determine the general applicability of the results.
