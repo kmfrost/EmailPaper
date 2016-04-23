@@ -400,28 +400,38 @@ Therefore, the classification accuracy for the study participants is $96.8\%$, c
 
 
 \subsection{Hierarchy Analysis}
-The predicted labels from Section~\ref{ssec:class_results} were combined with email patterns to generate the organic hierarchy in Fig.~\ref{fig:org_chart}.
-This chart represents the flow of project information for the center: from directors to project managers to research staff down to graduate students.
+A combination of the predicted labels from Section~\ref{ssec:class_results} and the email patterns from the data generated the organic hierarchy for the center, shown in Fig.~\ref{fig:org_chart}.
+This chart represents only the flow of project information for the center: from directors to project managers to research staff down to graduate students.
 Outreach and operations personnel are not actively involved in project work, and are therefore omitted from this chart.
-Edges are drawn from one layer to the layer above based on how many emails were sent.
-For example, each graduate student has three edges corresponding to each of the three researchers they emailed most frequently.
-The most common researcher is the darkest line, the second-most common edge is more transparent, and the third-most common link is the most transparent.
+Edges are drawn from each layer to the layer above based on how many emails were sent.
+For example, each graduate student has three edges corresponding to the three researchers they emailed most frequently.
+The most emailed researcher is the darkest line, the second-most common researcher is more transparent, and the third-most common link is the most transparent.
 
-To generate a metric of how well the email-based organic structure compares to the organizational chart.
+\begin{figure}[t]
+	\centering
+	\includegraphics[width=\columnwidth,trim={0mm 1mm 0mm 1mm},clip]{orgChart_3con_BW}
+	\vspace{-17pt}
+	\caption{Project organizational chart generated from the email data. This analysis could be used in corporate merges or restructuring in order to better understand the communication network of an organization.}
+	\vspace{-18pt}
+	\label{fig:org_chart}
+\end{figure}
+
+To generate a measure of how well the email-based organic structure compares to the organizational chart, the relationships in Fig.~\ref{fig:org_chart} and the rest of the email data were compared to the official hierarchy.
 
 Most of the employees at the center are organized under a director and work with a program manager (unless for example they are a director or program manager).
 The director and project manager for each applicable employee is predicted from the email metadata. 
-The director of each employee is predicted by the algorithm to be the director that the employee communicated with most by email.
-Only $52.63\%$ of the center's employees communicate most frequently with their official director.
-This result points to a possible disconnect between the official organizational chart and the organic relationships within the center.
+For each employee, the algorithm predicts the director that that employee communicated with most by email.
+Comparing these predictions to the official chart, only $52.63\%$ of the center's employees communicate most frequently with their assigned director.
+This result shows a clear disconnect between the official organizational chart and the organic relationships within the center.
 
-To identify each employee's project manager ground truth is selected to be the project that primarily funds the employee.
+To identify each employee's project manager, ground truth is selected to be the project that primarily funds the employee.
+Note that employees with job titles of project manager, outreach, and operations have directors, but no equivalent to project manager.
 This time, $91.67\%$ of graduate students and researchers communicate most frequently with their primary program manager.
-The relation between employees to project managers appears to be stronger than that with directors.
-Many of the errors in this classification are due to employees who work with multiple project managers.
+The relationships between employees and project managers appears to be stronger than that with directors.
+In the case of project managers, the organic and official hierarchys more closely match.
 
 These statistics are depicted for all classes in Fig.~\ref{fig:project_analysis}.
-Note that employees with job titles of project manager, outreach, and operations have directors, but no equivalent to project manager.
+
 
 
 \begin{figure}[t]
@@ -431,16 +441,6 @@ Note that employees with job titles of project manager, outreach, and operations
 	\caption{The official director an employee, from the organizational chart, is often not the director with whom they exchange the most emails.  However, graduate students and researchers often communicate most frequently with their primary project manager.}
 	\vspace{-12pt}
 	\label{fig:project_analysis}
-\end{figure}
-
-
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=\columnwidth,trim={0mm 1mm 0mm 1mm},clip]{orgChart_3con_BW}
-    \vspace{-17pt}
-	\caption{Project organizational chart generated from the email data. This analysis could be used in corporate merges or restructuring in order to better understand the communication network of an organization.}
-	\vspace{-18pt}
-	\label{fig:org_chart}
 \end{figure}
 
 \section{Conclusions and Future Work} \label{Conclusions}
