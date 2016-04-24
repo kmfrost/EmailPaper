@@ -78,6 +78,8 @@ A reorganization of a business can be very costly and has great effects once imp
 While this official hierarchy is important, there is an equally important organic structure within any business, which may or may not be reflected in the official organizational chart.
 Understanding this unofficial structure is important, but due to its informal nature, it can be difficult to determine.
 One massive source of electronically searchable information that can be used to better understand this hidden structure is the business's emails.
+Applications of this research are not limited only to corporate operations.
+These methods could be applied to any communications system to perform organizational analysis, anomalous behavior detection, or leadership identification.
 However, privacy concerns inhibit most research thrusts into email analysis.  
 
 The study presented in this paper collected an appropriately anonymized email metadata dataset to demonstrate how this metadata could be used to determine an organic organizational chart.
@@ -114,7 +116,7 @@ However, email text contains sensitive information and is often unavailable for 
 Therefore, features based on email text are not considered in this work.
 
 By using features extracted from email metadata alone, previous work has been able to cluster levels of management at Enron~\cite{yelupula_social_2008}.
-In addition to email traffic statistics, using features such as the presence of different email attachment types and the length of emails has been shown to successfully categorize email behavior~\cite{martin_analyzing_2005}.
+Other metadata features such as the presence of different email attachment types and the length of emails have been shown to successfully categorize email behavior~\cite{martin_analyzing_2005}.
 
 For social-based features, relational ties can be modeled as a graph where nodes represent people and edges represent email interactions.
 This is a useful model because many statistics can be calculated from a graphical layout~\cite{wasserman_social_1994}.
@@ -235,8 +237,8 @@ Some employees never exchanged any emails, while others exchanged several thousa
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=\columnwidth,trim={4mm 0mm 0mm 5mm},clip]{adj_matrix}
-    \vspace{-14pt}
+    \includegraphics[width=\columnwidth,trim={4mm 1mm 0mm 5mm},clip]{ViridisEdit_inv}
+    \vspace{-17pt}
     \caption{The adjacency matrix representing the social connections of the center.  There are groups within the center that exchanged thousands of emails as well as groups who never exchanged a single email.}
     \vspace{-16pt}
     \label{fig:adj_matrix}
@@ -275,10 +277,9 @@ The majority of the social-based features were centrality measures.
 This includes closeness centrality, betweenness centrality, degree centrality~\cite{borgatti2011analyzing}, current flow closeness centrality, current flow betweenness centrality~\cite{brandes2005centrality}, communicability centrality, communicability betweenness centrality~\cite{estrada2008communicability}, and load centrality~\cite{newman2001scientific}.
 
 \section{Analysis} \label{Analysis}
-
 Due to the large number of features and relatively low number of participants, a classification method was carefully chosen to avoid overfitting the data.
 While tree-based classifiers can be susceptible to overfitting, the random forest is robust to overfitting issues and was therefore chosen for this study.
-The java-based software package Weka was used to generate the random forest based on the algorithm described by Breiman~\cite{Breiman2001}.
+The Java-based software package Weka was used to generate the random forest based on the algorithm described by Breiman~\cite{Breiman2001}.
 
 Random forest training is an ensemble method of machine learning, comprised of many random trees.
 A random tree is an algorithm that uses training data to learn a series of rules to divide the data into the various classes.
@@ -300,7 +301,7 @@ These rules are constructed in a hierarchy that visually resembles a tree.
 	\centering
 	\includegraphics[width=5cm,height=5cm,keepaspectratio,trim={0mm 2.5mm 0mm 2mm},clip]{RandForest_BW}
 	\caption{The random forest method aggregates many random trees via bagging to build a robust classifier.}
-	\vspace{-8pt}
+	\vspace{-15pt}
 	\label{fig:rand_forest}
 \end{figure}  
 
@@ -380,7 +381,7 @@ The second part of the results section assumes perfect labeling of the employees
 The ultimate goal of this research is to determine an organic organizational chart, generated entirely from the email data.
 
 \subsection{Classification Results}\label{ssec:class_results}
-Each email was randomly assigned to either the training or testing set with equal probability.
+Each email is randomly assigned to either the training or testing set with equal probability.
 All of the metrics described in Section~\ref{Features} were calculated for both groups separately.
 The training data is used as input to the random forest algorithm as described in Section~\ref{Analysis}, and predictions are generated for the test data.
 The number of correct and incorrect classifications for each class are shown below in Fig.~\ref{fig:result_hist}.
@@ -428,7 +429,7 @@ To identify each employee's project manager, ground truth is selected to be the 
 Note that employees with job titles of project manager, outreach, and operations have directors, but no equivalent to project manager.
 This time, $91.67\%$ of graduate students and researchers communicate most frequently with their primary program manager.
 The relationships between employees and project managers appears to be stronger than that with directors.
-In the case of project managers, the organic and official hierarchys more closely match.
+In the case of project managers, the organic and official hierarchies more closely match.
 
 These statistics are depicted for all classes in Fig.~\ref{fig:project_analysis}.
 
@@ -443,16 +444,18 @@ These statistics are depicted for all classes in Fig.~\ref{fig:project_analysis}
 \end{figure}
 
 \section{Conclusions and Future Work} \label{Conclusions}
-This work presents a new dataset, larger than Enron, that was collected from volunteers' emails with particular attention to protect participant privacy.
-The new dataset includes accurate labels prepared by researchers with knowledge of the center and its employees.
-Statistics were calculated from this dataset, and were used with a random forest algorithm to automatically classify the center's employees.
-Random forests are shown to be powerful classifiers by predicting employee job titles with $96\%$ accuracy, even for employees for whom only secondhand data is available in the dataset.
+This work examines how email metadata can be used to predict an organization's internal structure.
+These methods can be applied to other communication systems such as cellular phones, social media, and wireless networks to gain an understanding of the leadership hierarchy.
 
-These results demonstrate the difference between an organic organiziational chart and the official corporate hierarchy.
-The email data was also used to show that emails could be used to predict an employee's primary program manager with $92\%$ accuracy.
-It has a worse chance, $52.63\%$, of being able to identify the director associated with the employee on the official organizational chart.
-This work has shown that it is possible to generate important organizational information from using carefully processed email metadata without compromising the privacy of employees.
-These methods could be applied to organizational analysis, anomalous behavior detection, leadership identification of any communications system.
+A contribution of this work is a new dataset, larger than Enron, that was collected from volunteers' emails with particular attention to protect participant privacy.
+The new dataset includes accurate labels prepared by researchers with knowledge of the center and its employees.
+Features were extracted from this dataset, and used with a random forest algorithm to automatically classify the center's employees.
+Random forests are shown to be powerful classifiers by predicting employee job titles with $96\%$ accuracy, even for employees for whom only secondhand data is available from the dataset.
+
+An organic organizational chart was generated from the email data and contrasted with the official corporate hierarchy.
+The organic chart showed that emails could be used to predict an employee's primary program manager with $92\%$ accuracy.
+This method was less accurate, $52.63\%$, at identifying the director associated with the employee on the official organizational chart.
+This work has shown that it is possible to infer important organizational information from using carefully processed email metadata without compromising the privacy of employees.
 Future work will attempt to further explore the center's organic hierarchy through this data as well as to apply these algorithms to other datasets to determine the general applicability of the results.
 
 \Urlmuskip=0mu plus 1mu\relax
