@@ -126,7 +126,7 @@ Over the past decade, the Enron dataset has been widely used to study email beha
 Due to difficulties with the Enron dataset, as described in Section~\ref{Related Works}, this study uses a new dataset generated from volunteers in one of the university's centers.
 
 In consideration of the inherent privacy concerns, researchers worked with the Internal Review Board (IRB) to approve a dataset which maintains participants' privacy.
-This dataset is meant to be representative of metadata that any company could use without violating the privacy of their employees.
+This dataset is meant to be representative of metadata that any company could use without divesting employees of their email privacy.
 Special care was taken to protect the privacy of those involved in the study.
 During the collection process, all subject and body text was hashed using MD5, and all email metadata was stored in a secure database using scripts without any researchers observing any email text.
 Any identifying information has been omitted from this publication.
@@ -267,7 +267,7 @@ This includes closeness centrality, betweenness centrality, degree centrality~\c
 
 \section{Analysis} \label{Analysis}
 Due to the large number of features and relatively low number of participants, a classification method was carefully chosen to avoid overfitting the data.
-While tree-based classifiers can be susceptible to overfitting, the random forest is robust to overfitting issues and was therefore chosen for this study.
+A random forest classifier was chosen for this study because it is extremely robust to overfitting.
 The Java-based software package Weka was used to generate the random forest based on the algorithm described by Breiman~\cite{Breiman2001}.
 
 Random forest training is an ensemble method of machine learning, comprised of many random trees.
@@ -347,7 +347,9 @@ Number of emails sent to center employees      & Traffic	    & 0.476  \\
 Partial graph number of cliques              & Social       & 0.470  \\
 Percentage of emails received as forwards    & Traffic      & 0.451  \\
 Partial graph degree centrality				 & Social		& 0.448  \\
-Partial graph average shortest paths         & Social	    & 0.448  \\ \bottomrule\end{tabular} 
+Partial graph average shortest paths         & Social	    & 0.448  \\ \bottomrule \\
+\footnotesize Note: Highlighted rows represent features unique to this work.
+\end{tabular} 
 }   
 \end{table} 
 
