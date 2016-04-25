@@ -67,6 +67,7 @@ These methods could be applied to any communications system to perform organizat
 In a military context, this work shows the importance of protecting this metadata from adversaries who could use it to uncover information about an organization that they could use to find vulnerabilities.
 
 The study presented in this paper collected an appropriately anonymized email metadata dataset to demonstrate how this metadata could be used to determine an organization's underlying organic structure.
+It is proposed that this organic chart contians valuable information not present in the official organizational chart.
 The study uses email metadata from $36$ voluntary participants.
 This metadata is used not only to analyze the voluntary participants, but also to what extent the non-participant members of the organization can be characterized.
 
@@ -106,6 +107,8 @@ For social-based features, relational ties can be modeled as a graph where nodes
 This is a useful model because many statistics can be calculated from a graphical layout~\cite{wasserman1994social}.
 A common feature used in social network analysis is betweenness centrality, which comes in several different flavors first developed by Freeman~\cite{freeman1977set}.
 Betweenness centrality is a measure of how many shortest paths in a graph travel over each node.
+In a graph with edge weights, a shortest path is a route from one node to another that has the minimum edge weight sum.
+Note that two or more equivilent shortest paths can exist for a pair of nodes.
 A node with high betweenness centrality in a social graph has been shown to represent a high degree of influence on other nodes.
 
 Tyler et al.~\cite{tyler2005mail} used a betweenness centrality algorithm to determine community structures within an organization.
@@ -141,8 +144,12 @@ The following is the metadata provided from each email:
 
 Table~\ref{tab:db_stats} compares statistics between this internal dataset and the Enron corpus.
 This internal database is more modern, contains more emails, and covers a longer time period, but involves fewer people than were used to construct the Enron dataset.
-While the study includes only 36 volunteers, the email metadata from these volunteers identified $38$ additional employees of the center, for a total of $74$.
-These peripheral employees were included in the study when ground truth for their job was available and when they were identified in at least $100$ email metadata records.
+While the study collected email data from only 36 volunteers, the email metadata from these volunteers identified $38$ additional employees of the center.
+These peripheral employees were included in the study when ground truth for their job was available and when the dataset contained sufficient email metadata records (defined as at least $100$ total emails).
+Five of the $36$ direct participants were very new employees to the center, and are not considered in the classification analysis due to lack of sufficient email data.
+The email records provided by these employees were still included to help characterize other employees.
+Therefore, for all analyses in Section~\ref{Analysis}, $31$ primary participants and $38$ peripheral employees, for a total of $69$ people, were classified.
+
 
 
 \begin{table}[t]
@@ -173,7 +180,7 @@ The directors exhibit opposite behavior: there are only eight directors in the c
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=\columnwidth,trim={1mm 5mm 1mm 5mm},clip]{DatasetStatsBar_BW}
-	\caption{Representation of each class in the database with respect to total number of emails and number of people.  The number of people with a given job title is often not a reliable indicator of how many emails belonged to that class.}
+	\caption{Representation of each class in the dataset with respect to total number of emails and number of people.  Both distributions are very nonuniform, which poses a challenge to the classification algorithm.}
 	\label{fig:db_bar}
 \end{figure}
 
@@ -181,7 +188,7 @@ The directors exhibit opposite behavior: there are only eight directors in the c
 \section{Features} \label{Features}
 The study includes $114$ features that were extracted from the email data: $84$ traffic-based and $30$ social-based.
 The traffic-based features focus on the amount and types of emails each employee sends and receives.
-Whereas the social features aim to quantify relationships within the community structure of the organization.
+The social features aim to quantify the relationships and social roles within the organization.
 In the following sections, all features from each of the two categories are described. 
 All of these statistics are used to characterize each employee of the center and serve as the inputs to the machine learning algorithm.
 
@@ -192,6 +199,7 @@ The number of emails sent and received as replies or forwards were used.
 Features also included the number of unique email address connections and the number of unique email subjects, sent and received.
 The average number of recipients on emails sent and received for each participant were calculated.
 It was hypothesized that staff members had more external communications than graduate students.
+External communications are defined as emails sent and received from entities not affiliated with the center.
 To test this, the number of emails sent and received from within the center and the university were calculated.  
 
 Other useful information collected from emails included the timestamp, character counts of the subject and body, and the presence of any attachments.
@@ -201,7 +209,7 @@ For this purpose, after hours was defined as between 6 p.m. and 7 a.m. EST on we
 The mean and variance of the number of characters in the subject and body were calculated.
 These metrics were also broken down between emails sent and received.
 The number of attachments sent and received were computed as well as the average number of attachments sent and received per email.
-Digitally signing an email or encrypting an email are recognized as a type of attachment.
+Digitally signing an email or encrypting an email are both recognized as types of attachments.
 Additional features were calculated from the total number of signed or encrypted emails sent and received as well as unique email addresses and subjects with signed or encrypted emails.
 
 The features above generally involved raw email counts.
@@ -212,10 +220,11 @@ Examples include the percentage of emails that were sent after hours and the per
 In addition to tracking metadata statistics, features are also derived from modeling the emails as a social network.
 A social network is composed of nodes that represent people, and edges that represent the emails between people.  For this analysis, two different graphs were generated.
 In the full graph, an edge exists between any two individuals that exchanged at least one email.
-A second graph only produces an edge between two nodes if at least 10 emails were exchanged, in order to focus on ongoing email relationships.
+A second graph only produces an edge between two nodes if at least 10 emails were exchanged, in order to filter out emails pertaining to isolated events.
 A representation of the full graph is shown as an adjacency matrix in Fig.~\ref{fig:adj_matrix}.
-Each of the two axes represent the employees of the center.
+Each of the two axes represent the employees of the center; the x-axis represents the sender and the y-axis represents the recipient.
 The color at each coordinate indicates the volume of emails sent between the two employees.
+The diagonal represents when a person emails or copies themselves.
 Some employees never exchanged any emails, while others exchanged several thousand.
 
 \begin{figure}[t]
@@ -293,8 +302,7 @@ Each tree outputs a prediction label for each data point, and the majority vote 
 This random forest model reduces the variance and increases the accuracy of the model compared to a single random tree.
 
 Random forests can be difficult to interpret because the ensemble method obscures which features are most meaningful.
-A feature analysis helps to determine which features are most useful.
-Since random trees use mutual information to optimize branch splits, mutual information was used as the evaluation criteria for the features.
+Since random trees use mutual information to optimize branch splits, mutual information was used as the evaluation criteria to rank the features.
 Each attribute is evaluated by measuring the mutual information with respect to the class.
 In this model, both the feature value and the class are treated as random variables.
 Mutual information represents how well knowledge of the attribute informs prediction of the class.
@@ -307,7 +315,7 @@ where $I(\text{Class}; \text{Feature})$ represents the mutual information betwee
 
 This mutual information value is then used to rank the importance of each feature.
 Table~\ref{tab:ranked_feats} shows the top $20$ features from this analysis and the features' corresponding mutual information.
-Highlighted rows represent the features either not used previously in email analysis.
+Highlighted rows represent the features not used previously in email analysis.
 
 \begin{table}[t]
 \centering
@@ -326,7 +334,7 @@ Number of signed emails received             & Traffic      & 0.514  \\
 Number of signed emails received with unique subjects & Traffic & 0.514\\ 
 Partial graph current flow closeness centrality & Social    & 0.512  \\
 Partial graph pagerank                       & Social       & 0.512  \\
-Number of emails received as carbon copies   & Traffic      & 0.500  \\
+Number of emails received as copies          & Traffic      & 0.500  \\
 Number of emails received from center employees & Traffic	    & 0.492  \\
 Full graph current flow closeness centrality & Social       & 0.492  \\
 Full graph pagerank                          & Social       & 0.492  \\
@@ -353,7 +361,6 @@ Each email is randomly assigned to either the training or testing set with equal
 All of the metrics described in Section~\ref{Features} were calculated for both groups separately.
 The training data is used as input to the random forest algorithm as described in Section~\ref{Analysis}, and predictions are generated for the test data.
 The number of correct and incorrect classifications for each class are shown below in Fig.~\ref{fig:result_hist}.
-Five of the $37$ participants in the study were very new employees to the center, and are not considered in this analysis due to lack of sufficient email data (defined as less than $100$ total emails).
 Note that only three predictions were wrong, and all were a result of confusing research staff with graduate students.
 It is important to note that two of these misclassifications are peripheral participants.
 Therefore, the classification accuracy for the study participants is $96.8\%$, correctly classified inferred employees is $94.7\%$, and the overall accuracy of this method using all features is $95.7\%$.
@@ -377,7 +384,7 @@ The most emailed researcher is the darkest line, the second-most common research
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=\columnwidth,trim={0mm 1mm 0mm 1mm},clip]{orgChart_3con_BW}
-	\caption{Project organizational chart generated from the email data. This analysis could be used in corporate mergers or restructuring in order to better understand the communication network of an organization.}
+	\caption{Project organizational chart generated from the email data. This analysis could be used as a tool in corporate mergers or restructuring in order to better understand the communication network of an organization.}
 	\label{fig:org_chart}
 \end{figure}
 
@@ -396,13 +403,10 @@ This time, $91.67\%$ of graduate students and researchers communicate most frequ
 The relationships between employees and project managers appears to be stronger than that with directors.
 In the case of project managers, the organic and official hierarchies more closely match.
 
-
-
-
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=\columnwidth,trim={1mm 5mm 10mm 2mm},clip]{superior_identification_BW}
-	\caption{The official director an employee, from the organizational chart, is often not the director with whom they exchange the most emails.  However, graduate students and researchers often communicate most frequently with their primary project manager.}
+	\caption{The official director of an employee, from the organizational chart, is often not the director with whom they exchange the most emails.  However, graduate students and researchers often communicate most frequently with their primary project manager.}
 	\label{fig:project_analysis}
 \end{figure}
 
