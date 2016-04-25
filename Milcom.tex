@@ -1,64 +1,48 @@
 \documentclass[10pt,twocolumn,conference]{IEEEtran}
-\usepackage{times}
+%\usepackage{times}
 \usepackage{graphicx}
 \usepackage{amsmath}
-\usepackage{amsthm, amssymb}
-\usepackage{enumerate}
-\usepackage{fullpage}
+\usepackage{booktabs}
 \usepackage{hyperref}
-\usepackage{soul}
+%\usepackage{amsthm, amssymb}
+%\usepackage{enumerate}
+%\usepackage{fullpage}
+%\usepackage{soul}
 \usepackage[table]{xcolor}
-\usepackage{float}
-\usepackage{comment}
-\usepackage{listings}
+%\usepackage{float}
+%\usepackage{comment}
+%\usepackage{listings}
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
 \definecolor{mylilas}{RGB}{170,55,241}
 \definecolor{Gray}{gray}{0.85}
-\usepackage{fancybox}
-\usepackage{framed}
-\usepackage{mathrsfs}
-\usepackage{url}
-\usepackage{paralist}
-\usepackage{booktabs}
-\usepackage{etoolbox}
-\makeatletter
-\patchcmd{\@makecaption}
-    {\shape}
-    {}
-    {}
-    {}
-\makeatother
+%\usepackage{fancybox}
+%\usepackage{framed}
+%\usepackage{mathrsfs}
+%\usepackage{url}
+%\usepackage{paralist}
+%\usepackage{etoolbox}
 
 %\usepackage[font=small,labelfont=bf]{caption}
 
-\hypersetup{breaklinks=true}
-\urlstyle{same}
+%\hypersetup{breaklinks=true}
+%\urlstyle{same}
 %-----------------------------------------------------------------
-\let\labelindent\relax %% Fixes labelindent error in IEETran Class
+%\let\labelindent\relax %% Fixes labelindent error in IEETran Class
 \usepackage{enumitem}
-\setlist[enumerate]{leftmargin = 9pt}
-\setlist[itemize]{leftmargin = 8pt}
+%\setlist[enumerate]{leftmargin = 9pt}
+%\setlist[itemize]{leftmargin = 8pt}
 %-----------------------------------------------------------------
-\setlength{\skip\footins}{0.15cm}
-
 
 \graphicspath{{Pictures/}}
 
 \begin{document}
     
-\setlength\belowdisplayskip{1.5pt}
-\setlength\abovedisplayskip{1.5pt}
-\allowdisplaybreaks
-
-	\sloppy
-    
-    \title{Data Mining Academic Emails to Model Employee Behaviors and Analyze Organizational Structure\vspace{-7.5pt}}
-    \author{\IEEEauthorblockN{Kayla M. Straub, Joseph M. Ernst, William C. Headley, Robert W. McGwier}
-        \IEEEauthorblockA{Hume Center for National Security and Technology,\\
-            Department of ECE, Virginia Tech, Blacksburg, VA 24060, USA \\
-            Email: kstraub@vt.edu, jmernst@vt.edu, cheadley@vt.edu, rwmcgwi@vt.edu}
-        \vspace{-25pt} }
-    
+\title{Data Mining Academic Emails to Model Employee Behaviors and Analyze Organizational Structure}
+\author{\IEEEauthorblockN{Kayla M. Straub, Joseph M. Ernst, William C. Headley, Robert W. McGwier}
+  \IEEEauthorblockA{Hume Center for National Security and Technology,\\
+    Virginia Tech, Blacksburg, VA 24060, USA \\
+    Email: \{kstraub, jmernst, cheadley, rwmcgwi\}@vt.edu}
+} 
 \maketitle
 
 \begin{abstract}
@@ -80,7 +64,7 @@ Understanding this unofficial structure is important, but due to its informal na
 One massive source of electronically searchable information that can be used to better understand this hidden structure is the business's emails.
 Applications of this research are not limited only to corporate operations.
 These methods could be applied to any communications system to perform organizational analysis, anomalous behavior detection, or leadership identification.
-However, privacy concerns inhibit most research thrusts into email analysis.  
+In a military context this work shows the importance of protecting this metadata from adversaries who could use it to uncover information about an organization that they could use to find vulnerabilities.
 
 The study presented in this paper collected an appropriately anonymized email metadata dataset to demonstrate how this metadata could be used to determine an organic organizational chart.
 The study uses email metadata from $36$ voluntary participants.
@@ -143,7 +127,7 @@ Special care was taken to protect the privacy of those involved in the study.
 During the collection process, all subject and body text was hashed using MD5, and all email metadata was stored in a secure database using scripts without any researchers observing any email text.
 Any identifying information has been omitted from this publication.
 The following is the metadata provided from each email:
-\begin{compactitem}
+\begin{itemize}
 \item Destination and source email address
 \item Email time stamp
 \item Subject prefix (e.g., Re:, Fwd:)
@@ -152,7 +136,7 @@ The following is the metadata provided from each email:
 \item Length of subject in characters
 \item Length of body text in characters
 \item Number of attachments
-\end{compactitem}
+\end{itemize}
 
 Table~\ref{tab:db_stats} compares statistics between this internal dataset and the Enron corpus.
 This internal database is more modern, contains more emails, and covers a longer time period, but involves fewer people than were used to construct the Enron dataset.
@@ -188,9 +172,7 @@ The directors exhibit opposite behavior: there are only eight directors in the c
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=\columnwidth,trim={1mm 5mm 1mm 5mm},clip]{DatasetStatsBar_BW}
-    \vspace{-17pt}
 	\caption{Representation of each class in the database with respect to total number of emails and number of people.  The number of people with a given job title is often not a reliable indicator of how many emails belonged to that class.}
-	\vspace{-15pt}
 	\label{fig:db_bar}
 \end{figure}
 
@@ -238,9 +220,7 @@ Some employees never exchanged any emails, while others exchanged several thousa
 \begin{figure}[t]
     \centering
     \includegraphics[width=\columnwidth,trim={4mm 1mm 0mm 5mm},clip]{ViridisEdit_inv}
-    \vspace{-17pt}
     \caption{The adjacency matrix representing the social connections of the center.  There are groups within the center that exchanged thousands of emails as well as groups who never exchanged a single email.}
-    \vspace{-16pt}
     \label{fig:adj_matrix}
 \end{figure}
 
@@ -271,7 +251,7 @@ Say there exists a node $i$ with neighbors $j$ and $k$.
 This metric measures the probability that $j$ and $k$ are also neighbors to a fourth node, $l$~\cite{lind_cycles_2005}.
 The higher the clustering coefficient, the more connected the node is within its neighborhood.
 The triangle clustering coefficient was also used as a metric.
-This value is the same as the square clustering coefficient but instead determines the probability of connected triangles involving each node~\cite{saramaki_generalizations_2007}1.
+This value is the same as the square clustering coefficient but instead determines the probability of connected triangles involving each node~\cite{saramaki_generalizations_2007}.
 
 The majority of the social-based features were centrality measures.
 This includes closeness centrality, betweenness centrality, degree centrality~\cite{borgatti2011analyzing}, current flow closeness centrality, current flow betweenness centrality~\cite{brandes2005centrality}, communicability centrality, communicability betweenness centrality~\cite{estrada2008communicability}, and load centrality~\cite{newman2001scientific}.
@@ -288,20 +268,10 @@ These rules are constructed in a hierarchy that visually resembles a tree.
 
 %An example random tree with depth three is shown in Fig.~\ref{fig:ex_tree}.
 
-%\begin{figure}[t]
-%    \centering
-%    \includegraphics[width=\columnwidth,trim={0mm 2.5mm 0mm 2mm},clip]{3_level_tree_BW}
-%    \vspace{-12pt}
-%    \caption{Example random tree of depth 3 to demonstrate how a few rules can be used to find significant class divisions.}
-%    \vspace{-15pt}
-%    \label{fig:ex_tree}
-%\end{figure}
-
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=5cm,height=5cm,keepaspectratio,trim={0mm 2.5mm 0mm 2mm},clip]{RandForest_BW}
 	\caption{The random forest method aggregates many random trees via bagging to build a robust classifier.}
-	\vspace{-15pt}
 	\label{fig:rand_forest}
 \end{figure}  
 
@@ -342,7 +312,6 @@ Highlighted rows represent the features either not used previously in email anal
 \begin{table}[t]
 \centering
 \caption{Top 20 features ranked by the mutual information.}
-\vspace{-5pt}
 \label{tab:ranked_feats}
 \resizebox{\columnwidth}{!}{
 \begin{tabular}{@{}lrr@{}}
@@ -372,7 +341,6 @@ Percentage of emails received as forwards    & Traffic      & 0.451  \\
 Partial graph degree centrality				 & Social		& 0.448  \\
 Partial graph average shortest paths         & Social	    & 0.448  \\ \bottomrule\end{tabular} 
 }   
-\vspace{-15pt}
 \end{table} 
 
 \section{Results} \label{Results}
@@ -393,9 +361,7 @@ Therefore, the classification accuracy for the study participants is $96.8\%$, c
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.85\columnwidth,trim={1mm 8mm 10mm 0mm},clip]{Classification_confusion_BW}
-    \vspace{-15pt}
     \caption{The random forest algorithm was extremely accurate even for very uneven class sizes.  Note that all members of the four smallest classes were labeled perfectly.  There were only three errors out of $69$ employees, two of which for employees who did not provide emails for the study.}
-    \vspace{-12pt}
     \label{fig:result_hist}
 \end{figure}
 
@@ -411,9 +377,7 @@ The most emailed researcher is the darkest line, the second-most common research
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=\columnwidth,trim={0mm 1mm 0mm 1mm},clip]{orgChart_3con_BW}
-	\vspace{-17pt}
 	\caption{Project organizational chart generated from the email data. This analysis could be used in corporate merges or restructuring in order to better understand the communication network of an organization.}
-	\vspace{-18pt}
 	\label{fig:org_chart}
 \end{figure}
 
@@ -437,9 +401,7 @@ These statistics are depicted for all classes in Fig.~\ref{fig:project_analysis}
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=\columnwidth,trim={1mm 5mm 10mm 2mm},clip]{superior_identification_BW}
-    \vspace{-18pt}
 	\caption{The official director an employee, from the organizational chart, is often not the director with whom they exchange the most emails.  However, graduate students and researchers often communicate most frequently with their primary project manager.}
-	\vspace{-12pt}
 	\label{fig:project_analysis}
 \end{figure}
 
