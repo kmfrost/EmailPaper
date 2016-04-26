@@ -32,7 +32,7 @@
 %\setlist[enumerate]{leftmargin = 9pt}
 %\setlist[itemize]{leftmargin = 8pt}
 %-----------------------------------------------------------------
-
+\usepackage{balance}
 \graphicspath{{Pictures/}}
 
 \begin{document}
@@ -67,7 +67,7 @@ These methods could be applied to any communications system to perform organizat
 In a military context, this work shows the importance of protecting this metadata from adversaries who could use it to uncover information about an organization that they could use to find vulnerabilities.
 
 The study presented in this paper collected an appropriately anonymized email metadata dataset to demonstrate how this metadata could be used to determine an organization's underlying organic structure.
-It is proposed that this organic chart contians valuable information not present in the official organizational chart.
+It is proposed that this organic chart contains valuable information not present in the official organizational chart.
 The study uses email metadata from $36$ voluntary participants.
 This metadata is used not only to analyze the voluntary participants, but also to what extent the non-participant members of the organization can be characterized.
 
@@ -108,7 +108,7 @@ This is a useful model because many statistics can be calculated from a graphica
 A common feature used in social network analysis is betweenness centrality, which comes in several different flavors first developed by Freeman~\cite{freeman1977set}.
 Betweenness centrality is a measure of how many shortest paths in a graph travel over each node.
 In a graph with edge weights, a shortest path is a route from one node to another that has the minimum edge weight sum.
-Note that two or more equivilent shortest paths can exist for a pair of nodes.
+Note that two or more equivalent shortest paths can exist for a pair of nodes.
 A node with high betweenness centrality in a social graph has been shown to represent a high degree of influence on other nodes.
 
 Tyler et al.~\cite{tyler2005mail} used a betweenness centrality algorithm to determine community structures within an organization.
@@ -144,7 +144,7 @@ The following is the metadata provided from each email:
 
 Table~\ref{tab:db_stats} compares statistics between this internal dataset and the Enron corpus.
 This internal database is more modern, contains more emails, and covers a longer time period, but involves fewer people than were used to construct the Enron dataset.
-While the study collected email data from only 36 volunteers, the email metadata from these volunteers identified $38$ additional employees of the center.
+While the study collected email data from only $36$ volunteers, the email metadata from these volunteers identified $38$ additional employees of the center.
 These peripheral employees were included in the study when ground truth for their job was available and when the dataset contained sufficient email metadata records (defined as at least $100$ total emails).
 Five of the $36$ direct participants were very new employees to the center, and are not considered in the classification analysis due to lack of sufficient email data.
 The email records provided by these employees were still included to help characterize other employees.
@@ -173,14 +173,14 @@ The center divides its employees into six main areas: directors, graduate studen
 Each person in the study was labeled with his or her job title.
 One challenge of working with this dataset is that the distribution of these job titles is far from uniform.
 Approximately half of the participants are graduate students, and there are only two outreach personnel included in the study.
-Fig.~\ref{fig:db_bar} compares the distribution of job titles to the distribution of total emails in the dataset.
-Even though graduate students are by far the largest class, their emails only comprise about $10\%$ of the dataset.
+Fig.~\ref{fig:db_bar} compares the distribution of job titles to the average number of emails per person per class.
+Even though graduate students are by far the largest class, they send the fewest emails per person out of any class.
 The directors exhibit opposite behavior: there are only eight directors in the center, but collectively their emails make up almost $50\%$ of the database.
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=\columnwidth,trim={1mm 5mm 1mm 5mm},clip]{DatasetStatsBar_BW}
-	\caption{Representation of each class in the dataset with respect to total number of emails and number of people.  Both distributions are very nonuniform, which poses a challenge to the classification algorithm.}
+	\includegraphics[width=\columnwidth,trim={1mm 0mm 1mm 0mm},clip]{DatasetStatsBar_BW}
+	\caption{Representation of each class in the dataset with respect to average emails per person and number of people.  Both distributions are very nonuniform, which poses a challenge to the classification algorithm.}
 	\label{fig:db_bar}
 \end{figure}
 
@@ -229,7 +229,7 @@ Some employees never exchanged any emails, while others exchanged several thousa
 
 \begin{figure}[t]
     \centering
-    \includegraphics[width=\columnwidth,trim={4mm 1mm 0mm 5mm},clip]{ViridisEdit_inv}
+    \includegraphics[width=\columnwidth,trim={0mm 0mm 0mm 0mm},clip]{GrayBiggerFont}
     \caption{The adjacency matrix representing the social connections of the center.  There are groups within the center that exchanged thousands of emails as well as groups who never exchanged a single email.}
     \label{fig:adj_matrix}
 \end{figure}
@@ -252,8 +252,8 @@ This algorithm was originally designed to rate web pages, but has since been app
 A node's authority is just that\textemdash{}a measure of its importance over other nodes.
 A node's hub score is a measure of how well-connected it is to other nodes.
 
-Another algorithm used to generate features was the pagerank algorithm, developed by Google~\cite{page1999pagerank} also to rank webpages for search results.
-The assumption is that the most important webpages will be linked to frequently by other pages.
+Another algorithm used to generate features was the pagerank algorithm, developed by Google~\cite{page1999pagerank} also to rank web pages for search results.
+The assumption is that the most important web pages will be linked to frequently by other pages.
 Therefore, the ranking is determined by estimating the quality and quantity of links to a node.
 The square clustering coefficient for each node was used as a feature.
 Say there exists a node $i$ with neighbors $j$ and $k$.
@@ -362,7 +362,7 @@ The ultimate goal of this research is to determine an organic hierarchy, generat
 Each email is randomly assigned to either the training or testing set with equal probability.
 All of the metrics described in Section~\ref{Features} were calculated for both groups separately.
 The training data is used as input to the random forest algorithm as described in Section~\ref{Analysis}, and predictions are generated for the test data.
-The number of correct and incorrect classifications for each class are shown below in Fig.~\ref{fig:result_hist}.
+The number of correct and incorrect classifications for each class are shown in Fig.~\ref{fig:result_hist}.
 Note that only three predictions were wrong, and all were a result of confusing research staff with graduate students.
 It is important to note that two of these misclassifications are peripheral participants.
 Therefore, the classification accuracy for the study participants is $96.8\%$, correctly classified inferred employees is $94.7\%$, and the overall accuracy of this method using all features is $95.7\%$.
@@ -385,7 +385,7 @@ The most emailed researcher is the darkest line, the second-most common research
 
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=\columnwidth,trim={0mm 1mm 0mm 1mm},clip]{orgChart_3con_BW}
+	\includegraphics[width=\columnwidth,trim={0mm 1mm 0mm 1mm},clip]{org_chart_with_legend_no_red}
 	\caption{Project organizational chart generated from the email data. This analysis could be used as a tool in corporate mergers or restructuring in order to better understand the communication network of an organization.}
 	\label{fig:org_chart}
 \end{figure}
@@ -402,7 +402,7 @@ This result shows a clear disconnect between the official organizational chart a
 To identify each employee's project manager, ground truth is selected to be the project that primarily funds the employee.
 Note that employees with job titles of project manager, outreach, and operations have directors, but no equivalent to project manager.
 This time, $91.67\%$ of graduate students and researchers communicate most frequently with their primary program manager.
-The relationships between employees and project managers appears to be stronger than that with directors.
+The relationships between employees and project managers appear to be stronger than that with directors.
 In the case of project managers, the organic and official hierarchies more closely match.
 
 \begin{figure}[t]
@@ -426,6 +426,8 @@ The organic chart showed that emails could be used to predict an employee's prim
 This method was less accurate, $52.63\%$, at identifying the director associated with the employee on the official organizational chart.
 This work has shown that it is possible to infer important organizational information from using carefully processed email metadata without compromising the privacy of employees.
 Future work will attempt to further explore the center's organic hierarchy through this data as well as to apply these algorithms to other datasets to determine the general applicability of the results.
+
+\balance
 
 \Urlmuskip=0mu plus 1mu\relax
 \bibliographystyle{IEEEtran}
