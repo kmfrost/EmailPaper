@@ -32,7 +32,7 @@
 %\setlist[enumerate]{leftmargin = 9pt}
 %\setlist[itemize]{leftmargin = 8pt}
 %-----------------------------------------------------------------
-
+\usepackage{balance}
 \graphicspath{{Pictures/}}
 
 \begin{document}
@@ -56,6 +56,10 @@ The result represents classifier performance not only on participants in the stu
 Furthermore, the data revealed relationships not present in the center's formal operating structure.
 The result is an organic organizational chart, which contains a fuller understanding of the center's internal structure than can be found in the official organizational chart.
 \end{abstract}
+
+	\begin{IEEEkeywords}
+		data analytics, machine learning, social computing.
+	\end{IEEEkeywords}
 
 \section{Introduction}
 A reorganization of a business can be very costly and has great effects once implemented, either for better or for worse.
@@ -425,11 +429,14 @@ An organic organizational chart was generated from the email data and contrasted
 The organic chart showed that emails could be used to predict an employee's primary program manager with $92\%$ accuracy.
 This method was less accurate, $52.63\%$, at identifying the director associated with the employee on the official organizational chart.
 This work has shown that it is possible to infer important organizational information from using carefully processed email metadata without compromising the privacy of employees.
-Future work will attempt to further explore the center's organic hierarchy through this data as well as to apply these algorithms to other datasets to determine the general applicability of the results.
+Future work will attempt to further explore the center's organic hierarchy through this data as well as to apply these algorithms to other datasets to determine the general applicability of the results
+
+
+\balance
+
 
 \Urlmuskip=0mu plus 1mu\relax
 \bibliographystyle{IEEEtran}
 \bibliography{bib}
-
 
 \end{document}
